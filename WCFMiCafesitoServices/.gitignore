@@ -280,3 +280,5 @@ config.ps1
 # Debug files
 *.etl
 *.dmp
+
+keys.json

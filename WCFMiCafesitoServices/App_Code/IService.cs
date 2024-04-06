@@ -10,11 +10,10 @@ using System.Text;
 [ServiceContract]
 public interface IService
 {
+    [OperationContract]
+    void GetData();
 
-	[OperationContract]
-	string GetData(int value);
-
-	[OperationContract]
+    [OperationContract]
 	CompositeType GetDataUsingDataContract(CompositeType composite);
 
 	// TODO: Add your service operations here
