@@ -1,15 +1,8 @@
 ﻿using Newtonsoft.Json;
 using System;
-using System.Collections.Generic;
-using System.Configuration;
 using System.IO;
-using System.Linq;
-using System.Reflection;
-using System.Web;
 
-/// <summary>
-/// Summary description for ConfigurationManager
-/// </summary>
+
 public class CustomConfigurationManager
 {
     public string ConnectionString { get; private set; }
