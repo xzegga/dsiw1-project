@@ -12,6 +12,8 @@ public class Service : IUserService
         _userService = new UserService();
     }
 
+    #region User Administration Methods
+
     public void AddUser(User user)
     {
         _userService.AddUser(user);
@@ -46,4 +48,6 @@ public class Service : IUserService
     {
         _userService.UpdateUser(user);
     }
+
+    #endregion
 }
