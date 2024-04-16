@@ -1,30 +1,49 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Configuration;
-using System.IO;
-using System.Linq;
-using System.Runtime.Serialization;
-using System.ServiceModel;
-using System.ServiceModel.Web;
-using System.Text;
+using System.Data;
 
-public class Service : IService
+
+public class Service : IUserService
 {
-    private CustomConfigurationManager _config;
+    public readonly IUserService _userService;
 
     public Service()
     {
-        _config = new CustomConfigurationManager();
-        string c = _config.ConnectionString;
+        _userService = new UserService();
     }
 
-    public void GetData()
+    public void AddUser(User user)
     {
-        string c = _config.ConnectionString;
+        _userService.AddUser(user);
     }
 
-    public CompositeType GetDataUsingDataContract(CompositeType composite)
+    public void DeleteUser(int id)
     {
-        throw new NotImplementedException();
+        _userService.DeleteUser(id);
+    }
+
+    public List<User> GetAllUsers()
+    {
+        return _userService.GetAllUsers();
+    }
+
+    public User GetUserById(int id)
+    {
+        return _userService.GetUserById(id);
+    }
+
+    public int Login(string user, string password)
+    {
+        return _userService.Login(user, password);
+    }
+
+    public void ResetPassword(string email, string password, string newPassword, string confirmPassword)
+    {
+        _userService.ResetPassword(email, password, newPassword, confirmPassword);
+    }
+
+    public void UpdateUser(User user)
+    {
+        _userService.UpdateUser(user);
     }
 }
