@@ -1,29 +1,31 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ServiceModel;
 
-[ServiceContract]
-public interface IUserService
+namespace MiCafesito
 {
-    [OperationContract]
-    List<User> GetAllUsers();
+    [ServiceContract]
+    public interface IUserService
+    {
+        [OperationContract]
+        List<User> GetAllUsers();
 
-    [OperationContract]
-    User GetUserById(int id);
+        [OperationContract]
+        User GetUserById(int id);
 
-    [OperationContract]
-    int Login(string email, string password);
+        [OperationContract]
+        int Login(string email, string password);
 
-    [OperationContract]
-    void UpdateUser(User user);
+        [OperationContract]
+        void UpdateUser(User user);
 
-    [OperationContract]
-    void DeleteUser(int id);
+        [OperationContract]
+        void DeleteUser(int id);
 
-    [OperationContract]
-    void AddUser(User user);
+        [OperationContract]
+        void AddUser(User user);
 
-    [OperationContract]
-    void ResetPassword(string email, string password, string newPassword, string confirmPassword);
+        [OperationContract]
+        void ResetPassword(string email, string password, string newPassword, string confirmPassword);
 
+    }
 }

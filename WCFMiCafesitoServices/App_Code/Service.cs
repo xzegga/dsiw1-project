@@ -1,15 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
+using MiCafesito;
 
-
-public class Service : IUserService
+public class Service : IUserService, ICategoryService
 {
     public readonly IUserService _userService;
+    public readonly ICategoryService _categoryService;
 
     public Service()
     {
         _userService = new UserService();
+        _categoryService = new CategoryService();
     }
 
     #region User Administration Methods
@@ -47,6 +48,33 @@ public class Service : IUserService
     public void UpdateUser(User user)
     {
         _userService.UpdateUser(user);
+    }
+
+    #endregion
+
+    #region Category Administration Methods
+
+    public void AddCategory(Category category)
+    {
+        _categoryService.AddCategory(category);
+    }
+    public void DeleteCategory(int id)
+    {
+        _categoryService.DeleteCategory(id);
+    }
+    public List<Category> GetAllCategories()
+    {
+        return _categoryService.GetAllCategories();
+    }
+
+    public Category GetCategoryById(int id)
+    {
+        return _categoryService.GetCategoryById(id);
+    }
+
+    public void UpdateCategory(Category category)
+    {
+        _categoryService.UpdateCategory(category);
     }
 
     #endregion
