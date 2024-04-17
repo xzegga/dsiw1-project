@@ -5,7 +5,7 @@ using System.Data.SqlClient;
 
 namespace MiCafesito
 {
-    public class ProductDetailService : IProductDetailService
+    public class ProductDetailService : IOrderDetailsService
     {
         private CustomConfigurationManager _config;
         private SqlConnection connection;

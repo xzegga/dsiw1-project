@@ -5,17 +5,17 @@ using System.Data.SqlClient;
 
 namespace MiCafesito
 {
-    public class ProductosSevice : IProductosSevice
+    public class ProductsService : IProductService
     {
         private CustomConfigurationManager _config;
         private SqlConnection connection;
 
-        public ProductosSevice()
+        public ProductsService()
         {
             _config = new CustomConfigurationManager();
             connection = new SqlConnection(_config.ConnectionString);
         }
-        public void AddProduct(Productos productos)
+        public void AddProduct(Product productos)
         {
 
             try
@@ -56,7 +56,7 @@ namespace MiCafesito
             finally { connection.Close(); }
         }
 
-        public List<Productos> GetAllProduct()
+        public List<Product> GetAllProduct()
         {
             try
             {
@@ -67,11 +67,11 @@ namespace MiCafesito
                     connection.Open();
                     using (SqlDataReader reader = command.ExecuteReader())
                     {
-                        List<Productos> productos = new List<Productos>();
+                        List<Product> productos = new List<Product>();
 
                         while (reader.Read())
                         {
-                            Productos productos = new Productos();
+                            Product productos = new Product();
                             productos.ID_Productos = Convert.ToInt32(reader["ID_Productos"]);
                             productos.Nombre = reader["Nombre"].ToString();
                             productos.Descripcion = reader["Descripcion"].ToString();
@@ -88,7 +88,7 @@ namespace MiCafesito
             finally { connection.Close(); }
         }
 
-        public Productos GetProductById(int id)
+        public Product GetProductById(int id)
         {
             try
             {
@@ -101,7 +101,7 @@ namespace MiCafesito
                     connection.Open();
                     using (SqlDataReader reader = command.ExecuteReader())
                     {
-                        Productos productos = new Productos();
+                        Product productos = new Product();
 
                         while (reader.Read())
                         {
@@ -121,7 +121,7 @@ namespace MiCafesito
             return null;
         }
 
-        public void UpdateProduct(Productos productos)
+        public void UpdateProduct(Product productos)
         {
             try
             {

@@ -3,7 +3,7 @@ using System;
 using System.Runtime.Serialization;
 
 [DataContract]
-public class Productos
+public class Product
 {
 
     [DataMember]

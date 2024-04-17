@@ -2,7 +2,7 @@ using System;
 using System.Runtime.Serialization;
 
 [DataContract]
-public class ProductDetailService
+public class OrderDetails
 {
 
     [DataMember]

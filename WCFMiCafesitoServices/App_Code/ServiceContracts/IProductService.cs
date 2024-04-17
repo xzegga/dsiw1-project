@@ -4,21 +4,21 @@ using System.ServiceModel;
 namespace MiCafesito
 {
     [ServiceContract]
-    public interface IProductosSevice
+    public interface IProductService
     {
         [OperationContract]
-        List<Productos> GetAllProduct();
+        List<Product> GetAllProduct();
 
         [OperationContract]
-        Productos GetProductById(int id);
+        Product GetProductById(int id);
 
         [OperationContract]
-        void UpdateProduct(Productos productos);
+        void UpdateProduct(Product productos);
 
         [OperationContract]
         void DeleteProducto(int id);
 
         [OperationContract]
-        void AddProduct(Productos productos);
+        void AddProduct(Product productos);
     }
 }
