@@ -58,6 +58,7 @@ namespace MiCafesito
 
         public List<Product> GetAllProduct()
         {
+
             try
             {
                 using (SqlCommand command = new SqlCommand("SP_ListarProductos", connection))
@@ -71,20 +72,22 @@ namespace MiCafesito
 
                         while (reader.Read())
                         {
-                            Product productos = new Product();
-                            productos.ID_Productos = Convert.ToInt32(reader["ID_Productos"]);
-                            productos.Nombre = reader["Nombre"].ToString();
-                            productos.Descripcion = reader["Descripcion"].ToString();
-                            productos.Precio = reader["Precio"].ToString();
+                            Product producto = new Product();
 
-                            productos.Add(Productos);
+                            producto.ID_Producto = Convert.ToInt32(reader["ID_Producto"]);
+                            producto.Nombre = reader["Nombre"].ToString();
+                            producto.Descripcion = reader["Descripcion"].ToString();
+                            producto.Precio = Convert.ToDouble(reader["Precio"].ToString());
+                            producto.ID_Categoria = Convert.ToInt32(reader["ID_Categoria"]);
+
+                            productos.Add(producto);
                         }
 
                         return productos;
                     }
                 }
             }
-            catch (Exception ex) { throw new ArgumentException("No se pudieron obtener la lista de productos"); }
+            catch (Exception ex) { throw new ArgumentException("No se pudo obtener la lista de productos"); }
             finally { connection.Close(); }
         }
 
@@ -108,7 +111,8 @@ namespace MiCafesito
                             productos.ID_Producto = Convert.ToInt32(reader["ID_Producto"]);
                             productos.Nombre = reader["Nombre"].ToString();
                             productos.Descripcion = reader["Descripcion"].ToString();
-                            productos.Precio = reader["Precio"].ToString();
+                            productos.Precio = Convert.ToDouble(reader["Precio"].ToString());
+                            productos.ID_Categoria = Convert.ToInt32(reader["ID_Categoria"]);
                         }
 
                         return productos;

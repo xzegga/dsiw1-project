@@ -24,16 +24,16 @@ namespace MiCafesito
                 {
                     command.CommandType = CommandType.StoredProcedure;
 
-                    command.Parameters.AddWithValue("@Nombre", detallePedidos.Nombre);
-                    command.Parameters.AddWithValue("@Descripcion", detallePedidos.Descripcion);
-                    command.Parameters.AddWithValue("@Precio", detallePedidos.Precio);
-                    command.Parameters.AddWithValue("@ID_Categoria", detallePedidos.ID_Categoria);
+                    command.Parameters.AddWithValue("@ID_Pedido", orderDetails.ID_Pedido);
+                    command.Parameters.AddWithValue("@ID_Producto", orderDetails.ID_Producto);
+                    command.Parameters.AddWithValue("@Cantidad", orderDetails.Cantidad);
+                    command.Parameters.AddWithValue("@PrecioUnitario", orderDetails.PrecioUnitario);
 
                     connection.Open();
                     command.ExecuteNonQuery();
                 }
             }
-            catch (Exception ex) { throw new ArgumentException("No se pudo agregar el detalle de pedido"); }
+            catch (Exception ex) { throw new ArgumentException("No se pudo agregar el detalle del pedido"); }
             finally { connection.Close(); }
         }
 
@@ -84,11 +84,7 @@ namespace MiCafesito
             finally { connection.Close(); }
         }
 
-    
-
-
-
-    public void UpdateOrderDetail(OrderDetails orderDetails)
+        public void UpdateOrderDetail(OrderDetails orderDetails)
         {
             try
             {
@@ -96,17 +92,17 @@ namespace MiCafesito
                 {
                     command.CommandType = CommandType.StoredProcedure;
 
-                    command.Parameters.AddWithValue("@ID_Detalle", detallePedidos.ID_Detalle);
-                    command.Parameters.AddWithValue("@ID_Pedido", detallePedidos.ID_Pedido);
-                    command.Parameters.AddWithValue("@ID_Producto", detallePedidos.ID_Producto);
-                    command.Parameters.AddWithValue("@Cantidad", detallePedidos.Cantidad);
-                    command.Parameters.AddWithValue("@PrecioUnitario", detallePedidos.PrecioUnitario);
+                    command.Parameters.AddWithValue("@ID_Detalle", orderDetails.ID_Detalle);
+                    command.Parameters.AddWithValue("@ID_Pedido", orderDetails.ID_Pedido);
+                    command.Parameters.AddWithValue("@ID_Producto", orderDetails.ID_Producto);
+                    command.Parameters.AddWithValue("@Cantidad", orderDetails.Cantidad);
+                    command.Parameters.AddWithValue("@PrecioUnitario", orderDetails.PrecioUnitario);
 
                     connection.Open();
                     command.ExecuteNonQuery();
                 }
             }
-            catch (Exception ex) { throw new ArgumentException("No se pudo actualizar el detalle de pedido"); }
+            catch (Exception ex) { throw new ArgumentException("No se pudo actualizar el detalle del pedido"); }
             finally { connection.Close(); }
         }
     }

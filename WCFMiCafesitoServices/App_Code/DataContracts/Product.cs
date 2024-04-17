@@ -16,9 +16,9 @@ public class Product
     public string Descripcion { get; set; }
 
     [DataMember]
-    public string Precio { get; set; }
+    public double Precio { get; set; }
 
     [DataMember]
-    public string ID_Categoria { get; set; }
+    public int ID_Categoria { get; set; }
 
 }

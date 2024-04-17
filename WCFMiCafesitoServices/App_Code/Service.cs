@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Runtime.InteropServices.WindowsRuntime;
 using MiCafesito;
 
-public class Service : IUserService, ICategoryService
+public class Service : IUserService, ICategoryService, IProductService
 {
     public readonly IUserService _userService;
     public readonly ICategoryService _categoryService;
+    public readonly IProductService _productService;
 
     public Service()
     {
@@ -75,6 +77,37 @@ public class Service : IUserService, ICategoryService
     public void UpdateCategory(Category category)
     {
         _categoryService.UpdateCategory(category);
+    }
+
+
+
+    #endregion
+
+    #region Product Administration Methods
+
+    public List<Product> GetAllProduct()
+    {
+        return _productService.GetAllProduct();
+    }
+
+    public Product GetProductById(int id)
+    {
+        return _productService.GetProductById(id);
+    }
+
+    public void UpdateProduct(Product productos)
+    {
+        _productService.UpdateProduct(productos);
+    }
+
+    public void DeleteProducto(int id)
+    {
+        _productService.DeleteProducto(id);
+    }
+
+    public void AddProduct(Product productos)
+    {
+        _productService.AddProduct(productos);
     }
 
     #endregion
