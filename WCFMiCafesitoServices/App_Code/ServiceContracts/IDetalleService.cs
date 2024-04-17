@@ -4,10 +4,10 @@ using System.ServiceModel;
 namespace MiCafesito
 {
     [ServiceContract]
-    public interface IDetalleService
+    public interface IProductDetailService
     {
         [OperationContract]
-        List<DetallePedidos> GetAllDetPedido();
+        List<ProductDetailService> GetAllDetPedido();
 
         [OperationContract]
         void UpdateDetPedido(DetallePedido Detallepedido);
