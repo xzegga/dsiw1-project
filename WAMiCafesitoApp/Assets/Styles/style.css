@@ -1,0 +1,65 @@
+﻿.hero {
+    min-height: 400px; /* Altura mínima del banner */
+    background: linear-gradient(to right, #A65A1A, #490702); /* Degradado de colores café */
+    color: #fff; /* Texto en color blanco */
+}
+
+.hero {
+    position: relative;
+    width: 100%;
+    height: 60vh;
+    min-height: 400px;
+    background-image: url('/Assets/Images/ariov60.png');
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+}
+
+.gradient-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0.8));
+}
+
+.gradient-overlay > .container {
+    position: relative;
+    z-index: 1;
+    color: white;
+    padding-top: 50px;
+}
+
+.btn-comprar {
+    background-color: #28a745;
+    border-color: #28a745;
+}
+
+.btn-informacion {
+    background-color: #fd7e14;
+    border-color: #fd7e14;
+}
+
+.hero-img {
+    width: 100%;
+    max-width: 512px;
+}
+
+.logo-text {
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-align: left;
+    color: saddlebrown
+}
+
+.logo-text-small {
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-align: left;
+
+}
+
+.logo-link {
+    text-decoration: none;
+}

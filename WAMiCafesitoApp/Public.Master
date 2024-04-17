@@ -1,0 +1,301 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Public.Master.cs" Inherits="WAMiCafesitoApp.Site1" %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head runat="server">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="/Assets/Styles/style.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+
+<body>
+    <form id="form2" runat="server">
+        <!--Main Navigation-->
+        <header>
+            <!-- Jumbotron -->
+            <div class="p-3 text-center bg-white border-bottom">
+                <div class="container">
+                    <div class="row gy-3">
+                        <div class="col-lg-2 col-sm-4 col-4">
+                            <a href="/" target="_blank" class="float-start d-flex align-items-center gap-2 logo-link">
+                                <img src="/Assets/Images/logo.jpg" height="45" />
+                                <h1 class="logo-text">MiCafesito <span class="logo-text-small d-block">Enlínea</span></h1>
+                            </a>
+                        </div>
+
+                        <div class="order-lg-last col-lg-5 col-sm-8 col-8">
+                            <div class="d-flex float-end">
+                                <a href="https://github.com/mdbootstrap/bootstrap-material-design" class="me-1 py-1 px-3 nav-link d-flex align-items-center" target="_blank"><i class="fas fa-user-alt m-1 me-md-2"></i>
+                                    <p class="d-none d-md-block mb-0">Ingresar</p>
+                                </a>
+                                <a href="https://github.com/mdbootstrap/bootstrap-material-design" class="me-1 py-1 px-3 nav-link d-flex align-items-center" target="_blank"><i class="fas fa-heart m-1 me-md-2"></i>
+                                    <p class="d-none d-md-block mb-0">Registrarse</p>
+                                </a>
+                                <a href="https://github.com/mdbootstrap/bootstrap-material-design" class="py-1 px-3 nav-link d-flex align-items-center" target="_blank"><i class="fas fa-shopping-cart m-1 me-md-2"></i>
+                                    <p class="d-none d-md-block mb-0">Carrito</p>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-5 col-md-12 col-12">
+                            <div class="input-group search-box">
+                                <input type="text" class="form-control" placeholder="Search">
+                                <button class="btn btn-outline-secondary" type="button">
+                                    <i class="fas fa-search"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navbar -->
+            <nav class="navbar navbar-expand-lg navbar-light bg-white">
+                <div class="container justify-content-center justify-content-md-between">
+                    <button
+                        class="navbar-toggler border py-2 text-dark"
+                        type="button"
+                        data-mdb-toggle="collapse"
+                        data-mdb-target="#navbarLeftAlignExample"
+                        aria-controls="navbarLeftAlignExample"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <i class="fas fa-bars"></i>
+                    </button>
+
+
+                    <div class="collapse navbar-collapse" id="navbarLeftAlignExample">
+
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" href="#">Equipos para Métodos</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" aria-current="page" href="#">Kettles</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" href="#">Filtros</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" href="#">Molinillos</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <asp:ContentPlaceHolder ID="header" runat="server">
+            </asp:ContentPlaceHolder>
+
+        </header>
+
+
+        <!-- main -->
+        <main>
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+        </main>
+        <!-- main -->
+
+        <!-- Feature -->
+        <section class="mt-5" style="background-color: #f5f5f5;">
+            <div class="container text-dark pt-3">
+                <header class="pt-4 pb-3">
+                    <h3>Why choose us</h3>
+                </header>
+
+                <div class="row mb-4">
+                    <div class="col-lg-4 col-md-6">
+                        <figure class="d-flex align-items-center mb-4">
+                            <span class="rounded-circle bg-white p-3 d-flex me-2 mb-2">
+                                <i class="fas fa-camera-retro fa-2x fa-fw text-primary floating"></i>
+                            </span>
+                            <figcaption class="info">
+                                <h6 class="title">Reasonable prices</h6>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmor</p>
+                            </figcaption>
+                        </figure>
+                        <!-- itemside // -->
+                    </div>
+                    <!-- col // -->
+                    <div class="col-lg-4 col-md-6">
+                        <figure class="d-flex align-items-center mb-4">
+                            <span class="rounded-circle bg-white p-3 d-flex me-2 mb-2">
+                                <i class="fas fa-star fa-2x fa-fw text-primary floating"></i>
+                            </span>
+                            <figcaption class="info">
+                                <h6 class="title">Best quality</h6>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmor</p>
+                            </figcaption>
+                        </figure>
+                        <!-- itemside // -->
+                    </div>
+                    <!-- col // -->
+                    <div class="col-lg-4 col-md-6">
+                        <figure class="d-flex align-items-center mb-4">
+                            <span class="rounded-circle bg-white p-3 d-flex me-2 mb-2">
+                                <i class="fas fa-plane fa-2x fa-fw text-primary floating"></i>
+                            </span>
+                            <figcaption class="info">
+                                <h6 class="title">Worldwide shipping</h6>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmor</p>
+                            </figcaption>
+                        </figure>
+                        <!-- itemside // -->
+                    </div>
+                    <!-- col // -->
+                    <div class="col-lg-4 col-md-6">
+                        <figure class="d-flex align-items-center mb-4">
+                            <span class="rounded-circle bg-white p-3 d-flex me-2 mb-2">
+                                <i class="fas fa-users fa-2x fa-fw text-primary floating"></i>
+                            </span>
+                            <figcaption class="info">
+                                <h6 class="title">Customer satisfaction</h6>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmor</p>
+                            </figcaption>
+                        </figure>
+                        <!-- itemside // -->
+                    </div>
+                    <!-- col // -->
+                    <div class="col-lg-4 col-md-6">
+                        <figure class="d-flex align-items-center mb-4">
+                            <span class="rounded-circle bg-white p-3 d-flex me-2 mb-2">
+                                <i class="fas fa-thumbs-up fa-2x fa-fw text-primary floating"></i>
+                            </span>
+                            <figcaption class="info">
+                                <h6 class="title">Happy customers</h6>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmor</p>
+                            </figcaption>
+                        </figure>
+                        <!-- itemside // -->
+                    </div>
+                    <!-- col // -->
+                    <div class="col-lg-4 col-md-6">
+                        <figure class="d-flex align-items-center mb-4">
+                            <span class="rounded-circle bg-white p-3 d-flex me-2 mb-2">
+                                <i class="fas fa-box fa-2x fa-fw text-primary floating"></i>
+                            </span>
+                            <figcaption class="info">
+                                <h6 class="title">Thousand items</h6>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmor</p>
+                            </figcaption>
+                        </figure>
+                        <!-- itemside // -->
+                    </div>
+                    <!-- col // -->
+                </div>
+            </div>
+            <!-- container end.// -->
+        </section>
+        <!-- Feature -->
+
+
+        <!-- Footer -->
+        <footer class="text-center text-lg-start text-muted mt-3" style="background-color: #f5f5f5;">
+            <!-- Section: Links  -->
+            <section class="">
+                <div class="container text-center text-md-start pt-4 pb-4">
+                    <!-- Grid row -->
+                    <div class="row mt-3">
+                        <!-- Grid column -->
+                        <div class="col-12 col-lg-3 col-sm-12 mb-2">
+                            <!-- Content -->
+                            <a href="https://mdbootstrap.com/" target="_blank" class="">
+                                <img src="https://mdbootstrap.com/img/logo/mdb-transaprent-noshadows.png" height="35" />
+                            </a>
+                            <p class="mt-2 text-dark">
+                                © 2023 Copyright: MDBootstrap.com
+                            </p>
+                        </div>
+                        <!-- Grid column -->
+
+                        <!-- Grid column -->
+                        <div class="col-6 col-sm-4 col-lg-2">
+                            <!-- Links -->
+                            <h6 class="text-uppercase text-dark fw-bold mb-2">Store
+                            </h6>
+                            <ul class="list-unstyled mb-4">
+                                <li><a class="text-muted" href="#">About us</a></li>
+                                <li><a class="text-muted" href="#">Find store</a></li>
+                                <li><a class="text-muted" href="#">Categories</a></li>
+                                <li><a class="text-muted" href="#">Blogs</a></li>
+                            </ul>
+                        </div>
+                        <!-- Grid column -->
+
+                        <!-- Grid column -->
+                        <div class="col-6 col-sm-4 col-lg-2">
+                            <!-- Links -->
+                            <h6 class="text-uppercase text-dark fw-bold mb-2">Information
+                            </h6>
+                            <ul class="list-unstyled mb-4">
+                                <li><a class="text-muted" href="#">Help center</a></li>
+                                <li><a class="text-muted" href="#">Money refund</a></li>
+                                <li><a class="text-muted" href="#">Shipping info</a></li>
+                                <li><a class="text-muted" href="#">Refunds</a></li>
+                            </ul>
+                        </div>
+                        <!-- Grid column -->
+
+                        <!-- Grid column -->
+                        <div class="col-6 col-sm-4 col-lg-2">
+                            <!-- Links -->
+                            <h6 class="text-uppercase text-dark fw-bold mb-2">Support
+                            </h6>
+                            <ul class="list-unstyled mb-4">
+                                <li><a class="text-muted" href="#">Help center</a></li>
+                                <li><a class="text-muted" href="#">Documents</a></li>
+                                <li><a class="text-muted" href="#">Account restore</a></li>
+                                <li><a class="text-muted" href="#">My orders</a></li>
+                            </ul>
+                        </div>
+                        <!-- Grid column -->
+
+                        <!-- Grid column -->
+                        <div class="col-12 col-sm-12 col-lg-3">
+                            <!-- Links -->
+                            <h6 class="text-uppercase text-dark fw-bold mb-2">Newsletter</h6>
+                            <p class="text-muted">Stay in touch with latest updates about our products and offers</p>
+                            <div class="input-group mb-3">
+                                <input type="email" class="form-control border" placeholder="Email" aria-label="Email" aria-describedby="button-addon2" />
+                                <button class="btn btn-light border shadow-0" type="button" id="button-addon2" data-mdb-ripple-color="dark">
+                                    Join
+                                </button>
+                            </div>
+                        </div>
+                        <!-- Grid column -->
+                    </div>
+                    <!-- Grid row -->
+                </div>
+            </section>
+            <!-- Section: Links  -->
+
+            <div class="">
+                <div class="container">
+                    <div class="d-flex justify-content-between py-4 border-top">
+                        <!--- payment --->
+                        <div>
+                            <i class="fab fa-lg fa-cc-visa text-dark"></i>
+                            <i class="fab fa-lg fa-cc-amex text-dark"></i>
+                            <i class="fab fa-lg fa-cc-mastercard text-dark"></i>
+                            <i class="fab fa-lg fa-cc-paypal text-dark"></i>
+                        </div>
+                        <!--- payment --->
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Footer -->
+    </form>
+
+    <!-- Bootstrap JS from CDN (Optional, for certain Bootstrap components) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+</body>
+</html>

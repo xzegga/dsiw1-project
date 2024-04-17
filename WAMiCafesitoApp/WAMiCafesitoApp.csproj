@@ -70,42 +70,67 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include=".gitignore" />
-    <None Include="Connected Services\WCFMiCafesitoService\Service.disco" />
-    <None Include="Connected Services\WCFMiCafesitoService\configuration91.svcinfo" />
-    <None Include="Connected Services\WCFMiCafesitoService\configuration.svcinfo" />
-    <None Include="Connected Services\WCFMiCafesitoService\Reference.svcmap">
+    <None Include="Connected Services\serviceapi\Service.disco" />
+    <None Include="Connected Services\serviceapi\configuration91.svcinfo" />
+    <None Include="Connected Services\serviceapi\configuration.svcinfo" />
+    <None Include="Connected Services\serviceapi\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <Content Include="Assets\Images\ariov60.png" />
+    <Content Include="Assets\Images\hero-home.png" />
+    <Content Include="Assets\Images\hero.png" />
+    <Content Include="Assets\Images\logo.jpg" />
+    <Content Include="Assets\Images\mv_slide_01.jpg" />
+    <Content Include="Assets\Styles\style.css" />
+    <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
-    <None Include="Connected Services\WCFMiCafesitoService\Service.wsdl" />
-    <None Include="Connected Services\WCFMiCafesitoService\Service.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\WCFMiCafesitoService\Service1.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\WCFMiCafesitoService\Service2.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <Content Include="Connected Services\WCFMiCafesitoService\WAMiCafesitoApp.WCFMiCafesitoService.CompositeType.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Connected Services\WCFMiCafesitoService\Reference.cs">
+    <Compile Include="Connected Services\serviceapi\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Public.Master.cs">
+      <DependentUpon>Public.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Public.Master.designer.cs">
+      <DependentUpon>Public.Master</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Connected Services\serviceapi\Service.wsdl" />
+    <None Include="Connected Services\serviceapi\Service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\serviceapi\Service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\serviceapi\Service2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Connected Services\serviceapi\WAMiCafesitoApp.serviceapi.Category.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\serviceapi\WAMiCafesitoApp.serviceapi.User.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="packages.config" />
+    <Content Include="Public.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -115,13 +140,14 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Assets\Scripts\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadataStorage Include="Connected Services\WCFMiCafesitoService\" />
+    <WCFMetadataStorage Include="Connected Services\serviceapi\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
