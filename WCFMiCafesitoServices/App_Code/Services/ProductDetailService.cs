@@ -5,12 +5,12 @@ using System.Data.SqlClient;
 
 namespace MiCafesito
 {
-    public class DetalleService : IDetalleService
+    public class ProductDetailService : IProductDetailService
     {
         private CustomConfigurationManager _config;
         private SqlConnection connection;
 
-        public DetalleService()
+        public ProductDetailService()
         {
             _config = new CustomConfigurationManager();
             connection = new SqlConnection(_config.ConnectionString);
