@@ -9,16 +9,16 @@ public class OrderDetails
     public int ID_Detalle { get; set; }
 
     [DataMember]
-    public string ID_Pedido { get; set; }
+    public int ID_Pedido { get; set; }
 
     [DataMember]
-    public string ID_Producto { get; set; }
+    public int ID_Producto { get; set; }
 
     [DataMember]
-    public string Cantidad { get; set; }
+    public int Cantidad { get; set; }
 
     [DataMember]
-    public string PrecioUnitario { get; set; }
+    public float PrecioUnitario { get; set; }
 
     [DataMember]
     public string Nombre { get; set; }
@@ -27,7 +27,7 @@ public class OrderDetails
     public string Descripcion { get; set; }
 
     [DataMember]
-    public string Precio { get; set; }
+    public float Precio { get; set; }
 
 }
 

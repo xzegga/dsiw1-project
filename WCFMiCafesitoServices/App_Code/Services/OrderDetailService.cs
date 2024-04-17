@@ -16,9 +16,8 @@ namespace MiCafesito
             connection = new SqlConnection(_config.ConnectionString);
         }
 
-        public void AddDetPedido(DetallePedidos detallePedidos)
+        public void AddOrderDetail(OrderDetails orderDetails)
         {
-
             try
             {
                 using (SqlCommand command = new SqlCommand("SP_InsertarDetallePedido", connection))
@@ -36,10 +35,9 @@ namespace MiCafesito
             }
             catch (Exception ex) { throw new ArgumentException("No se pudo agregar el detalle de pedido"); }
             finally { connection.Close(); }
-
         }
 
-        public void DeleteDetPedido(int id)
+        public void DeleteOrderDetail(int id)
         {
             try
             {
@@ -57,7 +55,7 @@ namespace MiCafesito
             finally { connection.Close(); }
         }
 
-        public List<DetallePedidos> GetAllDetPedido()
+        public List<OrderDetails> GetAllOrderDetail()
         {
             try
             {
@@ -68,14 +66,14 @@ namespace MiCafesito
                     connection.Open();
                     using (SqlDataReader reader = command.ExecuteReader())
                     {
-                        List<DetallePedidos> detallePedidos = new List<DetallePedidos>();
+                        List<OrderDetails> detallePedidos = new List<OrderDetails>();
 
                         while (reader.Read())
                         {
-                            DetallePedidos detallePedidos = new DetallePedidos();
-                            detallePedidos.ID_Pedido = Convert.ToInt32(reader["ID_Pedido"]);
+                            OrderDetails orderDetail = new OrderDetails();
+                            orderDetail.ID_Pedido = Convert.ToInt32(reader["ID_Pedido"]);
 
-                            detallePedidos.Add(DetallePedidos);
+                            detallePedidos.Add(orderDetail);
                         }
 
                         return detallePedidos;
@@ -86,8 +84,11 @@ namespace MiCafesito
             finally { connection.Close(); }
         }
 
+    
 
-        public void UpdateDetPedido(DetallePedidos detallePedidos)
+
+
+    public void UpdateOrderDetail(OrderDetails orderDetails)
         {
             try
             {
