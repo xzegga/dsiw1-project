@@ -72,19 +72,12 @@
                     <div class="collapse navbar-collapse" id="navbarLeftAlignExample">
 
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" href="#">Equipos para Métodos</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" aria-current="page" href="#">Kettles</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" href="#">Filtros</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" href="#">Molinillos</a>
-                            </li>
+                            <asp:Repeater ID="categoryRepeater" runat="server">
+                                <ItemTemplate>
+                                    <asp:HyperLink ID="categoryLink" runat="server" CssClass="nav-link text-dark cat-link"
+                                        NavigateUrl='<%# "category.aspx?cat=" + Eval("ID_Categoria") %>' Text='<%# Eval("Nombre") %>' />
+                                </ItemTemplate>
+                            </asp:Repeater>
                         </ul>
                     </div>
                 </div>
@@ -106,7 +99,7 @@
         <section class="mt-5" style="background-color: #f5f5f5;">
             <div class="container text-dark pt-3">
                 <header class="pt-4 pb-3">
-                    <h3>Why choose us</h3>
+                    <h3>Por qué comprar con nosotros</h3>
                 </header>
 
                 <div class="row mb-4">
@@ -116,8 +109,8 @@
                                 <i class="fas fa-camera-retro fa-2x fa-fw text-primary floating"></i>
                             </span>
                             <figcaption class="info">
-                                <h6 class="title">Reasonable prices</h6>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmor</p>
+                                <h6 class="title">Precios razonables</h6>
+                                <p>Disfruta de productos asequibles para una experiencia de café excepcional y deliciosa.</p>
                             </figcaption>
                         </figure>
                         <!-- itemside // -->
@@ -129,8 +122,8 @@
                                 <i class="fas fa-star fa-2x fa-fw text-primary floating"></i>
                             </span>
                             <figcaption class="info">
-                                <h6 class="title">Best quality</h6>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmor</p>
+                                <h6 class="title">Mejor calidad</h6>
+                                <p>Garantizamos la excelencia en cada taza con productos de calidad superior y deliciosa.</p>
                             </figcaption>
                         </figure>
                         <!-- itemside // -->
@@ -142,8 +135,8 @@
                                 <i class="fas fa-plane fa-2x fa-fw text-primary floating"></i>
                             </span>
                             <figcaption class="info">
-                                <h6 class="title">Worldwide shipping</h6>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmor</p>
+                                <h6 class="title">Envíos a todo El Salvador</h6>
+                                <p>Enviamos nuestros productos a cualquier lugar, para que puedas disfrutar del mejor café en casa, ¡sin importar dónde estés!</p>
                             </figcaption>
                         </figure>
                         <!-- itemside // -->
@@ -155,8 +148,8 @@
                                 <i class="fas fa-users fa-2x fa-fw text-primary floating"></i>
                             </span>
                             <figcaption class="info">
-                                <h6 class="title">Customer satisfaction</h6>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmor</p>
+                                <h6 class="title">Satisfacción del cliente</h6>
+                                <p>Tu felicidad es nuestra prioridad, te aseguramos una experiencia de compra satisfactoria.</p>
                             </figcaption>
                         </figure>
                         <!-- itemside // -->
@@ -168,8 +161,8 @@
                                 <i class="fas fa-thumbs-up fa-2x fa-fw text-primary floating"></i>
                             </span>
                             <figcaption class="info">
-                                <h6 class="title">Happy customers</h6>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmor</p>
+                                <h6 class="title">Clientes satisfechos</h6>
+                                <p>Nuestros clientes hablan por nosotros, proporcionamos atención excepcional y productos de alta calidad para que disfrutes al máximo de tu café.</p>
                             </figcaption>
                         </figure>
                         <!-- itemside // -->
@@ -181,8 +174,10 @@
                                 <i class="fas fa-box fa-2x fa-fw text-primary floating"></i>
                             </span>
                             <figcaption class="info">
-                                <h6 class="title">Thousand items</h6>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmor</p>
+                                <h6 class="title">Todo lo que necesitas</h6>
+                                <p>
+                                    Explora nuestra amplia selección de productos, desde cafeteras hasta accesorios, ¡todo lo que necesitas para tu café perfecto!
+                                </p>
                             </figcaption>
                         </figure>
                         <!-- itemside // -->
@@ -204,13 +199,15 @@
                     <div class="row mt-3">
                         <!-- Grid column -->
                         <div class="col-12 col-lg-3 col-sm-12 mb-2">
-                            <!-- Content -->
-                            <a href="https://mdbootstrap.com/" target="_blank" class="">
-                                <img src="https://mdbootstrap.com/img/logo/mdb-transaprent-noshadows.png" height="35" />
-                            </a>
-                            <p class="mt-2 text-dark">
-                                © 2023 Copyright: MDBootstrap.com
-                            </p>
+                            <div class="d-flex flex-column">
+                                <a href="/" target="_blank" class="float-start d-flex align-items-center gap-2 logo-link">
+                                    <img src="/Assets/Images/logo.jpg" height="45" />
+                                    <h1 class="logo-text">MiCafesito <span class="logo-text-small d-block">Enlínea</span></h1>
+                                </a>
+                                <p class="mt-2 text-dark">
+                                    © 2023 Copyright: MDBootstrap.com
+                                </p>
+                            </div>
                         </div>
                         <!-- Grid column -->
 
@@ -220,10 +217,9 @@
                             <h6 class="text-uppercase text-dark fw-bold mb-2">Store
                             </h6>
                             <ul class="list-unstyled mb-4">
-                                <li><a class="text-muted" href="#">About us</a></li>
-                                <li><a class="text-muted" href="#">Find store</a></li>
-                                <li><a class="text-muted" href="#">Categories</a></li>
-                                <li><a class="text-muted" href="#">Blogs</a></li>
+                                <li><a class="text-muted" href="#">Sobre Nosotros</a></li>
+                                <li><a class="text-muted" href="#">Encuéntranos</a></li>
+                                <li><a class="text-muted" href="#">Categorías</a></li>
                             </ul>
                         </div>
                         <!-- Grid column -->
@@ -234,41 +230,11 @@
                             <h6 class="text-uppercase text-dark fw-bold mb-2">Information
                             </h6>
                             <ul class="list-unstyled mb-4">
-                                <li><a class="text-muted" href="#">Help center</a></li>
-                                <li><a class="text-muted" href="#">Money refund</a></li>
-                                <li><a class="text-muted" href="#">Shipping info</a></li>
+                                <li><a class="text-muted" href="#">Ayuda</a></li>
+                                <li><a class="text-muted" href="#">Información de envío</a></li>
                                 <li><a class="text-muted" href="#">Refunds</a></li>
                             </ul>
                         </div>
-                        <!-- Grid column -->
-
-                        <!-- Grid column -->
-                        <div class="col-6 col-sm-4 col-lg-2">
-                            <!-- Links -->
-                            <h6 class="text-uppercase text-dark fw-bold mb-2">Support
-                            </h6>
-                            <ul class="list-unstyled mb-4">
-                                <li><a class="text-muted" href="#">Help center</a></li>
-                                <li><a class="text-muted" href="#">Documents</a></li>
-                                <li><a class="text-muted" href="#">Account restore</a></li>
-                                <li><a class="text-muted" href="#">My orders</a></li>
-                            </ul>
-                        </div>
-                        <!-- Grid column -->
-
-                        <!-- Grid column -->
-                        <div class="col-12 col-sm-12 col-lg-3">
-                            <!-- Links -->
-                            <h6 class="text-uppercase text-dark fw-bold mb-2">Newsletter</h6>
-                            <p class="text-muted">Stay in touch with latest updates about our products and offers</p>
-                            <div class="input-group mb-3">
-                                <input type="email" class="form-control border" placeholder="Email" aria-label="Email" aria-describedby="button-addon2" />
-                                <button class="btn btn-light border shadow-0" type="button" id="button-addon2" data-mdb-ripple-color="dark">
-                                    Join
-                                </button>
-                            </div>
-                        </div>
-                        <!-- Grid column -->
                     </div>
                     <!-- Grid row -->
                 </div>

@@ -19,4 +19,7 @@ public class Product
     [DataMember]
     public int ID_Categoria { get; set; }
 
+    [DataMember]
+    public string ImageUrl { get; set; }
+
 }

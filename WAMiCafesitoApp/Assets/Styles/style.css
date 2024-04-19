@@ -7,7 +7,7 @@
 .hero {
     position: relative;
     width: 100%;
-    height: 60vh;
+    height: 65vh;
     min-height: 400px;
     background-image: url('/Assets/Images/ariov60.png');
     background-size: cover;
@@ -24,12 +24,12 @@
     background: linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0.8));
 }
 
-.gradient-overlay > .container {
-    position: relative;
-    z-index: 1;
-    color: white;
-    padding-top: 50px;
-}
+    .gradient-overlay > .container {
+        position: relative;
+        z-index: 1;
+        color: white;
+        padding-top: 90px;
+    }
 
 .btn-comprar {
     background-color: #28a745;
@@ -57,9 +57,48 @@
     font-size: 0.8rem;
     font-weight: 700;
     text-align: left;
-
 }
 
 .logo-link {
     text-decoration: none;
+}
+
+.cat-link {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1rem;
+}
+
+    .cat-link:not(:last-child)::after {
+        content: "|";
+        margin-left: 15px;
+    }
+
+
+.a-add-to-cart {
+    background: #FFD814;
+    border-color: #FCD200;
+    border-radius: 60px;
+    color: #0F1111;
+}
+
+.a-price {
+    font-size: 32px;
+    position: relative;
+    line-height: normal;
+}
+
+    .a-price .a-price-symbol {
+        top: -.75em;
+        font-size: 13px;
+    }
+
+.a-price-symbol {
+    font-size: 13px;
+    padding-top: 7px;
+}
+
+.a-price-fraction {
+    font-size: 13px;
+    padding-top: 7px;
 }

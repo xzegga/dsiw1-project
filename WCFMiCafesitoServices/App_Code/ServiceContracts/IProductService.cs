@@ -7,7 +7,7 @@ namespace MiCafesito
     public interface IProductService
     {
         [OperationContract]
-        List<Product> GetAllProduct();
+        List<Product> GetAllProducts();
 
         [OperationContract]
         Product GetProductById(int id);
@@ -16,9 +16,15 @@ namespace MiCafesito
         void UpdateProduct(Product productos);
 
         [OperationContract]
-        void DeleteProducto(int id);
+        void DeleteProduct(int id);
 
         [OperationContract]
         void AddProduct(Product productos);
+
+        [OperationContract]
+        List<Product> GetAllProductsByCategoryId(int id);
+
+        [OperationContract]
+        List<Product> GetProductsFeatured();
     }
 }

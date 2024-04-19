@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WAMiCafesitoApp.serviceapi {
+namespace WAMiCafesitoApp.ServiceApi {
     using System.Runtime.Serialization;
     using System;
     
@@ -295,21 +295,412 @@ namespace WAMiCafesitoApp.serviceapi {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Product", Namespace="http://schemas.datacontract.org/2004/07/")]
+    [System.SerializableAttribute()]
+    public partial class Product : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DescripcionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int ID_CategoriaField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int ID_ProductoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ImageUrlField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NombreField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double PrecioField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Descripcion {
+            get {
+                return this.DescripcionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DescripcionField, value) != true)) {
+                    this.DescripcionField = value;
+                    this.RaisePropertyChanged("Descripcion");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ID_Categoria {
+            get {
+                return this.ID_CategoriaField;
+            }
+            set {
+                if ((this.ID_CategoriaField.Equals(value) != true)) {
+                    this.ID_CategoriaField = value;
+                    this.RaisePropertyChanged("ID_Categoria");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ID_Producto {
+            get {
+                return this.ID_ProductoField;
+            }
+            set {
+                if ((this.ID_ProductoField.Equals(value) != true)) {
+                    this.ID_ProductoField = value;
+                    this.RaisePropertyChanged("ID_Producto");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ImageUrl {
+            get {
+                return this.ImageUrlField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ImageUrlField, value) != true)) {
+                    this.ImageUrlField = value;
+                    this.RaisePropertyChanged("ImageUrl");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Nombre {
+            get {
+                return this.NombreField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NombreField, value) != true)) {
+                    this.NombreField = value;
+                    this.RaisePropertyChanged("Nombre");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double Precio {
+            get {
+                return this.PrecioField;
+            }
+            set {
+                if ((this.PrecioField.Equals(value) != true)) {
+                    this.PrecioField = value;
+                    this.RaisePropertyChanged("Precio");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Order", Namespace="http://schemas.datacontract.org/2004/07/")]
+    [System.SerializableAttribute()]
+    public partial class Order : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string EstadoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string FacturaField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime FechaPedidoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int ID_PedidoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int ID_UsuarioField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Estado {
+            get {
+                return this.EstadoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.EstadoField, value) != true)) {
+                    this.EstadoField = value;
+                    this.RaisePropertyChanged("Estado");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Factura {
+            get {
+                return this.FacturaField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FacturaField, value) != true)) {
+                    this.FacturaField = value;
+                    this.RaisePropertyChanged("Factura");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime FechaPedido {
+            get {
+                return this.FechaPedidoField;
+            }
+            set {
+                if ((this.FechaPedidoField.Equals(value) != true)) {
+                    this.FechaPedidoField = value;
+                    this.RaisePropertyChanged("FechaPedido");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ID_Pedido {
+            get {
+                return this.ID_PedidoField;
+            }
+            set {
+                if ((this.ID_PedidoField.Equals(value) != true)) {
+                    this.ID_PedidoField = value;
+                    this.RaisePropertyChanged("ID_Pedido");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ID_Usuario {
+            get {
+                return this.ID_UsuarioField;
+            }
+            set {
+                if ((this.ID_UsuarioField.Equals(value) != true)) {
+                    this.ID_UsuarioField = value;
+                    this.RaisePropertyChanged("ID_Usuario");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="OrderDetail", Namespace="http://schemas.datacontract.org/2004/07/")]
+    [System.SerializableAttribute()]
+    public partial class OrderDetail : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int CantidadField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DescripcionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int ID_DetalleField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int ID_PedidoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int ID_ProductoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NombreField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private float PrecioField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private float PrecioUnitarioField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Cantidad {
+            get {
+                return this.CantidadField;
+            }
+            set {
+                if ((this.CantidadField.Equals(value) != true)) {
+                    this.CantidadField = value;
+                    this.RaisePropertyChanged("Cantidad");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Descripcion {
+            get {
+                return this.DescripcionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DescripcionField, value) != true)) {
+                    this.DescripcionField = value;
+                    this.RaisePropertyChanged("Descripcion");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ID_Detalle {
+            get {
+                return this.ID_DetalleField;
+            }
+            set {
+                if ((this.ID_DetalleField.Equals(value) != true)) {
+                    this.ID_DetalleField = value;
+                    this.RaisePropertyChanged("ID_Detalle");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ID_Pedido {
+            get {
+                return this.ID_PedidoField;
+            }
+            set {
+                if ((this.ID_PedidoField.Equals(value) != true)) {
+                    this.ID_PedidoField = value;
+                    this.RaisePropertyChanged("ID_Pedido");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ID_Producto {
+            get {
+                return this.ID_ProductoField;
+            }
+            set {
+                if ((this.ID_ProductoField.Equals(value) != true)) {
+                    this.ID_ProductoField = value;
+                    this.RaisePropertyChanged("ID_Producto");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Nombre {
+            get {
+                return this.NombreField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NombreField, value) != true)) {
+                    this.NombreField = value;
+                    this.RaisePropertyChanged("Nombre");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public float Precio {
+            get {
+                return this.PrecioField;
+            }
+            set {
+                if ((this.PrecioField.Equals(value) != true)) {
+                    this.PrecioField = value;
+                    this.RaisePropertyChanged("Precio");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public float PrecioUnitario {
+            get {
+                return this.PrecioUnitarioField;
+            }
+            set {
+                if ((this.PrecioUnitarioField.Equals(value) != true)) {
+                    this.PrecioUnitarioField = value;
+                    this.RaisePropertyChanged("PrecioUnitario");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="serviceapi.IUserService")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceApi.IUserService")]
     public interface IUserService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserService/GetAllUsers", ReplyAction="http://tempuri.org/IUserService/GetAllUsersResponse")]
-        WAMiCafesitoApp.serviceapi.User[] GetAllUsers();
+        WAMiCafesitoApp.ServiceApi.User[] GetAllUsers();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserService/GetAllUsers", ReplyAction="http://tempuri.org/IUserService/GetAllUsersResponse")]
-        System.Threading.Tasks.Task<WAMiCafesitoApp.serviceapi.User[]> GetAllUsersAsync();
+        System.Threading.Tasks.Task<WAMiCafesitoApp.ServiceApi.User[]> GetAllUsersAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserService/GetUserById", ReplyAction="http://tempuri.org/IUserService/GetUserByIdResponse")]
-        WAMiCafesitoApp.serviceapi.User GetUserById(int id);
+        WAMiCafesitoApp.ServiceApi.User GetUserById(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserService/GetUserById", ReplyAction="http://tempuri.org/IUserService/GetUserByIdResponse")]
-        System.Threading.Tasks.Task<WAMiCafesitoApp.serviceapi.User> GetUserByIdAsync(int id);
+        System.Threading.Tasks.Task<WAMiCafesitoApp.ServiceApi.User> GetUserByIdAsync(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserService/Login", ReplyAction="http://tempuri.org/IUserService/LoginResponse")]
         int Login(string email, string password);
@@ -318,10 +709,10 @@ namespace WAMiCafesitoApp.serviceapi {
         System.Threading.Tasks.Task<int> LoginAsync(string email, string password);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserService/UpdateUser", ReplyAction="http://tempuri.org/IUserService/UpdateUserResponse")]
-        void UpdateUser(WAMiCafesitoApp.serviceapi.User user);
+        void UpdateUser(WAMiCafesitoApp.ServiceApi.User user);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserService/UpdateUser", ReplyAction="http://tempuri.org/IUserService/UpdateUserResponse")]
-        System.Threading.Tasks.Task UpdateUserAsync(WAMiCafesitoApp.serviceapi.User user);
+        System.Threading.Tasks.Task UpdateUserAsync(WAMiCafesitoApp.ServiceApi.User user);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserService/DeleteUser", ReplyAction="http://tempuri.org/IUserService/DeleteUserResponse")]
         void DeleteUser(int id);
@@ -330,10 +721,10 @@ namespace WAMiCafesitoApp.serviceapi {
         System.Threading.Tasks.Task DeleteUserAsync(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserService/AddUser", ReplyAction="http://tempuri.org/IUserService/AddUserResponse")]
-        void AddUser(WAMiCafesitoApp.serviceapi.User user);
+        void AddUser(WAMiCafesitoApp.ServiceApi.User user);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserService/AddUser", ReplyAction="http://tempuri.org/IUserService/AddUserResponse")]
-        System.Threading.Tasks.Task AddUserAsync(WAMiCafesitoApp.serviceapi.User user);
+        System.Threading.Tasks.Task AddUserAsync(WAMiCafesitoApp.ServiceApi.User user);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserService/ResetPassword", ReplyAction="http://tempuri.org/IUserService/ResetPasswordResponse")]
         void ResetPassword(string email, string password, string newPassword, string confirmPassword);
@@ -343,12 +734,12 @@ namespace WAMiCafesitoApp.serviceapi {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IUserServiceChannel : WAMiCafesitoApp.serviceapi.IUserService, System.ServiceModel.IClientChannel {
+    public interface IUserServiceChannel : WAMiCafesitoApp.ServiceApi.IUserService, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class UserServiceClient : System.ServiceModel.ClientBase<WAMiCafesitoApp.serviceapi.IUserService>, WAMiCafesitoApp.serviceapi.IUserService {
+    public partial class UserServiceClient : System.ServiceModel.ClientBase<WAMiCafesitoApp.ServiceApi.IUserService>, WAMiCafesitoApp.ServiceApi.IUserService {
         
         public UserServiceClient() {
         }
@@ -369,19 +760,19 @@ namespace WAMiCafesitoApp.serviceapi {
                 base(binding, remoteAddress) {
         }
         
-        public WAMiCafesitoApp.serviceapi.User[] GetAllUsers() {
+        public WAMiCafesitoApp.ServiceApi.User[] GetAllUsers() {
             return base.Channel.GetAllUsers();
         }
         
-        public System.Threading.Tasks.Task<WAMiCafesitoApp.serviceapi.User[]> GetAllUsersAsync() {
+        public System.Threading.Tasks.Task<WAMiCafesitoApp.ServiceApi.User[]> GetAllUsersAsync() {
             return base.Channel.GetAllUsersAsync();
         }
         
-        public WAMiCafesitoApp.serviceapi.User GetUserById(int id) {
+        public WAMiCafesitoApp.ServiceApi.User GetUserById(int id) {
             return base.Channel.GetUserById(id);
         }
         
-        public System.Threading.Tasks.Task<WAMiCafesitoApp.serviceapi.User> GetUserByIdAsync(int id) {
+        public System.Threading.Tasks.Task<WAMiCafesitoApp.ServiceApi.User> GetUserByIdAsync(int id) {
             return base.Channel.GetUserByIdAsync(id);
         }
         
@@ -393,11 +784,11 @@ namespace WAMiCafesitoApp.serviceapi {
             return base.Channel.LoginAsync(email, password);
         }
         
-        public void UpdateUser(WAMiCafesitoApp.serviceapi.User user) {
+        public void UpdateUser(WAMiCafesitoApp.ServiceApi.User user) {
             base.Channel.UpdateUser(user);
         }
         
-        public System.Threading.Tasks.Task UpdateUserAsync(WAMiCafesitoApp.serviceapi.User user) {
+        public System.Threading.Tasks.Task UpdateUserAsync(WAMiCafesitoApp.ServiceApi.User user) {
             return base.Channel.UpdateUserAsync(user);
         }
         
@@ -409,11 +800,11 @@ namespace WAMiCafesitoApp.serviceapi {
             return base.Channel.DeleteUserAsync(id);
         }
         
-        public void AddUser(WAMiCafesitoApp.serviceapi.User user) {
+        public void AddUser(WAMiCafesitoApp.ServiceApi.User user) {
             base.Channel.AddUser(user);
         }
         
-        public System.Threading.Tasks.Task AddUserAsync(WAMiCafesitoApp.serviceapi.User user) {
+        public System.Threading.Tasks.Task AddUserAsync(WAMiCafesitoApp.ServiceApi.User user) {
             return base.Channel.AddUserAsync(user);
         }
         
@@ -427,26 +818,26 @@ namespace WAMiCafesitoApp.serviceapi {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="serviceapi.ICategoryService")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceApi.ICategoryService")]
     public interface ICategoryService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICategoryService/GetAllCategories", ReplyAction="http://tempuri.org/ICategoryService/GetAllCategoriesResponse")]
-        WAMiCafesitoApp.serviceapi.Category[] GetAllCategories();
+        WAMiCafesitoApp.ServiceApi.Category[] GetAllCategories();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICategoryService/GetAllCategories", ReplyAction="http://tempuri.org/ICategoryService/GetAllCategoriesResponse")]
-        System.Threading.Tasks.Task<WAMiCafesitoApp.serviceapi.Category[]> GetAllCategoriesAsync();
+        System.Threading.Tasks.Task<WAMiCafesitoApp.ServiceApi.Category[]> GetAllCategoriesAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICategoryService/GetCategoryById", ReplyAction="http://tempuri.org/ICategoryService/GetCategoryByIdResponse")]
-        WAMiCafesitoApp.serviceapi.Category GetCategoryById(int id);
+        WAMiCafesitoApp.ServiceApi.Category GetCategoryById(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICategoryService/GetCategoryById", ReplyAction="http://tempuri.org/ICategoryService/GetCategoryByIdResponse")]
-        System.Threading.Tasks.Task<WAMiCafesitoApp.serviceapi.Category> GetCategoryByIdAsync(int id);
+        System.Threading.Tasks.Task<WAMiCafesitoApp.ServiceApi.Category> GetCategoryByIdAsync(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICategoryService/UpdateCategory", ReplyAction="http://tempuri.org/ICategoryService/UpdateCategoryResponse")]
-        void UpdateCategory(WAMiCafesitoApp.serviceapi.Category category);
+        void UpdateCategory(WAMiCafesitoApp.ServiceApi.Category category);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICategoryService/UpdateCategory", ReplyAction="http://tempuri.org/ICategoryService/UpdateCategoryResponse")]
-        System.Threading.Tasks.Task UpdateCategoryAsync(WAMiCafesitoApp.serviceapi.Category category);
+        System.Threading.Tasks.Task UpdateCategoryAsync(WAMiCafesitoApp.ServiceApi.Category category);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICategoryService/DeleteCategory", ReplyAction="http://tempuri.org/ICategoryService/DeleteCategoryResponse")]
         void DeleteCategory(int id);
@@ -455,19 +846,19 @@ namespace WAMiCafesitoApp.serviceapi {
         System.Threading.Tasks.Task DeleteCategoryAsync(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICategoryService/AddCategory", ReplyAction="http://tempuri.org/ICategoryService/AddCategoryResponse")]
-        void AddCategory(WAMiCafesitoApp.serviceapi.Category category);
+        void AddCategory(WAMiCafesitoApp.ServiceApi.Category category);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICategoryService/AddCategory", ReplyAction="http://tempuri.org/ICategoryService/AddCategoryResponse")]
-        System.Threading.Tasks.Task AddCategoryAsync(WAMiCafesitoApp.serviceapi.Category category);
+        System.Threading.Tasks.Task AddCategoryAsync(WAMiCafesitoApp.ServiceApi.Category category);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface ICategoryServiceChannel : WAMiCafesitoApp.serviceapi.ICategoryService, System.ServiceModel.IClientChannel {
+    public interface ICategoryServiceChannel : WAMiCafesitoApp.ServiceApi.ICategoryService, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class CategoryServiceClient : System.ServiceModel.ClientBase<WAMiCafesitoApp.serviceapi.ICategoryService>, WAMiCafesitoApp.serviceapi.ICategoryService {
+    public partial class CategoryServiceClient : System.ServiceModel.ClientBase<WAMiCafesitoApp.ServiceApi.ICategoryService>, WAMiCafesitoApp.ServiceApi.ICategoryService {
         
         public CategoryServiceClient() {
         }
@@ -488,27 +879,27 @@ namespace WAMiCafesitoApp.serviceapi {
                 base(binding, remoteAddress) {
         }
         
-        public WAMiCafesitoApp.serviceapi.Category[] GetAllCategories() {
+        public WAMiCafesitoApp.ServiceApi.Category[] GetAllCategories() {
             return base.Channel.GetAllCategories();
         }
         
-        public System.Threading.Tasks.Task<WAMiCafesitoApp.serviceapi.Category[]> GetAllCategoriesAsync() {
+        public System.Threading.Tasks.Task<WAMiCafesitoApp.ServiceApi.Category[]> GetAllCategoriesAsync() {
             return base.Channel.GetAllCategoriesAsync();
         }
         
-        public WAMiCafesitoApp.serviceapi.Category GetCategoryById(int id) {
+        public WAMiCafesitoApp.ServiceApi.Category GetCategoryById(int id) {
             return base.Channel.GetCategoryById(id);
         }
         
-        public System.Threading.Tasks.Task<WAMiCafesitoApp.serviceapi.Category> GetCategoryByIdAsync(int id) {
+        public System.Threading.Tasks.Task<WAMiCafesitoApp.ServiceApi.Category> GetCategoryByIdAsync(int id) {
             return base.Channel.GetCategoryByIdAsync(id);
         }
         
-        public void UpdateCategory(WAMiCafesitoApp.serviceapi.Category category) {
+        public void UpdateCategory(WAMiCafesitoApp.ServiceApi.Category category) {
             base.Channel.UpdateCategory(category);
         }
         
-        public System.Threading.Tasks.Task UpdateCategoryAsync(WAMiCafesitoApp.serviceapi.Category category) {
+        public System.Threading.Tasks.Task UpdateCategoryAsync(WAMiCafesitoApp.ServiceApi.Category category) {
             return base.Channel.UpdateCategoryAsync(category);
         }
         
@@ -520,12 +911,363 @@ namespace WAMiCafesitoApp.serviceapi {
             return base.Channel.DeleteCategoryAsync(id);
         }
         
-        public void AddCategory(WAMiCafesitoApp.serviceapi.Category category) {
+        public void AddCategory(WAMiCafesitoApp.ServiceApi.Category category) {
             base.Channel.AddCategory(category);
         }
         
-        public System.Threading.Tasks.Task AddCategoryAsync(WAMiCafesitoApp.serviceapi.Category category) {
+        public System.Threading.Tasks.Task AddCategoryAsync(WAMiCafesitoApp.ServiceApi.Category category) {
             return base.Channel.AddCategoryAsync(category);
+        }
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceApi.IProductService")]
+    public interface IProductService {
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/GetAllProducts", ReplyAction="http://tempuri.org/IProductService/GetAllProductsResponse")]
+        WAMiCafesitoApp.ServiceApi.Product[] GetAllProducts();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/GetAllProducts", ReplyAction="http://tempuri.org/IProductService/GetAllProductsResponse")]
+        System.Threading.Tasks.Task<WAMiCafesitoApp.ServiceApi.Product[]> GetAllProductsAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/GetProductById", ReplyAction="http://tempuri.org/IProductService/GetProductByIdResponse")]
+        WAMiCafesitoApp.ServiceApi.Product GetProductById(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/GetProductById", ReplyAction="http://tempuri.org/IProductService/GetProductByIdResponse")]
+        System.Threading.Tasks.Task<WAMiCafesitoApp.ServiceApi.Product> GetProductByIdAsync(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/UpdateProduct", ReplyAction="http://tempuri.org/IProductService/UpdateProductResponse")]
+        void UpdateProduct(WAMiCafesitoApp.ServiceApi.Product productos);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/UpdateProduct", ReplyAction="http://tempuri.org/IProductService/UpdateProductResponse")]
+        System.Threading.Tasks.Task UpdateProductAsync(WAMiCafesitoApp.ServiceApi.Product productos);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/DeleteProduct", ReplyAction="http://tempuri.org/IProductService/DeleteProductResponse")]
+        void DeleteProduct(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/DeleteProduct", ReplyAction="http://tempuri.org/IProductService/DeleteProductResponse")]
+        System.Threading.Tasks.Task DeleteProductAsync(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/AddProduct", ReplyAction="http://tempuri.org/IProductService/AddProductResponse")]
+        void AddProduct(WAMiCafesitoApp.ServiceApi.Product productos);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/AddProduct", ReplyAction="http://tempuri.org/IProductService/AddProductResponse")]
+        System.Threading.Tasks.Task AddProductAsync(WAMiCafesitoApp.ServiceApi.Product productos);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/GetAllProductsByCategoryId", ReplyAction="http://tempuri.org/IProductService/GetAllProductsByCategoryIdResponse")]
+        WAMiCafesitoApp.ServiceApi.Product[] GetAllProductsByCategoryId(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/GetAllProductsByCategoryId", ReplyAction="http://tempuri.org/IProductService/GetAllProductsByCategoryIdResponse")]
+        System.Threading.Tasks.Task<WAMiCafesitoApp.ServiceApi.Product[]> GetAllProductsByCategoryIdAsync(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/GetProductsFeatured", ReplyAction="http://tempuri.org/IProductService/GetProductsFeaturedResponse")]
+        WAMiCafesitoApp.ServiceApi.Product[] GetProductsFeatured();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/GetProductsFeatured", ReplyAction="http://tempuri.org/IProductService/GetProductsFeaturedResponse")]
+        System.Threading.Tasks.Task<WAMiCafesitoApp.ServiceApi.Product[]> GetProductsFeaturedAsync();
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public interface IProductServiceChannel : WAMiCafesitoApp.ServiceApi.IProductService, System.ServiceModel.IClientChannel {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class ProductServiceClient : System.ServiceModel.ClientBase<WAMiCafesitoApp.ServiceApi.IProductService>, WAMiCafesitoApp.ServiceApi.IProductService {
+        
+        public ProductServiceClient() {
+        }
+        
+        public ProductServiceClient(string endpointConfigurationName) : 
+                base(endpointConfigurationName) {
+        }
+        
+        public ProductServiceClient(string endpointConfigurationName, string remoteAddress) : 
+                base(endpointConfigurationName, remoteAddress) {
+        }
+        
+        public ProductServiceClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(endpointConfigurationName, remoteAddress) {
+        }
+        
+        public ProductServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(binding, remoteAddress) {
+        }
+        
+        public WAMiCafesitoApp.ServiceApi.Product[] GetAllProducts() {
+            return base.Channel.GetAllProducts();
+        }
+        
+        public System.Threading.Tasks.Task<WAMiCafesitoApp.ServiceApi.Product[]> GetAllProductsAsync() {
+            return base.Channel.GetAllProductsAsync();
+        }
+        
+        public WAMiCafesitoApp.ServiceApi.Product GetProductById(int id) {
+            return base.Channel.GetProductById(id);
+        }
+        
+        public System.Threading.Tasks.Task<WAMiCafesitoApp.ServiceApi.Product> GetProductByIdAsync(int id) {
+            return base.Channel.GetProductByIdAsync(id);
+        }
+        
+        public void UpdateProduct(WAMiCafesitoApp.ServiceApi.Product productos) {
+            base.Channel.UpdateProduct(productos);
+        }
+        
+        public System.Threading.Tasks.Task UpdateProductAsync(WAMiCafesitoApp.ServiceApi.Product productos) {
+            return base.Channel.UpdateProductAsync(productos);
+        }
+        
+        public void DeleteProduct(int id) {
+            base.Channel.DeleteProduct(id);
+        }
+        
+        public System.Threading.Tasks.Task DeleteProductAsync(int id) {
+            return base.Channel.DeleteProductAsync(id);
+        }
+        
+        public void AddProduct(WAMiCafesitoApp.ServiceApi.Product productos) {
+            base.Channel.AddProduct(productos);
+        }
+        
+        public System.Threading.Tasks.Task AddProductAsync(WAMiCafesitoApp.ServiceApi.Product productos) {
+            return base.Channel.AddProductAsync(productos);
+        }
+        
+        public WAMiCafesitoApp.ServiceApi.Product[] GetAllProductsByCategoryId(int id) {
+            return base.Channel.GetAllProductsByCategoryId(id);
+        }
+        
+        public System.Threading.Tasks.Task<WAMiCafesitoApp.ServiceApi.Product[]> GetAllProductsByCategoryIdAsync(int id) {
+            return base.Channel.GetAllProductsByCategoryIdAsync(id);
+        }
+        
+        public WAMiCafesitoApp.ServiceApi.Product[] GetProductsFeatured() {
+            return base.Channel.GetProductsFeatured();
+        }
+        
+        public System.Threading.Tasks.Task<WAMiCafesitoApp.ServiceApi.Product[]> GetProductsFeaturedAsync() {
+            return base.Channel.GetProductsFeaturedAsync();
+        }
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceApi.IOrderService")]
+    public interface IOrderService {
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOrderService/GetAllOrders", ReplyAction="http://tempuri.org/IOrderService/GetAllOrdersResponse")]
+        WAMiCafesitoApp.ServiceApi.Order[] GetAllOrders();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOrderService/GetAllOrders", ReplyAction="http://tempuri.org/IOrderService/GetAllOrdersResponse")]
+        System.Threading.Tasks.Task<WAMiCafesitoApp.ServiceApi.Order[]> GetAllOrdersAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOrderService/GetOrderById", ReplyAction="http://tempuri.org/IOrderService/GetOrderByIdResponse")]
+        WAMiCafesitoApp.ServiceApi.Order GetOrderById(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOrderService/GetOrderById", ReplyAction="http://tempuri.org/IOrderService/GetOrderByIdResponse")]
+        System.Threading.Tasks.Task<WAMiCafesitoApp.ServiceApi.Order> GetOrderByIdAsync(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOrderService/UpdateOrder", ReplyAction="http://tempuri.org/IOrderService/UpdateOrderResponse")]
+        void UpdateOrder(WAMiCafesitoApp.ServiceApi.Order order);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOrderService/UpdateOrder", ReplyAction="http://tempuri.org/IOrderService/UpdateOrderResponse")]
+        System.Threading.Tasks.Task UpdateOrderAsync(WAMiCafesitoApp.ServiceApi.Order order);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOrderService/DeleteOrder", ReplyAction="http://tempuri.org/IOrderService/DeleteOrderResponse")]
+        void DeleteOrder(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOrderService/DeleteOrder", ReplyAction="http://tempuri.org/IOrderService/DeleteOrderResponse")]
+        System.Threading.Tasks.Task DeleteOrderAsync(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOrderService/AddOrder", ReplyAction="http://tempuri.org/IOrderService/AddOrderResponse")]
+        void AddOrder(WAMiCafesitoApp.ServiceApi.Order order);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOrderService/AddOrder", ReplyAction="http://tempuri.org/IOrderService/AddOrderResponse")]
+        System.Threading.Tasks.Task AddOrderAsync(WAMiCafesitoApp.ServiceApi.Order order);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOrderService/GetAllOrdersByUserId", ReplyAction="http://tempuri.org/IOrderService/GetAllOrdersByUserIdResponse")]
+        WAMiCafesitoApp.ServiceApi.Order[] GetAllOrdersByUserId(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOrderService/GetAllOrdersByUserId", ReplyAction="http://tempuri.org/IOrderService/GetAllOrdersByUserIdResponse")]
+        System.Threading.Tasks.Task<WAMiCafesitoApp.ServiceApi.Order[]> GetAllOrdersByUserIdAsync(int id);
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public interface IOrderServiceChannel : WAMiCafesitoApp.ServiceApi.IOrderService, System.ServiceModel.IClientChannel {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class OrderServiceClient : System.ServiceModel.ClientBase<WAMiCafesitoApp.ServiceApi.IOrderService>, WAMiCafesitoApp.ServiceApi.IOrderService {
+        
+        public OrderServiceClient() {
+        }
+        
+        public OrderServiceClient(string endpointConfigurationName) : 
+                base(endpointConfigurationName) {
+        }
+        
+        public OrderServiceClient(string endpointConfigurationName, string remoteAddress) : 
+                base(endpointConfigurationName, remoteAddress) {
+        }
+        
+        public OrderServiceClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(endpointConfigurationName, remoteAddress) {
+        }
+        
+        public OrderServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(binding, remoteAddress) {
+        }
+        
+        public WAMiCafesitoApp.ServiceApi.Order[] GetAllOrders() {
+            return base.Channel.GetAllOrders();
+        }
+        
+        public System.Threading.Tasks.Task<WAMiCafesitoApp.ServiceApi.Order[]> GetAllOrdersAsync() {
+            return base.Channel.GetAllOrdersAsync();
+        }
+        
+        public WAMiCafesitoApp.ServiceApi.Order GetOrderById(int id) {
+            return base.Channel.GetOrderById(id);
+        }
+        
+        public System.Threading.Tasks.Task<WAMiCafesitoApp.ServiceApi.Order> GetOrderByIdAsync(int id) {
+            return base.Channel.GetOrderByIdAsync(id);
+        }
+        
+        public void UpdateOrder(WAMiCafesitoApp.ServiceApi.Order order) {
+            base.Channel.UpdateOrder(order);
+        }
+        
+        public System.Threading.Tasks.Task UpdateOrderAsync(WAMiCafesitoApp.ServiceApi.Order order) {
+            return base.Channel.UpdateOrderAsync(order);
+        }
+        
+        public void DeleteOrder(int id) {
+            base.Channel.DeleteOrder(id);
+        }
+        
+        public System.Threading.Tasks.Task DeleteOrderAsync(int id) {
+            return base.Channel.DeleteOrderAsync(id);
+        }
+        
+        public void AddOrder(WAMiCafesitoApp.ServiceApi.Order order) {
+            base.Channel.AddOrder(order);
+        }
+        
+        public System.Threading.Tasks.Task AddOrderAsync(WAMiCafesitoApp.ServiceApi.Order order) {
+            return base.Channel.AddOrderAsync(order);
+        }
+        
+        public WAMiCafesitoApp.ServiceApi.Order[] GetAllOrdersByUserId(int id) {
+            return base.Channel.GetAllOrdersByUserId(id);
+        }
+        
+        public System.Threading.Tasks.Task<WAMiCafesitoApp.ServiceApi.Order[]> GetAllOrdersByUserIdAsync(int id) {
+            return base.Channel.GetAllOrdersByUserIdAsync(id);
+        }
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceApi.IOrderDetailsService")]
+    public interface IOrderDetailsService {
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOrderDetailsService/GetAllOrderDetailByOrderId", ReplyAction="http://tempuri.org/IOrderDetailsService/GetAllOrderDetailByOrderIdResponse")]
+        WAMiCafesitoApp.ServiceApi.OrderDetail[] GetAllOrderDetailByOrderId(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOrderDetailsService/GetAllOrderDetailByOrderId", ReplyAction="http://tempuri.org/IOrderDetailsService/GetAllOrderDetailByOrderIdResponse")]
+        System.Threading.Tasks.Task<WAMiCafesitoApp.ServiceApi.OrderDetail[]> GetAllOrderDetailByOrderIdAsync(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOrderDetailsService/UpdateOrderDetail", ReplyAction="http://tempuri.org/IOrderDetailsService/UpdateOrderDetailResponse")]
+        void UpdateOrderDetail(WAMiCafesitoApp.ServiceApi.OrderDetail orderDetails);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOrderDetailsService/UpdateOrderDetail", ReplyAction="http://tempuri.org/IOrderDetailsService/UpdateOrderDetailResponse")]
+        System.Threading.Tasks.Task UpdateOrderDetailAsync(WAMiCafesitoApp.ServiceApi.OrderDetail orderDetails);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOrderDetailsService/DeleteOrderDetail", ReplyAction="http://tempuri.org/IOrderDetailsService/DeleteOrderDetailResponse")]
+        void DeleteOrderDetail(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOrderDetailsService/DeleteOrderDetail", ReplyAction="http://tempuri.org/IOrderDetailsService/DeleteOrderDetailResponse")]
+        System.Threading.Tasks.Task DeleteOrderDetailAsync(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOrderDetailsService/AddOrderDetail", ReplyAction="http://tempuri.org/IOrderDetailsService/AddOrderDetailResponse")]
+        void AddOrderDetail(WAMiCafesitoApp.ServiceApi.OrderDetail orderDetails);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOrderDetailsService/AddOrderDetail", ReplyAction="http://tempuri.org/IOrderDetailsService/AddOrderDetailResponse")]
+        System.Threading.Tasks.Task AddOrderDetailAsync(WAMiCafesitoApp.ServiceApi.OrderDetail orderDetails);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOrderDetailsService/DeleteOrderDetailByOrderId", ReplyAction="http://tempuri.org/IOrderDetailsService/DeleteOrderDetailByOrderIdResponse")]
+        void DeleteOrderDetailByOrderId(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOrderDetailsService/DeleteOrderDetailByOrderId", ReplyAction="http://tempuri.org/IOrderDetailsService/DeleteOrderDetailByOrderIdResponse")]
+        System.Threading.Tasks.Task DeleteOrderDetailByOrderIdAsync(int id);
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public interface IOrderDetailsServiceChannel : WAMiCafesitoApp.ServiceApi.IOrderDetailsService, System.ServiceModel.IClientChannel {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class OrderDetailsServiceClient : System.ServiceModel.ClientBase<WAMiCafesitoApp.ServiceApi.IOrderDetailsService>, WAMiCafesitoApp.ServiceApi.IOrderDetailsService {
+        
+        public OrderDetailsServiceClient() {
+        }
+        
+        public OrderDetailsServiceClient(string endpointConfigurationName) : 
+                base(endpointConfigurationName) {
+        }
+        
+        public OrderDetailsServiceClient(string endpointConfigurationName, string remoteAddress) : 
+                base(endpointConfigurationName, remoteAddress) {
+        }
+        
+        public OrderDetailsServiceClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(endpointConfigurationName, remoteAddress) {
+        }
+        
+        public OrderDetailsServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(binding, remoteAddress) {
+        }
+        
+        public WAMiCafesitoApp.ServiceApi.OrderDetail[] GetAllOrderDetailByOrderId(int id) {
+            return base.Channel.GetAllOrderDetailByOrderId(id);
+        }
+        
+        public System.Threading.Tasks.Task<WAMiCafesitoApp.ServiceApi.OrderDetail[]> GetAllOrderDetailByOrderIdAsync(int id) {
+            return base.Channel.GetAllOrderDetailByOrderIdAsync(id);
+        }
+        
+        public void UpdateOrderDetail(WAMiCafesitoApp.ServiceApi.OrderDetail orderDetails) {
+            base.Channel.UpdateOrderDetail(orderDetails);
+        }
+        
+        public System.Threading.Tasks.Task UpdateOrderDetailAsync(WAMiCafesitoApp.ServiceApi.OrderDetail orderDetails) {
+            return base.Channel.UpdateOrderDetailAsync(orderDetails);
+        }
+        
+        public void DeleteOrderDetail(int id) {
+            base.Channel.DeleteOrderDetail(id);
+        }
+        
+        public System.Threading.Tasks.Task DeleteOrderDetailAsync(int id) {
+            return base.Channel.DeleteOrderDetailAsync(id);
+        }
+        
+        public void AddOrderDetail(WAMiCafesitoApp.ServiceApi.OrderDetail orderDetails) {
+            base.Channel.AddOrderDetail(orderDetails);
+        }
+        
+        public System.Threading.Tasks.Task AddOrderDetailAsync(WAMiCafesitoApp.ServiceApi.OrderDetail orderDetails) {
+            return base.Channel.AddOrderDetailAsync(orderDetails);
+        }
+        
+        public void DeleteOrderDetailByOrderId(int id) {
+            base.Channel.DeleteOrderDetailByOrderId(id);
+        }
+        
+        public System.Threading.Tasks.Task DeleteOrderDetailByOrderIdAsync(int id) {
+            return base.Channel.DeleteOrderDetailByOrderIdAsync(id);
         }
     }
 }

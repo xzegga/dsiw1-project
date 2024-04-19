@@ -70,25 +70,33 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include=".gitignore" />
-    <None Include="Connected Services\serviceapi\Service.disco" />
-    <None Include="Connected Services\serviceapi\configuration91.svcinfo" />
-    <None Include="Connected Services\serviceapi\configuration.svcinfo" />
-    <None Include="Connected Services\serviceapi\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
     <Content Include="Assets\Images\ariov60.png" />
     <Content Include="Assets\Images\hero-home.png" />
     <Content Include="Assets\Images\hero.png" />
     <Content Include="Assets\Images\logo.jpg" />
     <Content Include="Assets\Images\mv_slide_01.jpg" />
     <Content Include="Assets\Styles\style.css" />
+    <Content Include="Assets\Images\15.webp" />
+    <Content Include="Assets\Images\3.webp" />
+    <Content Include="Assets\Images\4.webp" />
+    <Content Include="Assets\Images\5.webp" />
+    <Content Include="Assets\Images\6.webp" />
+    <Content Include="Assets\Images\7.webp" />
+    <Content Include="Assets\Images\8.webp" />
+    <Content Include="Assets\Images\9.webp" />
+    <None Include="Connected Services\ServiceApi\Service.disco" />
+    <None Include="Connected Services\ServiceApi\configuration91.svcinfo" />
+    <None Include="Connected Services\ServiceApi\configuration.svcinfo" />
+    <None Include="Connected Services\ServiceApi\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Connected Services\serviceapi\Reference.cs">
+    <Compile Include="Connected Services\ServiceApi\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -113,20 +121,29 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\serviceapi\Service.wsdl" />
-    <None Include="Connected Services\serviceapi\Service.xsd">
+    <None Include="Connected Services\ServiceApi\Service.wsdl" />
+    <None Include="Connected Services\ServiceApi\Service.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\serviceapi\Service1.xsd">
+    <None Include="Connected Services\ServiceApi\Service1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\serviceapi\Service2.xsd">
+    <None Include="Connected Services\ServiceApi\Service2.xsd">
       <SubType>Designer</SubType>
     </None>
-    <Content Include="Connected Services\serviceapi\WAMiCafesitoApp.serviceapi.Category.datasource">
+    <Content Include="Connected Services\ServiceApi\WAMiCafesitoApp.ServiceApi.Category.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Connected Services\serviceapi\WAMiCafesitoApp.serviceapi.User.datasource">
+    <Content Include="Connected Services\ServiceApi\WAMiCafesitoApp.ServiceApi.Order.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiceApi\WAMiCafesitoApp.ServiceApi.OrderDetail.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiceApi\WAMiCafesitoApp.ServiceApi.Product.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiceApi\WAMiCafesitoApp.ServiceApi.User.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <None Include="packages.config" />
@@ -147,7 +164,7 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadataStorage Include="Connected Services\serviceapi\" />
+    <WCFMetadataStorage Include="Connected Services\ServiceApi\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -79,6 +79,114 @@
   <wsdl:message name="ICategoryService_AddCategory_OutputMessage">
     <wsdl:part name="parameters" element="tns:AddCategoryResponse" />
   </wsdl:message>
+  <wsdl:message name="IProductService_GetAllProducts_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllProducts" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_GetAllProducts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllProductsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_GetProductById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductById" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_GetProductById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_UpdateProduct_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateProduct" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_UpdateProduct_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_DeleteProduct_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteProduct" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_DeleteProduct_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_AddProduct_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddProduct" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_AddProduct_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_GetAllProductsByCategoryId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllProductsByCategoryId" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_GetAllProductsByCategoryId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllProductsByCategoryIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_GetProductsFeatured_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductsFeatured" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_GetProductsFeatured_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductsFeaturedResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOrderService_GetAllOrders_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllOrders" />
+  </wsdl:message>
+  <wsdl:message name="IOrderService_GetAllOrders_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllOrdersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOrderService_GetOrderById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrderById" />
+  </wsdl:message>
+  <wsdl:message name="IOrderService_GetOrderById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrderByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOrderService_UpdateOrder_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateOrder" />
+  </wsdl:message>
+  <wsdl:message name="IOrderService_UpdateOrder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOrderService_DeleteOrder_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteOrder" />
+  </wsdl:message>
+  <wsdl:message name="IOrderService_DeleteOrder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOrderService_AddOrder_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddOrder" />
+  </wsdl:message>
+  <wsdl:message name="IOrderService_AddOrder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOrderService_GetAllOrdersByUserId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllOrdersByUserId" />
+  </wsdl:message>
+  <wsdl:message name="IOrderService_GetAllOrdersByUserId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllOrdersByUserIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOrderDetailsService_GetAllOrderDetailByOrderId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllOrderDetailByOrderId" />
+  </wsdl:message>
+  <wsdl:message name="IOrderDetailsService_GetAllOrderDetailByOrderId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllOrderDetailByOrderIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOrderDetailsService_UpdateOrderDetail_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateOrderDetail" />
+  </wsdl:message>
+  <wsdl:message name="IOrderDetailsService_UpdateOrderDetail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateOrderDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOrderDetailsService_DeleteOrderDetail_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteOrderDetail" />
+  </wsdl:message>
+  <wsdl:message name="IOrderDetailsService_DeleteOrderDetail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteOrderDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOrderDetailsService_AddOrderDetail_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddOrderDetail" />
+  </wsdl:message>
+  <wsdl:message name="IOrderDetailsService_AddOrderDetail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddOrderDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOrderDetailsService_DeleteOrderDetailByOrderId_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteOrderDetailByOrderId" />
+  </wsdl:message>
+  <wsdl:message name="IOrderDetailsService_DeleteOrderDetailByOrderId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteOrderDetailByOrderIdResponse" />
+  </wsdl:message>
   <wsdl:portType name="IUserService">
     <wsdl:operation name="GetAllUsers">
       <wsdl:input wsaw:Action="http://tempuri.org/IUserService/GetAllUsers" message="tns:IUserService_GetAllUsers_InputMessage" />
@@ -129,6 +237,84 @@
     <wsdl:operation name="AddCategory">
       <wsdl:input wsaw:Action="http://tempuri.org/ICategoryService/AddCategory" message="tns:ICategoryService_AddCategory_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ICategoryService/AddCategoryResponse" message="tns:ICategoryService_AddCategory_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IProductService">
+    <wsdl:operation name="GetAllProducts">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProductService/GetAllProducts" message="tns:IProductService_GetAllProducts_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProductService/GetAllProductsResponse" message="tns:IProductService_GetAllProducts_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProductById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProductService/GetProductById" message="tns:IProductService_GetProductById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProductService/GetProductByIdResponse" message="tns:IProductService_GetProductById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProduct">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProductService/UpdateProduct" message="tns:IProductService_UpdateProduct_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProductService/UpdateProductResponse" message="tns:IProductService_UpdateProduct_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteProduct">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProductService/DeleteProduct" message="tns:IProductService_DeleteProduct_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProductService/DeleteProductResponse" message="tns:IProductService_DeleteProduct_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddProduct">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProductService/AddProduct" message="tns:IProductService_AddProduct_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProductService/AddProductResponse" message="tns:IProductService_AddProduct_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllProductsByCategoryId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProductService/GetAllProductsByCategoryId" message="tns:IProductService_GetAllProductsByCategoryId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProductService/GetAllProductsByCategoryIdResponse" message="tns:IProductService_GetAllProductsByCategoryId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProductsFeatured">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProductService/GetProductsFeatured" message="tns:IProductService_GetProductsFeatured_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProductService/GetProductsFeaturedResponse" message="tns:IProductService_GetProductsFeatured_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IOrderService">
+    <wsdl:operation name="GetAllOrders">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOrderService/GetAllOrders" message="tns:IOrderService_GetAllOrders_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOrderService/GetAllOrdersResponse" message="tns:IOrderService_GetAllOrders_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOrderService/GetOrderById" message="tns:IOrderService_GetOrderById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOrderService/GetOrderByIdResponse" message="tns:IOrderService_GetOrderById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOrder">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOrderService/UpdateOrder" message="tns:IOrderService_UpdateOrder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOrderService/UpdateOrderResponse" message="tns:IOrderService_UpdateOrder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteOrder">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOrderService/DeleteOrder" message="tns:IOrderService_DeleteOrder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOrderService/DeleteOrderResponse" message="tns:IOrderService_DeleteOrder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddOrder">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOrderService/AddOrder" message="tns:IOrderService_AddOrder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOrderService/AddOrderResponse" message="tns:IOrderService_AddOrder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllOrdersByUserId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOrderService/GetAllOrdersByUserId" message="tns:IOrderService_GetAllOrdersByUserId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOrderService/GetAllOrdersByUserIdResponse" message="tns:IOrderService_GetAllOrdersByUserId_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IOrderDetailsService">
+    <wsdl:operation name="GetAllOrderDetailByOrderId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOrderDetailsService/GetAllOrderDetailByOrderId" message="tns:IOrderDetailsService_GetAllOrderDetailByOrderId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOrderDetailsService/GetAllOrderDetailByOrderIdResponse" message="tns:IOrderDetailsService_GetAllOrderDetailByOrderId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOrderDetail">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOrderDetailsService/UpdateOrderDetail" message="tns:IOrderDetailsService_UpdateOrderDetail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOrderDetailsService/UpdateOrderDetailResponse" message="tns:IOrderDetailsService_UpdateOrderDetail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteOrderDetail">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOrderDetailsService/DeleteOrderDetail" message="tns:IOrderDetailsService_DeleteOrderDetail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOrderDetailsService/DeleteOrderDetailResponse" message="tns:IOrderDetailsService_DeleteOrderDetail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddOrderDetail">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOrderDetailsService/AddOrderDetail" message="tns:IOrderDetailsService_AddOrderDetail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOrderDetailsService/AddOrderDetailResponse" message="tns:IOrderDetailsService_AddOrderDetail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteOrderDetailByOrderId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOrderDetailsService/DeleteOrderDetailByOrderId" message="tns:IOrderDetailsService_DeleteOrderDetailByOrderId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOrderDetailsService/DeleteOrderDetailByOrderIdResponse" message="tns:IOrderDetailsService_DeleteOrderDetailByOrderId_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IUserService" type="tns:IUserService">
@@ -245,11 +431,191 @@
       </wsdl:output>
     </wsdl:operation>
   </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_IProductService" type="tns:IProductService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetAllProducts">
+      <soap:operation soapAction="http://tempuri.org/IProductService/GetAllProducts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductById">
+      <soap:operation soapAction="http://tempuri.org/IProductService/GetProductById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProduct">
+      <soap:operation soapAction="http://tempuri.org/IProductService/UpdateProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteProduct">
+      <soap:operation soapAction="http://tempuri.org/IProductService/DeleteProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddProduct">
+      <soap:operation soapAction="http://tempuri.org/IProductService/AddProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllProductsByCategoryId">
+      <soap:operation soapAction="http://tempuri.org/IProductService/GetAllProductsByCategoryId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductsFeatured">
+      <soap:operation soapAction="http://tempuri.org/IProductService/GetProductsFeatured" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_IOrderService" type="tns:IOrderService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetAllOrders">
+      <soap:operation soapAction="http://tempuri.org/IOrderService/GetAllOrders" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderById">
+      <soap:operation soapAction="http://tempuri.org/IOrderService/GetOrderById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOrder">
+      <soap:operation soapAction="http://tempuri.org/IOrderService/UpdateOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteOrder">
+      <soap:operation soapAction="http://tempuri.org/IOrderService/DeleteOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddOrder">
+      <soap:operation soapAction="http://tempuri.org/IOrderService/AddOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllOrdersByUserId">
+      <soap:operation soapAction="http://tempuri.org/IOrderService/GetAllOrdersByUserId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_IOrderDetailsService" type="tns:IOrderDetailsService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetAllOrderDetailByOrderId">
+      <soap:operation soapAction="http://tempuri.org/IOrderDetailsService/GetAllOrderDetailByOrderId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOrderDetail">
+      <soap:operation soapAction="http://tempuri.org/IOrderDetailsService/UpdateOrderDetail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteOrderDetail">
+      <soap:operation soapAction="http://tempuri.org/IOrderDetailsService/DeleteOrderDetail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddOrderDetail">
+      <soap:operation soapAction="http://tempuri.org/IOrderDetailsService/AddOrderDetail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteOrderDetailByOrderId">
+      <soap:operation soapAction="http://tempuri.org/IOrderDetailsService/DeleteOrderDetailByOrderId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
   <wsdl:service name="Service">
     <wsdl:port name="BasicHttpBinding_IUserService" binding="tns:BasicHttpBinding_IUserService">
       <soap:address location="http://localhost:61183/Service.svc" />
     </wsdl:port>
     <wsdl:port name="BasicHttpBinding_ICategoryService" binding="tns:BasicHttpBinding_ICategoryService">
+      <soap:address location="http://localhost:61183/Service.svc" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_IProductService" binding="tns:BasicHttpBinding_IProductService">
+      <soap:address location="http://localhost:61183/Service.svc" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_IOrderService" binding="tns:BasicHttpBinding_IOrderService">
+      <soap:address location="http://localhost:61183/Service.svc" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_IOrderDetailsService" binding="tns:BasicHttpBinding_IOrderDetailsService">
       <soap:address location="http://localhost:61183/Service.svc" />
     </wsdl:port>
   </wsdl:service>

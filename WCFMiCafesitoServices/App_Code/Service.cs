@@ -1,7 +1,5 @@
-﻿using System;
+﻿using MiCafesito;
 using System.Collections.Generic;
-using System.Runtime.InteropServices.WindowsRuntime;
-using MiCafesito;
 
 public class Service : IUserService, ICategoryService, IProductService, IOrderService, IOrderDetailsService
 {
@@ -15,6 +13,10 @@ public class Service : IUserService, ICategoryService, IProductService, IOrderSe
     {
         _userService = new UserService();
         _categoryService = new CategoryService();
+        _productService = new ProductsService();
+        _orderService = new OrderService();
+        _orderDetailsService = new ProductDetailService();
+
     }
 
     #region User Administration Methods
@@ -87,9 +89,9 @@ public class Service : IUserService, ICategoryService, IProductService, IOrderSe
 
     #region Product Administration Methods
 
-    public List<Product> GetAllProduct()
+    public List<Product> GetAllProducts()
     {
-        return _productService.GetAllProduct();
+        return _productService.GetAllProducts();
     }
 
     public Product GetProductById(int id)
@@ -102,9 +104,9 @@ public class Service : IUserService, ICategoryService, IProductService, IOrderSe
         _productService.UpdateProduct(productos);
     }
 
-    public void DeleteProducto(int id)
+    public void DeleteProduct(int id)
     {
-        _productService.DeleteProducto(id);
+        _productService.DeleteProduct(id);
     }
 
     public void AddProduct(Product productos)
@@ -112,6 +114,15 @@ public class Service : IUserService, ICategoryService, IProductService, IOrderSe
         _productService.AddProduct(productos);
     }
 
+    public List<Product> GetAllProductsByCategoryId(int id)
+    {
+        return _productService.GetAllProductsByCategoryId(id);
+    }
+
+    public List<Product> GetProductsFeatured()
+    {
+        return _productService.GetProductsFeatured();
+    }
     #endregion
 
     #region Order Administration Methods
