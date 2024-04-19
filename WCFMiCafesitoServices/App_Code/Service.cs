@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.Runtime.InteropServices.WindowsRuntime;
 using MiCafesito;
 
-public class Service : IUserService, ICategoryService, IProductService
+public class Service : IUserService, ICategoryService, IProductService, IOrderService, IOrderDetailsService
 {
     public readonly IUserService _userService;
     public readonly ICategoryService _categoryService;
     public readonly IProductService _productService;
+    public readonly IOrderService _orderService;
+    public readonly IOrderDetailsService _orderDetailsService;
 
     public Service()
     {
@@ -110,5 +112,67 @@ public class Service : IUserService, ICategoryService, IProductService
         _productService.AddProduct(productos);
     }
 
+    #endregion
+
+    #region Order Administration Methods
+
+    public List<Order> GetAllOrders()
+    {
+        return _orderService.GetAllOrders();
+    }
+
+    public List<Order> GetAllOrdersByUserId(int id)
+    {
+        return _orderService.GetAllOrdersByUserId(id);
+    }
+
+    public Order GetOrderById(int id)
+    {
+        return _orderService.GetOrderById(id);
+    }
+
+    public void UpdateOrder(Order order)
+    {
+        _orderService.UpdateOrder(order);
+    }
+
+    public void DeleteOrder(int id)
+    {
+        _orderService.DeleteOrder(id);
+    }
+
+    public void AddOrder(Order order)
+    {
+        _orderService.AddOrder(order);
+    }
+
+    #endregion
+
+    #region OrderDetails Administration Methods
+ 
+    public List<OrderDetail> GetAllOrderDetailByOrderId(int id)
+    {
+        return _orderDetailsService.GetAllOrderDetailByOrderId(id);
+    }
+
+    public void UpdateOrderDetail(OrderDetail orderDetails)
+    {
+        _orderDetailsService.UpdateOrderDetail(orderDetails);
+    }
+
+    public void DeleteOrderDetail(int id)
+    {
+        _orderDetailsService.DeleteOrderDetail(id);
+    }
+
+    public void AddOrderDetail(OrderDetail orderDetails)
+    {
+        _orderDetailsService.AddOrderDetail(orderDetails);
+    }
+
+    public void DeleteOrderDetailByOrderId(int id)
+    {
+        _orderDetailsService.DeleteOrderDetailByOrderId(id);
+    }
     #endregion
 }

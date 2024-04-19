@@ -7,15 +7,18 @@ namespace MiCafesito
     public interface IOrderDetailsService
     {
         [OperationContract]
-        List<OrderDetails> GetAllOrderDetail();
+        List<OrderDetail> GetAllOrderDetailByOrderId(int id);
 
         [OperationContract]
-        void UpdateOrderDetail(OrderDetails orderDetails);
+        void UpdateOrderDetail(OrderDetail orderDetails);
 
         [OperationContract]
         void DeleteOrderDetail(int id);
 
         [OperationContract]
-        void AddOrderDetail(OrderDetails orderDetails);
+        void AddOrderDetail(OrderDetail orderDetails);
+
+        [OperationContract]
+        void DeleteOrderDetailByOrderId(int id);
     }
 }

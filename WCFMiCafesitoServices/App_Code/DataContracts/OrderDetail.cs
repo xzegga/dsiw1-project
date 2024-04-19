@@ -1,8 +1,7 @@
-using System;
 using System.Runtime.Serialization;
 
 [DataContract]
-public class OrderDetails
+public class OrderDetail
 {
 
     [DataMember]

@@ -1,4 +1,5 @@
 using System;
+using System.Activities.Expressions;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -16,7 +17,7 @@ namespace MiCafesito
             connection = new SqlConnection(_config.ConnectionString);
         }
 
-        public void AddOrderDetail(OrderDetails orderDetails)
+        public void AddOrderDetail(OrderDetail orderDetails)
         {
             try
             {
@@ -55,7 +56,28 @@ namespace MiCafesito
             finally { connection.Close(); }
         }
 
-        public List<OrderDetails> GetAllOrderDetail()
+        public void DeleteOrderDetailByOrderId(int id)
+        {
+            // SP_EliminarDetallesPedido
+            // ID_Pedido INT
+
+            try
+            {
+                using (SqlCommand command = new SqlCommand("SP_EliminarDetallesPedido", connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    command.Parameters.AddWithValue("@ID_Pedido", id);
+
+                    connection.Open();
+                    command.ExecuteNonQuery();
+                }
+            }
+            catch (Exception ex) { throw new ArgumentException("No se pudo eliminar los detalles del pedido"); }
+            finally { connection.Close(); }
+        }
+
+        public List<OrderDetail> GetAllOrderDetailByOrderId(int id)
         {
             try
             {
@@ -63,15 +85,21 @@ namespace MiCafesito
                 {
                     command.CommandType = CommandType.StoredProcedure;
 
+                    command.Parameters.AddWithValue("@ID_Pedido", id);
+
                     connection.Open();
                     using (SqlDataReader reader = command.ExecuteReader())
                     {
-                        List<OrderDetails> detallePedidos = new List<OrderDetails>();
+                        List<OrderDetail> detallePedidos = new List<OrderDetail>();
 
                         while (reader.Read())
                         {
-                            OrderDetails orderDetail = new OrderDetails();
+                            OrderDetail orderDetail = new OrderDetail();
+                            orderDetail.ID_Detalle = Convert.ToInt32(reader["ID_Detalle"]);
                             orderDetail.ID_Pedido = Convert.ToInt32(reader["ID_Pedido"]);
+                            orderDetail.ID_Producto = Convert.ToInt32(reader["ID_Producto"]);
+                            orderDetail.Cantidad = Convert.ToInt32(reader["Cantidad"]);
+                            orderDetail.PrecioUnitario = Convert.ToSingle(reader["PrecioUnitario"]);
 
                             detallePedidos.Add(orderDetail);
                         }
@@ -84,7 +112,7 @@ namespace MiCafesito
             finally { connection.Close(); }
         }
 
-        public void UpdateOrderDetail(OrderDetails orderDetails)
+        public void UpdateOrderDetail(OrderDetail orderDetails)
         {
             try
             {
