@@ -70,20 +70,24 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include=".gitignore" />
+    <Content Include="Assets\Images\15.png" />
+    <Content Include="Assets\Images\3.png" />
+    <Content Include="Assets\Images\4.png" />
+    <Content Include="Assets\Images\5.png" />
+    <Content Include="Assets\Images\6.png" />
+    <Content Include="Assets\Images\7.png" />
+    <Content Include="Assets\Images\8.png" />
+    <Content Include="Assets\Images\9.png" />
     <Content Include="Assets\Images\ariov60.png" />
+    <Content Include="Assets\Images\hero %281%29.png" />
     <Content Include="Assets\Images\hero-home.png" />
     <Content Include="Assets\Images\hero.png" />
+    <Content Include="Assets\Images\login.png" />
     <Content Include="Assets\Images\logo.jpg" />
     <Content Include="Assets\Images\mv_slide_01.jpg" />
+    <Content Include="Assets\Scripts\LoginErrMessage.js" />
+    <Content Include="Assets\Styles\login.css" />
     <Content Include="Assets\Styles\style.css" />
-    <Content Include="Assets\Images\15.webp" />
-    <Content Include="Assets\Images\3.webp" />
-    <Content Include="Assets\Images\4.webp" />
-    <Content Include="Assets\Images\5.webp" />
-    <Content Include="Assets\Images\6.webp" />
-    <Content Include="Assets\Images\7.webp" />
-    <Content Include="Assets\Images\8.webp" />
-    <Content Include="Assets\Images\9.webp" />
     <None Include="Connected Services\ServiceApi\Service.disco" />
     <None Include="Connected Services\ServiceApi\configuration91.svcinfo" />
     <None Include="Connected Services\ServiceApi\configuration.svcinfo" />
@@ -93,6 +97,8 @@
     </None>
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
+    <Content Include="Login.aspx" />
+    <Content Include="Store\ProductDetail.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -111,6 +117,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Public.Master.cs">
       <DependentUpon>Public.Master</DependentUpon>
@@ -118,6 +131,13 @@
     </Compile>
     <Compile Include="Public.Master.designer.cs">
       <DependentUpon>Public.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Store\ProductDetail.aspx.cs">
+      <DependentUpon>ProductDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Store\ProductDetail.aspx.designer.cs">
+      <DependentUpon>ProductDetail.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -157,7 +177,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Assets\Scripts\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>

@@ -13,6 +13,13 @@ namespace WAMiCafesitoApp
         ServiceApi.ICategoryService categoryService = new ServiceApi.CategoryServiceClient();
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
+                if (Session["UserId"] != null)
+                {
+                    HideLoginLink();
+                }
+            }
             LoadCategories();
         }
 
@@ -27,6 +34,24 @@ namespace WAMiCafesitoApp
 
             }
         }
+        protected void RedirectLogin()
+        {
+            Response.Redirect("~/Login.aspx");
+        }
 
+        protected void HideLoginLink()
+        {
+            UnauthenticatedLnks.Visible = false;
+            AuthenticatedLnks.Visible = true;
+
+        }
+
+        protected void closeSessionLnk_Click(object sender, EventArgs e)
+        {
+            // Almacenar el objeto de usuario en la sesión
+            Session["UserId"] = null;
+            Session["RoleId"] = null;
+            Response.Redirect(Request.RawUrl);
+        }
     }
 }

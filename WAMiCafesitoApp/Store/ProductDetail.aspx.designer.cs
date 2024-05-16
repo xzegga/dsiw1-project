@@ -7,110 +7,92 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WAMiCafesitoApp
+namespace WAMiCafesitoApp.Store
 {
 
 
-    public partial class Site1
+    public partial class ProductDetail
     {
 
         /// <summary>
-        /// head control.
+        /// imgProduct control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder head;
+        protected global::System.Web.UI.WebControls.Image imgProduct;
 
         /// <summary>
-        /// form2 control.
+        /// lblProductName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form2;
+        protected global::System.Web.UI.WebControls.Label lblProductName;
 
         /// <summary>
-        /// UnauthenticatedLnks control.
+        /// lblCategory control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder UnauthenticatedLnks;
+        protected global::System.Web.UI.WebControls.Label lblCategory;
 
         /// <summary>
-        /// loginLnk control.
+        /// lblProductDescription control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink loginLnk;
+        protected global::System.Web.UI.WebControls.Label lblProductDescription;
 
         /// <summary>
-        /// registreLnk control.
+        /// lblPriceInteger control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink registreLnk;
+        protected global::System.Web.UI.WebControls.Label lblPriceInteger;
 
         /// <summary>
-        /// AuthenticatedLnks control.
+        /// lblPriceDecimal control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder AuthenticatedLnks;
+        protected global::System.Web.UI.WebControls.Label lblPriceDecimal;
 
         /// <summary>
-        /// cartLnk control.
+        /// lblQuantity control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink cartLnk;
+        protected global::System.Web.UI.WebControls.Label lblQuantity;
 
         /// <summary>
-        /// cartBtn control.
+        /// quantity control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button cartBtn;
+        protected global::System.Web.UI.WebControls.TextBox quantity;
 
         /// <summary>
-        /// categoryRepeater control.
+        /// btnAddToCart control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater categoryRepeater;
-
-        /// <summary>
-        /// header control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder header;
-
-        /// <summary>
-        /// MainContent control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder MainContent;
+        protected global::System.Web.UI.WebControls.HyperLink btnAddToCart;
     }
 }

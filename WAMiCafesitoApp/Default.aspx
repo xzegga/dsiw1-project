@@ -38,7 +38,7 @@
             </header>
 
             <div class="row">
-                <asp:Repeater ID="featuredProductsRepeater" runat="server">
+                <asp:Repeater ID="featuredProductsRepeater" runat="server" OnItemDataBound="featuredProductsRepeater_ItemDataBound">
                     <ItemTemplate>
                         <div class="col-lg-3 col-md-6 col-sm-6 d-flex mb-5">
                             <div class="card w-100 my-2 shadow-2-strong">
@@ -47,13 +47,18 @@
                                     <h5 class="card-title"><%# Eval("Nombre") %></h5>
                                     <span class="a-price d-flex align-items-start" aria-hidden="true">
                                         <span class="a-price-symbol">$</span>
-                                        <span class="a-price-whole"><%# String.Format("{0:N0}", Convert.ToInt32(Eval("Precio"))) %></span>
+                                        <span class="a-price-whole"><%# Convert.ToInt32(Math.Floor(Convert.ToDouble(Eval("Precio")))) %></span>
                                         <span class="a-price-fraction"><%# String.Format("{0:00}", GetFractionalPart(Eval("Precio"))) %></span>
                                     </span>
                                     <p class="card-text"><%# Eval("Descripcion", "{0:C}") %></p>
-                                    <div class="d-flex align-items-end py-2 px-0 mt-auto">
-                                        <asp:HyperLink ID="btnAgregarCarrito" runat="server" CssClass="btn btn-light shadow-none me-1 a-add-to-cart" NavigateUrl="#!">
-                                            <i class="fa-solid fa-cart-shopping"></i> Agregar al carrito
+                                    <div class="d-flex align-items-end py-2 px-0 mt-auto gap-2">
+                                        <asp:HyperLink ID="btnViewDetail" 
+                                            runat="server" 
+                                            CssClass="btn btn-light shadow-none me-1 btn-view-details">
+                                            <i class="fa-solid fa-magnifying-glass"></i> Detalle 
+                                        </asp:HyperLink>
+                                        <asp:HyperLink ID="btnAddToCart" runat="server" CssClass="btn btn-light shadow-none me-1 btn-add-to-cart" NavigateUrl="#!">
+                                            <i class="fa-solid fa-cart-shopping"></i> Comprar
                                         </asp:HyperLink>
                                     </div>
                                 </div>

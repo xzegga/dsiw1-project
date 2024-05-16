@@ -9,11 +9,16 @@ namespace MiCafesito
     {
         private CustomConfigurationManager _config;
         private SqlConnection connection;
+        List<Category> categories;
 
         public ProductsService()
         {
             _config = new CustomConfigurationManager();
             connection = new SqlConnection(_config.ConnectionString);
+
+            // Load Categories calling CategoryService
+            CategoryService categoryService = new CategoryService();
+            categories = categoryService.GetAllCategories();
         }
         public void AddProduct(Product product)
         {
@@ -153,6 +158,16 @@ namespace MiCafesito
                             product.Descripcion = reader["Descripcion"].ToString();
                             product.Precio = Convert.ToDouble(reader["Precio"].ToString());
                             product.ID_Categoria = Convert.ToInt32(reader["ID_Categoria"]);
+
+                            // Get Category Name
+                            foreach (Category category in categories)
+                            {
+                                if (category.ID_Categoria == product.ID_Categoria)
+                                {
+                                    product.Categoria = category.Nombre;
+                                    break;
+                                }
+                            }
                             product.ImageUrl = reader["ImageUrl"].ToString();
                         }
 

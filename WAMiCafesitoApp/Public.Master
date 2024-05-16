@@ -22,7 +22,7 @@
                 <div class="container">
                     <div class="row gy-3">
                         <div class="col-lg-2 col-sm-4 col-4">
-                            <a href="/" target="_blank" class="float-start d-flex align-items-center gap-2 logo-link">
+                            <a href="/" target="_self" class="float-start d-flex align-items-center gap-2 logo-link">
                                 <img src="/Assets/Images/logo.jpg" height="45" />
                                 <h1 class="logo-text">MiCafesito <span class="logo-text-small d-block">Enlínea</span></h1>
                             </a>
@@ -30,15 +30,23 @@
 
                         <div class="order-lg-last col-lg-5 col-sm-8 col-8">
                             <div class="d-flex float-end">
-                                <a href="https://github.com/mdbootstrap/bootstrap-material-design" class="me-1 py-1 px-3 nav-link d-flex align-items-center" target="_blank"><i class="fas fa-user-alt m-1 me-md-2"></i>
-                                    <p class="d-none d-md-block mb-0">Ingresar</p>
-                                </a>
-                                <a href="https://github.com/mdbootstrap/bootstrap-material-design" class="me-1 py-1 px-3 nav-link d-flex align-items-center" target="_blank"><i class="fas fa-heart m-1 me-md-2"></i>
-                                    <p class="d-none d-md-block mb-0">Registrarse</p>
-                                </a>
-                                <a href="https://github.com/mdbootstrap/bootstrap-material-design" class="py-1 px-3 nav-link d-flex align-items-center" target="_blank"><i class="fas fa-shopping-cart m-1 me-md-2"></i>
-                                    <p class="d-none d-md-block mb-0">Carrito</p>
-                                </a>
+                                <asp:PlaceHolder ID="UnauthenticatedLnks" runat="server" Visible="true">
+                                    <asp:HyperLink ID="loginLnk" runat="server" NavigateUrl="~/Login.aspx" CssClass="me-1 py-1 px-3 nav-link d-flex align-items-center">
+                                        <i class="fas fa-user-alt m-1 me-md-2"></i>
+                                        <p class="d-none d-md-block mb-0">Ingresar</p>
+                                    </asp:HyperLink>
+                                    <asp:HyperLink ID="registreLnk" runat="server" NavigateUrl="~/Registre.aspx" CssClass="me-1 py-1 px-3 nav-link d-flex align-items-center">
+                                        <i class="fas fa-heart m-1 me-md-2"></i>
+                                        <p class="d-none d-md-block mb-0">Registrarse</p>
+                                    </asp:HyperLink>
+                                </asp:PlaceHolder>
+                                <asp:PlaceHolder ID="AuthenticatedLnks" runat="server" Visible="false">
+                                    <asp:HyperLink ID="cartLnk" runat="server" NavigateUrl="~/Registre.aspx" CssClass="me-1 py-1 px-3 nav-link d-flex align-items-center">
+                                        <i class="fas fa-shopping-cart m-1 me-md-2"></i>
+                                        <p class="d-none d-md-block mb-0">Carrito</p>
+                                    </asp:HyperLink>
+                                    <asp:Button ID="cartBtn" runat="server" OnClick="closeSessionLnk_Click" Text="Carrito" CssClass="btn btn-outline-primary me-1 py-1 px-3 d-flex align-items-center"></asp:Button>
+                                </asp:PlaceHolder>
                             </div>
                         </div>
 
@@ -205,7 +213,7 @@
                                     <h1 class="logo-text">MiCafesito <span class="logo-text-small d-block">Enlínea</span></h1>
                                 </a>
                                 <p class="mt-2 text-dark">
-                                    © 2023 Copyright: MDBootstrap.com
+                                    © 2023 MiCafesito.com
                                 </p>
                             </div>
                         </div>
