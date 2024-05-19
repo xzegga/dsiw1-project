@@ -187,6 +187,36 @@
   <wsdl:message name="IOrderDetailsService_DeleteOrderDetailByOrderId_OutputMessage">
     <wsdl:part name="parameters" element="tns:DeleteOrderDetailByOrderIdResponse" />
   </wsdl:message>
+  <wsdl:message name="ICartService_AddCartItem_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddCartItem" />
+  </wsdl:message>
+  <wsdl:message name="ICartService_AddCartItem_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddCartItemResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICartService_GetCartItemsByUserId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCartItemsByUserId" />
+  </wsdl:message>
+  <wsdl:message name="ICartService_GetCartItemsByUserId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCartItemsByUserIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICartService_UpdateCartItemById_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCartItemById" />
+  </wsdl:message>
+  <wsdl:message name="ICartService_UpdateCartItemById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCartItemByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICartService_DeleteCartItem_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteCartItem" />
+  </wsdl:message>
+  <wsdl:message name="ICartService_DeleteCartItem_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteCartItemResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICartService_DeleteCartItemsByUserId_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteCartItemsByUserId" />
+  </wsdl:message>
+  <wsdl:message name="ICartService_DeleteCartItemsByUserId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteCartItemsByUserIdResponse" />
+  </wsdl:message>
   <wsdl:portType name="IUserService">
     <wsdl:operation name="GetAllUsers">
       <wsdl:input wsaw:Action="http://tempuri.org/IUserService/GetAllUsers" message="tns:IUserService_GetAllUsers_InputMessage" />
@@ -315,6 +345,28 @@
     <wsdl:operation name="DeleteOrderDetailByOrderId">
       <wsdl:input wsaw:Action="http://tempuri.org/IOrderDetailsService/DeleteOrderDetailByOrderId" message="tns:IOrderDetailsService_DeleteOrderDetailByOrderId_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IOrderDetailsService/DeleteOrderDetailByOrderIdResponse" message="tns:IOrderDetailsService_DeleteOrderDetailByOrderId_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="ICartService">
+    <wsdl:operation name="AddCartItem">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICartService/AddCartItem" message="tns:ICartService_AddCartItem_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICartService/AddCartItemResponse" message="tns:ICartService_AddCartItem_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCartItemsByUserId">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICartService/GetCartItemsByUserId" message="tns:ICartService_GetCartItemsByUserId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICartService/GetCartItemsByUserIdResponse" message="tns:ICartService_GetCartItemsByUserId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCartItemById">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICartService/UpdateCartItemById" message="tns:ICartService_UpdateCartItemById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICartService/UpdateCartItemByIdResponse" message="tns:ICartService_UpdateCartItemById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCartItem">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICartService/DeleteCartItem" message="tns:ICartService_DeleteCartItem_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICartService/DeleteCartItemResponse" message="tns:ICartService_DeleteCartItem_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCartItemsByUserId">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICartService/DeleteCartItemsByUserId" message="tns:ICartService_DeleteCartItemsByUserId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICartService/DeleteCartItemsByUserIdResponse" message="tns:ICartService_DeleteCartItemsByUserId_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IUserService" type="tns:IUserService">
@@ -602,6 +654,54 @@
       </wsdl:output>
     </wsdl:operation>
   </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_ICartService" type="tns:ICartService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AddCartItem">
+      <soap:operation soapAction="http://tempuri.org/ICartService/AddCartItem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCartItemsByUserId">
+      <soap:operation soapAction="http://tempuri.org/ICartService/GetCartItemsByUserId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCartItemById">
+      <soap:operation soapAction="http://tempuri.org/ICartService/UpdateCartItemById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCartItem">
+      <soap:operation soapAction="http://tempuri.org/ICartService/DeleteCartItem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCartItemsByUserId">
+      <soap:operation soapAction="http://tempuri.org/ICartService/DeleteCartItemsByUserId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
   <wsdl:service name="Service">
     <wsdl:port name="BasicHttpBinding_IUserService" binding="tns:BasicHttpBinding_IUserService">
       <soap:address location="http://localhost:61183/Service.svc" />
@@ -616,6 +716,9 @@
       <soap:address location="http://localhost:61183/Service.svc" />
     </wsdl:port>
     <wsdl:port name="BasicHttpBinding_IOrderDetailsService" binding="tns:BasicHttpBinding_IOrderDetailsService">
+      <soap:address location="http://localhost:61183/Service.svc" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_ICartService" binding="tns:BasicHttpBinding_ICartService">
       <soap:address location="http://localhost:61183/Service.svc" />
     </wsdl:port>
   </wsdl:service>

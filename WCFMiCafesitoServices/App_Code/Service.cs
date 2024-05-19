@@ -1,13 +1,22 @@
 ﻿using MiCafesito;
+using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 
-public class Service : IUserService, ICategoryService, IProductService, IOrderService, IOrderDetailsService
+public class Service :
+    IUserService,
+    ICategoryService,
+    IProductService,
+    IOrderService,
+    IOrderDetailsService,
+    ICartService
 {
     public readonly IUserService _userService;
     public readonly ICategoryService _categoryService;
     public readonly IProductService _productService;
     public readonly IOrderService _orderService;
     public readonly IOrderDetailsService _orderDetailsService;
+    public readonly ICartService _cartService;
 
     public Service()
     {
@@ -16,6 +25,7 @@ public class Service : IUserService, ICategoryService, IProductService, IOrderSe
         _productService = new ProductsService();
         _orderService = new OrderService();
         _orderDetailsService = new ProductDetailService();
+        _cartService = new CartService();
 
     }
 
@@ -160,7 +170,7 @@ public class Service : IUserService, ICategoryService, IProductService, IOrderSe
     #endregion
 
     #region OrderDetails Administration Methods
- 
+
     public List<OrderDetail> GetAllOrderDetailByOrderId(int id)
     {
         return _orderDetailsService.GetAllOrderDetailByOrderId(id);
@@ -186,4 +196,34 @@ public class Service : IUserService, ICategoryService, IProductService, IOrderSe
         _orderDetailsService.DeleteOrderDetailByOrderId(id);
     }
     #endregion
+
+    #region Cart Administration Methods
+
+    public void AddCartItem(Cart cart)
+    {
+        _cartService.AddCartItem(cart);
+    }
+
+    public void DeleteCartItem(int id)
+    {
+        _cartService.DeleteCartItem(id);
+    }
+
+    public void DeleteCartItemsByUserId(int id)
+    {
+        _cartService.DeleteCartItemsByUserId(id);
+    }
+
+    public List<Cart> GetCartItemsByUserId(int id)
+    {
+        return _cartService.GetCartItemsByUserId(id);
+    }
+
+    public void UpdateCartItemById(int id, int quantity, double unitprice)
+    {
+        _cartService.UpdateCartItemById(id, quantity, unitprice);
+    }
+
+    #endregion
 }
+

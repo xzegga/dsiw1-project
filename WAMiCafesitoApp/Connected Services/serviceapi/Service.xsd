@@ -79,14 +79,29 @@
   <xs:complexType name="OrderDetail">
     <xs:sequence>
       <xs:element minOccurs="0" name="Cantidad" type="xs:int" />
-      <xs:element minOccurs="0" name="Descripcion" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="ID_Detalle" type="xs:int" />
       <xs:element minOccurs="0" name="ID_Pedido" type="xs:int" />
       <xs:element minOccurs="0" name="ID_Producto" type="xs:int" />
-      <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Precio" type="xs:float" />
       <xs:element minOccurs="0" name="PrecioUnitario" type="xs:float" />
+      <xs:element minOccurs="0" name="Total" type="xs:float" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="OrderDetail" nillable="true" type="tns:OrderDetail" />
+  <xs:complexType name="Cart">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Cantidad" type="xs:int" />
+      <xs:element minOccurs="0" name="Fecha" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ID_Carrito" type="xs:int" />
+      <xs:element minOccurs="0" name="ID_Producto" type="xs:int" />
+      <xs:element minOccurs="0" name="ID_Usuario" type="xs:int" />
+      <xs:element minOccurs="0" name="PrecioUnitario" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Cart" nillable="true" type="tns:Cart" />
+  <xs:complexType name="ArrayOfCart">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Cart" nillable="true" type="tns:Cart" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCart" nillable="true" type="tns:ArrayOfCart" />
 </xs:schema>

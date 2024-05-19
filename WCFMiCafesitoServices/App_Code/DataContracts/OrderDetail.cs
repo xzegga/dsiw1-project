@@ -19,14 +19,9 @@ public class OrderDetail
     [DataMember]
     public float PrecioUnitario { get; set; }
 
-    [DataMember]
-    public string Nombre { get; set; }
 
     [DataMember]
-    public string Descripcion { get; set; }
-
-    [DataMember]
-    public float Precio { get; set; }
+    public float Total { get; set; }
 
 }
 

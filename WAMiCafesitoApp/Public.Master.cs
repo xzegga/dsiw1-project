@@ -19,8 +19,16 @@ namespace WAMiCafesitoApp
                 {
                     HideLoginLink();
                 }
+
+                if (Session["CartItems"] != null)
+                {
+                    HideLoginLink();
+                }
+
+
+                LoadCategories();
             }
-            LoadCategories();
+
         }
 
         protected void LoadCategories()

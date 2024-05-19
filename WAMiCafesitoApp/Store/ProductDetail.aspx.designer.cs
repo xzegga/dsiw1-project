@@ -15,6 +15,24 @@ namespace WAMiCafesitoApp.Store
     {
 
         /// <summary>
+        /// hdnToastMessage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hdnToastMessage;
+
+        /// <summary>
+        /// hdnToastType control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hdnToastType;
+
+        /// <summary>
         /// imgProduct control.
         /// </summary>
         /// <remarks>
@@ -31,6 +49,15 @@ namespace WAMiCafesitoApp.Store
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblProductName;
+
+        /// <summary>
+        /// txtCart control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label txtCart;
 
         /// <summary>
         /// lblCategory control.
@@ -78,13 +105,13 @@ namespace WAMiCafesitoApp.Store
         protected global::System.Web.UI.WebControls.Label lblQuantity;
 
         /// <summary>
-        /// quantity control.
+        /// txtQuantity control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox quantity;
+        protected global::System.Web.UI.WebControls.TextBox txtQuantity;
 
         /// <summary>
         /// btnAddToCart control.
@@ -93,6 +120,6 @@ namespace WAMiCafesitoApp.Store
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink btnAddToCart;
+        protected global::System.Web.UI.WebControls.LinkButton btnAddToCart;
     }
 }

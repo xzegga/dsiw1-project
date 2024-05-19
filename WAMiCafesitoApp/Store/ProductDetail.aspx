@@ -8,6 +8,8 @@
     <section>
         <div class="container my-5">
             <div class="row">
+                <asp:HiddenField ID="hdnToastMessage" runat="server" />
+                <asp:HiddenField ID="hdnToastType" runat="server" />
                 <div class="col-lg-4">
                     <!-- Product Image with Lightbox -->
                     <a href="#" data-bs-toggle="modal" data-bs-target="#imageModal">
@@ -23,7 +25,7 @@
                                     <i class="fa-regular fa-circle-xmark"></i>
                                 </button>
                                 <div class="modal-body p-0">
-                                    <img id="modalImage" src="<%= ResolveUrl(imgProduct.ImageUrl) %>" class="img-fluid" alt="Product Image">
+                                    <img id="modalImage" class="img-fluid" alt="Product Image">
                                 </div>
                             </div>
                         </div>
@@ -32,9 +34,11 @@
                 <div class="col-lg-7 ps-4 pt-4">
                     <h2 class="mb-0">
                         <asp:Label ID="lblProductName" runat="server" Text=""></asp:Label>
+                        En carrito
+                        <asp:Label ID="txtCart" runat="server" Text=""></asp:Label>
                     </h2>
                     <div class="d-flex align-items-center gap-2 mb-4">
-                        <strong>Categoria:</strong> 
+                        <strong>Categoria:</strong>
                         <asp:Label ID="lblCategory" runat="server" Text=""></asp:Label>
                     </div>
                     <p class="lead mb-4">
@@ -51,17 +55,26 @@
 
                     <div class="mb-4">
                         <!-- Quantity selection -->
-                        <asp:Label ID="lblQuantity" runat="server" AssociatedControlID="quantity" Text="Cantidad:" CssClass="form-label"></asp:Label>
+                        <asp:Label ID="lblQuantity" runat="server" AssociatedControlID="txtQuantity" Text="Cantidad:" CssClass="form-label"></asp:Label>
                         <div class="d-flex align-items-center gap-3">
-                            <asp:TextBox ID="quantity" runat="server" CssClass="form-control max-80" Text="1" Type="Number" Min="1"></asp:TextBox>
-                            <asp:HyperLink ID="btnAddToCart" runat="server" CssClass="btn btn-light shadow-none me-1 btn-add-to-cart px-4">
-                                <i class="fa-solid fa-cart-shopping"></i> Ordenar
-                            </asp:HyperLink>
+                            <asp:TextBox ID="txtQuantity" runat="server" CssClass="form-control max-80" Text="1" Type="Number" Min="1"></asp:TextBox>
+                            <asp:LinkButton ID="btnAddToCart" runat="server" CssClass="btn btn-light shadow-none me-1 btn-add-to-cart px-4" OnClick="btnAddToCart_Click"><i class="fa-solid fa-cart-shopping"></i> Ordenar</asp:LinkButton>
                         </div>
-                </div>
+                    </div>
 
                 </div>
             </div>
         </div>
     </section>
+</asp:Content>
+
+<asp:Content ID="Content4" ContentPlaceHolderID="FooterScripts" runat="server">
+    <script src="../Assets/Scripts/ErrMesasges.js" type="text/javascript"></script>
+    <script>
+        var toastMessage = document.getElementById('<%= hdnToastMessage.ClientID %>');
+        var toastType = document.getElementById('<%= hdnToastType.ClientID %>');
+        if (toastMessage) {
+            showAnimatedToast(toastMessage, toastType);
+        }
+    </script>
 </asp:Content>

@@ -558,9 +558,6 @@ namespace WAMiCafesitoApp.ServiceApi {
         private int CantidadField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string DescripcionField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int ID_DetalleField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -570,13 +567,10 @@ namespace WAMiCafesitoApp.ServiceApi {
         private int ID_ProductoField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string NombreField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private float PrecioField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private float PrecioUnitarioField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private float TotalField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -597,19 +591,6 @@ namespace WAMiCafesitoApp.ServiceApi {
                 if ((this.CantidadField.Equals(value) != true)) {
                     this.CantidadField = value;
                     this.RaisePropertyChanged("Cantidad");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Descripcion {
-            get {
-                return this.DescripcionField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DescripcionField, value) != true)) {
-                    this.DescripcionField = value;
-                    this.RaisePropertyChanged("Descripcion");
                 }
             }
         }
@@ -654,33 +635,145 @@ namespace WAMiCafesitoApp.ServiceApi {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Nombre {
-            get {
-                return this.NombreField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.NombreField, value) != true)) {
-                    this.NombreField = value;
-                    this.RaisePropertyChanged("Nombre");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public float Precio {
-            get {
-                return this.PrecioField;
-            }
-            set {
-                if ((this.PrecioField.Equals(value) != true)) {
-                    this.PrecioField = value;
-                    this.RaisePropertyChanged("Precio");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
         public float PrecioUnitario {
+            get {
+                return this.PrecioUnitarioField;
+            }
+            set {
+                if ((this.PrecioUnitarioField.Equals(value) != true)) {
+                    this.PrecioUnitarioField = value;
+                    this.RaisePropertyChanged("PrecioUnitario");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public float Total {
+            get {
+                return this.TotalField;
+            }
+            set {
+                if ((this.TotalField.Equals(value) != true)) {
+                    this.TotalField = value;
+                    this.RaisePropertyChanged("Total");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Cart", Namespace="http://schemas.datacontract.org/2004/07/")]
+    [System.SerializableAttribute()]
+    public partial class Cart : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int CantidadField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime FechaField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int ID_CarritoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int ID_ProductoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int ID_UsuarioField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double PrecioUnitarioField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Cantidad {
+            get {
+                return this.CantidadField;
+            }
+            set {
+                if ((this.CantidadField.Equals(value) != true)) {
+                    this.CantidadField = value;
+                    this.RaisePropertyChanged("Cantidad");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime Fecha {
+            get {
+                return this.FechaField;
+            }
+            set {
+                if ((this.FechaField.Equals(value) != true)) {
+                    this.FechaField = value;
+                    this.RaisePropertyChanged("Fecha");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ID_Carrito {
+            get {
+                return this.ID_CarritoField;
+            }
+            set {
+                if ((this.ID_CarritoField.Equals(value) != true)) {
+                    this.ID_CarritoField = value;
+                    this.RaisePropertyChanged("ID_Carrito");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ID_Producto {
+            get {
+                return this.ID_ProductoField;
+            }
+            set {
+                if ((this.ID_ProductoField.Equals(value) != true)) {
+                    this.ID_ProductoField = value;
+                    this.RaisePropertyChanged("ID_Producto");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ID_Usuario {
+            get {
+                return this.ID_UsuarioField;
+            }
+            set {
+                if ((this.ID_UsuarioField.Equals(value) != true)) {
+                    this.ID_UsuarioField = value;
+                    this.RaisePropertyChanged("ID_Usuario");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double PrecioUnitario {
             get {
                 return this.PrecioUnitarioField;
             }
@@ -1284,6 +1377,109 @@ namespace WAMiCafesitoApp.ServiceApi {
         
         public System.Threading.Tasks.Task DeleteOrderDetailByOrderIdAsync(int id) {
             return base.Channel.DeleteOrderDetailByOrderIdAsync(id);
+        }
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceApi.ICartService")]
+    public interface ICartService {
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICartService/AddCartItem", ReplyAction="http://tempuri.org/ICartService/AddCartItemResponse")]
+        void AddCartItem(WAMiCafesitoApp.ServiceApi.Cart cart);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICartService/AddCartItem", ReplyAction="http://tempuri.org/ICartService/AddCartItemResponse")]
+        System.Threading.Tasks.Task AddCartItemAsync(WAMiCafesitoApp.ServiceApi.Cart cart);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICartService/GetCartItemsByUserId", ReplyAction="http://tempuri.org/ICartService/GetCartItemsByUserIdResponse")]
+        WAMiCafesitoApp.ServiceApi.Cart[] GetCartItemsByUserId(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICartService/GetCartItemsByUserId", ReplyAction="http://tempuri.org/ICartService/GetCartItemsByUserIdResponse")]
+        System.Threading.Tasks.Task<WAMiCafesitoApp.ServiceApi.Cart[]> GetCartItemsByUserIdAsync(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICartService/UpdateCartItemById", ReplyAction="http://tempuri.org/ICartService/UpdateCartItemByIdResponse")]
+        void UpdateCartItemById(int id, int quantity, double unitprice);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICartService/UpdateCartItemById", ReplyAction="http://tempuri.org/ICartService/UpdateCartItemByIdResponse")]
+        System.Threading.Tasks.Task UpdateCartItemByIdAsync(int id, int quantity, double unitprice);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICartService/DeleteCartItem", ReplyAction="http://tempuri.org/ICartService/DeleteCartItemResponse")]
+        void DeleteCartItem(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICartService/DeleteCartItem", ReplyAction="http://tempuri.org/ICartService/DeleteCartItemResponse")]
+        System.Threading.Tasks.Task DeleteCartItemAsync(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICartService/DeleteCartItemsByUserId", ReplyAction="http://tempuri.org/ICartService/DeleteCartItemsByUserIdResponse")]
+        void DeleteCartItemsByUserId(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICartService/DeleteCartItemsByUserId", ReplyAction="http://tempuri.org/ICartService/DeleteCartItemsByUserIdResponse")]
+        System.Threading.Tasks.Task DeleteCartItemsByUserIdAsync(int id);
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public interface ICartServiceChannel : WAMiCafesitoApp.ServiceApi.ICartService, System.ServiceModel.IClientChannel {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class CartServiceClient : System.ServiceModel.ClientBase<WAMiCafesitoApp.ServiceApi.ICartService>, WAMiCafesitoApp.ServiceApi.ICartService {
+        
+        public CartServiceClient() {
+        }
+        
+        public CartServiceClient(string endpointConfigurationName) : 
+                base(endpointConfigurationName) {
+        }
+        
+        public CartServiceClient(string endpointConfigurationName, string remoteAddress) : 
+                base(endpointConfigurationName, remoteAddress) {
+        }
+        
+        public CartServiceClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(endpointConfigurationName, remoteAddress) {
+        }
+        
+        public CartServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(binding, remoteAddress) {
+        }
+        
+        public void AddCartItem(WAMiCafesitoApp.ServiceApi.Cart cart) {
+            base.Channel.AddCartItem(cart);
+        }
+        
+        public System.Threading.Tasks.Task AddCartItemAsync(WAMiCafesitoApp.ServiceApi.Cart cart) {
+            return base.Channel.AddCartItemAsync(cart);
+        }
+        
+        public WAMiCafesitoApp.ServiceApi.Cart[] GetCartItemsByUserId(int id) {
+            return base.Channel.GetCartItemsByUserId(id);
+        }
+        
+        public System.Threading.Tasks.Task<WAMiCafesitoApp.ServiceApi.Cart[]> GetCartItemsByUserIdAsync(int id) {
+            return base.Channel.GetCartItemsByUserIdAsync(id);
+        }
+        
+        public void UpdateCartItemById(int id, int quantity, double unitprice) {
+            base.Channel.UpdateCartItemById(id, quantity, unitprice);
+        }
+        
+        public System.Threading.Tasks.Task UpdateCartItemByIdAsync(int id, int quantity, double unitprice) {
+            return base.Channel.UpdateCartItemByIdAsync(id, quantity, unitprice);
+        }
+        
+        public void DeleteCartItem(int id) {
+            base.Channel.DeleteCartItem(id);
+        }
+        
+        public System.Threading.Tasks.Task DeleteCartItemAsync(int id) {
+            return base.Channel.DeleteCartItemAsync(id);
+        }
+        
+        public void DeleteCartItemsByUserId(int id) {
+            base.Channel.DeleteCartItemsByUserId(id);
+        }
+        
+        public System.Threading.Tasks.Task DeleteCartItemsByUserIdAsync(int id) {
+            return base.Channel.DeleteCartItemsByUserIdAsync(id);
         }
     }
 }

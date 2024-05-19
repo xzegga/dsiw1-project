@@ -85,7 +85,7 @@
     <Content Include="Assets\Images\login.png" />
     <Content Include="Assets\Images\logo.jpg" />
     <Content Include="Assets\Images\mv_slide_01.jpg" />
-    <Content Include="Assets\Scripts\LoginErrMessage.js" />
+    <Content Include="Assets\Scripts\ErrMesasges.js" />
     <Content Include="Assets\Styles\login.css" />
     <Content Include="Assets\Styles\style.css" />
     <None Include="Connected Services\ServiceApi\Service.disco" />
@@ -117,6 +117,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\Auth.cs" />
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -164,6 +165,9 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Connected Services\ServiceApi\WAMiCafesitoApp.ServiceApi.User.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiceApi\WAMiCafesitoApp.ServiceApi.Cart.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <None Include="packages.config" />

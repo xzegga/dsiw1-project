@@ -70,3 +70,5 @@
         </div>
     </section>
 </asp:Content>
+<asp:Content ID="Content4" ContentPlaceHolderID="FooterScripts" runat="server">
+</asp:Content>
