@@ -239,3 +239,17 @@
     color: #0F1111;
     font-size: 0.9rem;
 }
+
+.card-text {
+    font-size: 0.9rem;
+    padding-bottom: 8px;
+
+}
+
+.card-label {
+    min-width: 120px;
+}
+
+.update-status {
+    max-width: 450px;
+}

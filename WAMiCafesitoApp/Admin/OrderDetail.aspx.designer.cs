@@ -42,13 +42,13 @@ namespace WAMiCafesitoApp.Admin
         protected global::System.Web.UI.WebControls.Label lblOrderID;
 
         /// <summary>
-        /// lblUserID control.
+        /// lblUser control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblUserID;
+        protected global::System.Web.UI.WebControls.Label lblUser;
 
         /// <summary>
         /// lblOrderDate control.

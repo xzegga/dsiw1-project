@@ -163,7 +163,7 @@ namespace MiCafesito
                         {
                             order.ID_Pedido = Convert.ToInt32(reader["ID_Pedido"]);
                             order.ID_Usuario = Convert.ToInt32(reader["ID_Usuario"]);
-                            order.FechaPedido = Convert.ToDateTime(reader["Fecha"]);
+                            order.FechaPedido = Convert.ToDateTime(reader["FechaPedido"]);
                             order.Estado = reader["Estado"].ToString();
                             order.Factura = reader["Factura"] == DBNull.Value ? "N/A" : reader["Factura"].ToString();
                             order.SubTotal = reader["SubTotal"] == DBNull.Value ? 0 : Convert.ToDouble(reader["SubTotal"]);
@@ -187,7 +187,7 @@ namespace MiCafesito
                     command.CommandType = CommandType.StoredProcedure;
 
                     command.Parameters.AddWithValue("@ID_Pedido", order.ID_Pedido);
-                    command.Parameters.AddWithValue("@ID_Usuario", order.ID_Usuario);
+                    command.Parameters.AddWithValue("@Estado", order.Estado);
                     command.Parameters.AddWithValue("@Factura", order.Factura);
 
                     connection.Open();
