@@ -1,11 +1,14 @@
 ﻿using System;
 using System.Web;
+using static WAMiCafesitoApp.Helpers.Auth;
 
 namespace WAMiCafesitoApp.Helpers
 {
     public class Auth
     {
         public Auth() { }
+
+        public delegate void CallBack(string message);
         public int isAuthenticated()
         {
             int userId = 0;
@@ -24,6 +27,18 @@ namespace WAMiCafesitoApp.Helpers
             int userId = isAuthenticated();
 
             if (userId.Equals(0)) HttpContext.Current.Response.Redirect("/login.aspx");
+            return userId;
+        }
+
+        public int isAdminAuthorized(CallBack callback)
+        {
+            int userId = isAuthenticated();
+
+            if (userId.Equals(0) || !(HttpContext.Current.Session["RoleId"] != null &&
+                HttpContext.Current.Session["RoleId"].ToString().Equals("1")))
+            {
+                HttpContext.Current.Response.Redirect("/login.aspx");
+            }
 
             return userId;
         }

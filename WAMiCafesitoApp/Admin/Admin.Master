@@ -1,0 +1,155 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Admin.master.cs" Inherits="WAMiCafesitoApp.Admin.Admin" %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head runat="server">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="/Assets/Styles/style.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+
+<body>
+    <form id="form2" runat="server">
+
+        <!--Main Navigation-->
+        <header>
+            <!-- Jumbotron -->
+            <div class="p-3 text-center bg-white border-bottom">
+                <div class="container">
+                    <div class="row gy-3">
+                        <div class="col-lg-2 col-sm-4 col-4">
+                            <a href="/" target="_self" class="float-start d-flex align-items-center gap-2 logo-link">
+                                <img src="/Assets/Images/logo.jpg" height="45" />
+                                <h1 class="logo-text">MiCafesito <span class="logo-text-small d-block">Enlínea</span></h1>
+                            </a>
+                        </div>
+
+                        <div class="order-lg-last col-lg-5 col-sm-8 col-8">
+                            <div class="d-flex float-end">
+                                <asp:PlaceHolder ID="UnauthenticatedLnks" runat="server" Visible="true">
+                                    <asp:HyperLink ID="loginLnk" runat="server" NavigateUrl="~/Login.aspx" CssClass="me-1 py-1 px-3 nav-link d-flex align-items-center">
+                                        <i class="fas fa-user-alt m-1 me-md-2"></i>
+                                        <p class="d-none d-md-block mb-0">Ingresar</p>
+                                    </asp:HyperLink>
+                                    <asp:HyperLink ID="registreLnk" runat="server" NavigateUrl="~/Signup.aspx" CssClass="me-1 py-1 px-3 nav-link d-flex align-items-center">
+                                        <i class="fas fa-heart m-1 me-md-2"></i>
+                                        <p class="d-none d-md-block mb-0">Registrarse</p>
+                                    </asp:HyperLink>
+                                </asp:PlaceHolder>
+                                <asp:PlaceHolder ID="AuthenticatedLnks" runat="server" Visible="false">
+                                    <asp:HyperLink ID="cartLnk" runat="server" NavigateUrl="~/Store/Cart.aspx" CssClass="me-1 py-1 px-3 nav-link d-flex align-items-center">
+                                        <i class="fas fa-shopping-cart m-1 me-md-2"></i>
+                                        <p class="d-none d-md-block mb-0">Carrito</p>
+                                        <asp:Label ID="cartCountLbl" Visible="false" runat="server" CssClass="badge bg-primary rounded-pill ms-1"></asp:Label>
+                                    </asp:HyperLink>
+                                    <asp:Button ID="cartBtn" runat="server" OnClick="closeSessionLnk_Click" Text="Salir" CssClass="btn btn-outline-primary me-1 py-1 px-3 d-flex align-items-center"></asp:Button>
+                                </asp:PlaceHolder>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-5 col-md-12 col-12">
+                            <div class="input-group search-box">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navbar -->
+            <nav class="navbar navbar-expand-lg navbar-light bg-white">
+                <div class="container justify-content-center justify-content-md-between">
+                    <button
+                        class="navbar-toggler border py-2 text-dark"
+                        type="button"
+                        data-mdb-toggle="collapse"
+                        data-mdb-target="#navbarLeftAlignExample"
+                        aria-controls="navbarLeftAlignExample"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <i class="fas fa-bars"></i>
+                    </button>
+
+
+                    <div class="collapse navbar-collapse" id="navbarLeftAlignExample">
+
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            
+                            <asp:HyperLink ID="lnkOrders" runat="server" CssClass="nav-link text-dark cat-link"
+                                NavigateUrl="/Admin/Default.aspx" Text='Pedidos' />
+                            <asp:HyperLink ID="lnkProducts" runat="server" CssClass="nav-link text-dark cat-link"
+                                NavigateUrl="/Admin/Products.aspx" Text='Productos' />
+                            <asp:HyperLink ID="lnkCategories" runat="server" CssClass="nav-link text-dark cat-link"
+                                NavigateUrl="/Admin/Categories.aspx" Text='Categorías' />
+                            <asp:HyperLink ID="lngUsers" runat="server" CssClass="nav-link text-dark cat-link"
+                                NavigateUrl="/Admin/Users.aspx" Text='Usuarios' />
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <asp:ContentPlaceHolder ID="header" runat="server">
+            </asp:ContentPlaceHolder>
+
+        </header>
+
+
+        <!-- main -->
+        <main>
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+        </main>
+        <!-- main -->
+
+        <!-- Footer -->
+        <footer class="text-center text-lg-start text-muted" style="background-color: #f5f5f5;">
+            <!-- Section: Links  -->
+            <section class="">
+                <div class="container text-center text-md-start pt-4 pb-4">
+                    <!-- Grid row -->
+                    <div class="row mt-3">
+                        <!-- Grid column -->
+                        <div class="col-12 col-lg-3 col-sm-12 mb-2">
+                            <div class="d-flex flex-column">
+
+                                <p class="mt-2 text-dark">
+                                    © 2023 MiCafesito.com
+                                </p>
+                                <div>
+                                    <i class="fab fa-lg fa-cc-visa text-dark"></i>
+                                    <i class="fab fa-lg fa-cc-amex text-dark"></i>
+                                    <i class="fab fa-lg fa-cc-mastercard text-dark"></i>
+                                    <i class="fab fa-lg fa-cc-paypal text-dark"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Grid column -->
+
+
+                    </div>
+                    <!-- Grid row -->
+                </div>
+            </section>
+
+        </footer>
+        <!-- Footer -->
+    </form>
+
+    <div class="toast-container position-fixed top-0 end-0 p-3">
+        <div id="liveToast" class="toast text-white" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-body d-flex align-items-center">
+                <i class="fas fa-exclamation-triangle fa-sm me-2"></i>
+                <span id="toastMessage"></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS from CDN (Optional, for certain Bootstrap components) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <asp:ContentPlaceHolder ID="FooterScripts" runat="server">
+    </asp:ContentPlaceHolder>
+</body>
+</html>

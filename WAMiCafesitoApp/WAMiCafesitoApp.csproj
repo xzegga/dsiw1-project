@@ -70,6 +70,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include=".gitignore" />
+    <Content Include="Admin\Default.aspx" />
     <Content Include="Assets\Images\15.png" />
     <Content Include="Assets\Images\3.png" />
     <Content Include="Assets\Images\4.png" />
@@ -88,6 +89,7 @@
     <Content Include="Assets\Scripts\ErrMesasges.js" />
     <Content Include="Assets\Styles\login.css" />
     <Content Include="Assets\Styles\style.css" />
+    <Content Include="Admin\Admin.Master" />
     <None Include="Connected Services\ServiceApi\Service.disco" />
     <None Include="Connected Services\ServiceApi\configuration91.svcinfo" />
     <None Include="Connected Services\ServiceApi\configuration.svcinfo" />
@@ -106,6 +108,20 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin\Admin.Master.cs">
+      <DependentUpon>Admin.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Admin.Master.designer.cs">
+      <DependentUpon>Admin.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Connected Services\ServiceApi\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

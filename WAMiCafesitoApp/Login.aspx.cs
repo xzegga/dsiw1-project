@@ -68,7 +68,6 @@ namespace WAMiCafesitoApp
             // Verificar si tanto UserId como RoleId existen en la sesión
             if (Session["UserId"] != null && Session["RoleId"] != null)
             {
-                int userId = Convert.ToInt32(Session["UserId"]);
                 int roleId = Convert.ToInt32(Session["RoleId"]);
 
                 // Redirigir según el rol
@@ -76,15 +75,11 @@ namespace WAMiCafesitoApp
                 {
                     // Suponiendo que el rol 1 es para administradores
                     // Redirigir a la página de administrador
-                    Response.Redirect("~/AdminPage.aspx"); 
-                }
-                else if (roleId == 2) 
-                {
-                    // Redirigir a la página de cliente
-                    Response.Redirect("~/Default.aspx"); 
+                    Response.Redirect("~/Admin/Default.aspx");
                 }
                 else
                 {
+                    // Redirigir a la página de cliente
                     Response.Redirect("~/Default.aspx"); 
                 }
             }

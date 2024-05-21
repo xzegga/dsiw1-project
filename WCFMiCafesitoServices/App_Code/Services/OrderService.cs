@@ -40,7 +40,7 @@ namespace MiCafesito
             try
             {
 
-                
+
                 using (SqlCommand command = new SqlCommand("SP_EliminarPedido", connection))
                 {
                     command.CommandType = CommandType.StoredProcedure;
@@ -75,9 +75,9 @@ namespace MiCafesito
                             Order order = new Order();
                             order.ID_Pedido = Convert.ToInt32(reader["ID_Pedido"]);
                             order.ID_Usuario = Convert.ToInt32(reader["ID_Usuario"]);
-                            order.FechaPedido = Convert.ToDateTime(reader["Fecha"]);
+                            order.FechaPedido = Convert.ToDateTime(reader["FechaPedido"]);
                             order.Estado = reader["Estado"].ToString();
-                            order.Factura = reader["Factura"].ToString();
+                            order.Factura = reader["Factura"] == DBNull.Value ? "" : reader["Factura"].ToString();
 
                             orders.Add(order);
                         }
