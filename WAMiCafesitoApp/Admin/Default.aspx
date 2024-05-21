@@ -30,7 +30,7 @@
                         <ItemTemplate>
                             <div class="d-flex justify-content-end align-items-center pe-4">
                                 <asp:LinkButton ID="lnkViewOrder" runat="server"
-                                    OnCommand="btnDelete_Command"
+                                    OnCommand="lnkViewOrder_Command"
                                     CommandArgument='<%# Eval("ID_Pedido") %>'
                                     CssClass="btn btn-primary me-4">
                                         <i class="fa-regular fa-eye"></i> Ver Detalle

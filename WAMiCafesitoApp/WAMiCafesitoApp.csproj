@@ -71,6 +71,7 @@
   <ItemGroup>
     <Content Include=".gitignore" />
     <Content Include="Admin\Default.aspx" />
+    <Content Include="Admin\OrderDetail.aspx" />
     <Content Include="Assets\Images\15.png" />
     <Content Include="Assets\Images\3.png" />
     <Content Include="Assets\Images\4.png" />
@@ -122,6 +123,13 @@
     </Compile>
     <Compile Include="Admin\Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\OrderDetail.aspx.cs">
+      <DependentUpon>OrderDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\OrderDetail.aspx.designer.cs">
+      <DependentUpon>OrderDetail.aspx</DependentUpon>
     </Compile>
     <Compile Include="Connected Services\ServiceApi\Reference.cs">
       <AutoGen>True</AutoGen>

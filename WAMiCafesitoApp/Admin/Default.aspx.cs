@@ -76,5 +76,10 @@ namespace WAMiCafesitoApp.Admin
             hdnToastType.Value = "info";
         }
 
+        protected void lnkViewOrder_Command(object sender, CommandEventArgs e)
+        {
+            int orderId = Convert.ToInt32(e.CommandArgument);
+            Response.Redirect($"OrderDetail.aspx?id={orderId}");
+        }
     }
 }

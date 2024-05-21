@@ -127,7 +127,9 @@ namespace MiCafesito
                             order.ID_Usuario = Convert.ToInt32(reader["ID_Usuario"]);
                             order.FechaPedido = Convert.ToDateTime(reader["Fecha"]);
                             order.Estado = reader["Estado"].ToString();
-                            order.Factura = reader["Factura"].ToString();
+                            order.Factura = reader["Factura"] == DBNull.Value ? "N/A" : reader["Factura"].ToString();
+                            order.SubTotal = reader["SubTotal"] == DBNull.Value ? 0 : Convert.ToDouble(reader["SubTotal"]);
+
 
                             orders.Add(order);
                         }
@@ -163,7 +165,9 @@ namespace MiCafesito
                             order.ID_Usuario = Convert.ToInt32(reader["ID_Usuario"]);
                             order.FechaPedido = Convert.ToDateTime(reader["Fecha"]);
                             order.Estado = reader["Estado"].ToString();
-                            order.Factura = reader["Factura"].ToString();
+                            order.Factura = reader["Factura"] == DBNull.Value ? "N/A" : reader["Factura"].ToString();
+                            order.SubTotal = reader["SubTotal"] == DBNull.Value ? 0 : Convert.ToDouble(reader["SubTotal"]);
+
                         }
                     }
                 }
