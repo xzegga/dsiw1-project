@@ -9,11 +9,12 @@ using WAMiCafesitoApp.ServiceApi;
 
 namespace WAMiCafesitoApp.Admin
 {
-    public partial class OrderDetail : System.Web.UI.Page
+    public partial class OrderDetailPage : System.Web.UI.Page
     {
         IOrderService orderService = new OrderServiceClient();
         IOrderDetailsService orderDetailsService = new OrderDetailsServiceClient();
         private IUserService userService = new UserServiceClient();
+        private IProductService productService = new ProductServiceClient();
         private Auth auth = new Auth();
 
         protected void Page_Load(object sender, EventArgs e)
@@ -59,6 +60,11 @@ namespace WAMiCafesitoApp.Admin
 
             return userService.GetUserById(userId);
         }
+
+        private Product GetProduct(int productId)
+        {
+            return productService.GetProductById(productId);
+        }
         protected void RenderOrder(Order order, User user)
         {
             if (order != null)
@@ -69,19 +75,32 @@ namespace WAMiCafesitoApp.Admin
                 ddlStatus.SelectedIndex = ddlStatus.Items.IndexOf(ddlStatus.Items.FindByText(order.Estado));
                 lblInvoice.Text = order.Factura;
                 lblSubTotal.Text = $"{order.SubTotal:C2}";
+                lblTaxes.Text = $"{(order.SubTotal * 0.13):C2}";
+                lblTotal.Text = $"{(order.SubTotal + (order.SubTotal * 0.13)):C2}";
 
+                List<OrderDetail> orderDetails = orderDetailsService.GetAllOrderDetailByOrderId(order.ID_Pedido).ToList();
+
+                gvOrderDetails.DataSource = orderDetails.Select(c =>
+                {
+                    Product product = GetProduct(c.ID_Producto);
+                    return new
+                    {
+                        product.Nombre,
+                        Imagen = $"/Assets/Images/{product.ID_Producto}.png",
+                        c.Cantidad,
+                        c.PrecioUnitario,
+                        Impuestos = $"{(c.Cantidad * c.PrecioUnitario * 0.13):C2}",
+                        Total = $"{(c.Cantidad * c.PrecioUnitario):C2}",
+                    };
+                }).ToList();
+
+
+                gvOrderDetails.DataBind();
             }
             else
             {
                 Response.Write("Orden no encontrada.");
             }
-        }
-
-        private List<string> GetAvailableStates()
-        {
-            // Replace with your logic to retrieve available order states
-            // This is a placeholder for demonstration
-            return new List<string>() { "Recibido", "En Proceso", "Enviado", "Entregado" };
         }
 
         protected void btnUpdateStatus_Click(object sender, EventArgs e)

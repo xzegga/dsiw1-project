@@ -160,6 +160,9 @@
         height: auto;
     }
 
+.small-img {
+    max-width: 30px;
+}
 .btn-rounded {
     border-radius: 60px;
 }

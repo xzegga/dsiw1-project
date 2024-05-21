@@ -11,7 +11,7 @@ namespace WAMiCafesitoApp.Admin
 {
 
 
-    public partial class OrderDetail
+    public partial class OrderDetailPage
     {
 
         /// <summary>
@@ -78,6 +78,33 @@ namespace WAMiCafesitoApp.Admin
         protected global::System.Web.UI.WebControls.Label lblSubTotal;
 
         /// <summary>
+        /// lblTaxes control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblTaxes;
+
+        /// <summary>
+        /// lblTotal control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblTotal;
+
+        /// <summary>
+        /// gvOrderDetails control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView gvOrderDetails;
+
+        /// <summary>
         /// ddlStatus control.
         /// </summary>
         /// <remarks>
@@ -94,14 +121,5 @@ namespace WAMiCafesitoApp.Admin
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnUpdateStatus;
-
-        /// <summary>
-        /// gvOrderDetails control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvOrderDetails;
     }
 }

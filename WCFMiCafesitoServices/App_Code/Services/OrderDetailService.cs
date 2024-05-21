@@ -81,7 +81,7 @@ namespace MiCafesito
         {
             try
             {
-                using (SqlCommand command = new SqlCommand("SP_ListarDetallePedido", connection))
+                using (SqlCommand command = new SqlCommand("SP_ListarDetallesPedido", connection))
                 {
                     command.CommandType = CommandType.StoredProcedure;
 
@@ -100,8 +100,6 @@ namespace MiCafesito
                             orderDetail.ID_Producto = Convert.ToInt32(reader["ID_Producto"]);
                             orderDetail.Cantidad = Convert.ToInt32(reader["Cantidad"]);
                             orderDetail.PrecioUnitario = Convert.ToDouble(reader["PrecioUnitario"]);
-                            orderDetail.Total = Convert.ToDouble(reader["Total"]);
-
                             detallePedidos.Add(orderDetail);
                         }
 
