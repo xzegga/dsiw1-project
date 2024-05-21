@@ -30,108 +30,57 @@ public class Service :
 
     #region User Administration Methods
 
-    public void AddUser(User user)
-    {
-        _userService.AddUser(user);
-    }
+    public void AddUser(User user) { _userService.AddUser(user); }
 
-    public void DeleteUser(int id)
-    {
-        _userService.DeleteUser(id);
-    }
+    public void DeleteUser(int id) { _userService.DeleteUser(id); }
 
-    public List<User> GetAllUsers()
-    {
-        return _userService.GetAllUsers();
-    }
+    public List<User> GetAllUsers() { return _userService.GetAllUsers(); }
 
-    public User GetUserById(int id)
-    {
-        return _userService.GetUserById(id);
-    }
+    public User GetUserById(int id) { return _userService.GetUserById(id); }
 
-    public int Login(string user, string password)
-    {
-        return _userService.Login(user, password);
-    }
+    public int Login(string user, string password) { return _userService.Login(user, password); }
 
     public void ResetPassword(string email, string password, string newPassword, string confirmPassword)
     {
         _userService.ResetPassword(email, password, newPassword, confirmPassword);
     }
 
-    public void UpdateUser(User user)
-    {
-        _userService.UpdateUser(user);
-    }
+    public void UpdateUser(User user) { _userService.UpdateUser(user); }
 
     #endregion
 
     #region Category Administration Methods
 
-    public void AddCategory(Category category)
-    {
-        _categoryService.AddCategory(category);
-    }
-    public void DeleteCategory(int id)
-    {
-        _categoryService.DeleteCategory(id);
-    }
-    public List<Category> GetAllCategories()
-    {
-        return _categoryService.GetAllCategories();
-    }
+    public void AddCategory(Category category) { _categoryService.AddCategory(category); }
 
-    public Category GetCategoryById(int id)
-    {
-        return _categoryService.GetCategoryById(id);
-    }
+    public void DeleteCategory(int id) { _categoryService.DeleteCategory(id); }
 
-    public void UpdateCategory(Category category)
-    {
-        _categoryService.UpdateCategory(category);
-    }
+    public List<Category> GetAllCategories() { return _categoryService.GetAllCategories(); }
 
+    public Category GetCategoryById(int id) { return _categoryService.GetCategoryById(id); }
 
+    public void UpdateCategory(Category category) { _categoryService.UpdateCategory(category); }
 
     #endregion
 
     #region Product Administration Methods
 
-    public List<Product> GetAllProducts()
-    {
-        return _productService.GetAllProducts();
-    }
+    public List<Product> GetAllProducts() { return _productService.GetAllProducts(); }
 
-    public Product GetProductById(int id)
-    {
-        return _productService.GetProductById(id);
-    }
+    public Product GetProductById(int id) { return _productService.GetProductById(id); }
 
-    public void UpdateProduct(Product productos)
-    {
-        _productService.UpdateProduct(productos);
-    }
+    public void UpdateProduct(Product productos) { _productService.UpdateProduct(productos); }
 
-    public void DeleteProduct(int id)
-    {
-        _productService.DeleteProduct(id);
-    }
+    public void DeleteProduct(int id) { _productService.DeleteProduct(id); }
 
-    public void AddProduct(Product productos)
-    {
-        _productService.AddProduct(productos);
-    }
+    public void AddProduct(Product productos) { _productService.AddProduct(productos); }
 
     public List<Product> GetAllProductsByCategoryId(int id)
     {
         return _productService.GetAllProductsByCategoryId(id);
     }
 
-    public List<Product> GetProductsFeatured()
-    {
-        return _productService.GetProductsFeatured();
-    }
+    public List<Product> GetProductsFeatured() { return _productService.GetProductsFeatured(); }
 
     public List<Product> GetProductsByName(string criteria)
     {
@@ -141,35 +90,17 @@ public class Service :
 
     #region Order Administration Methods
 
-    public List<Order> GetAllOrders()
-    {
-        return _orderService.GetAllOrders();
-    }
+    public List<Order> GetAllOrders() { return _orderService.GetAllOrders(); }
 
-    public List<Order> GetAllOrdersByUserId(int id)
-    {
-        return _orderService.GetAllOrdersByUserId(id);
-    }
+    public List<Order> GetAllOrdersByUserId(int id) { return _orderService.GetAllOrdersByUserId(id); }
 
-    public Order GetOrderById(int id)
-    {
-        return _orderService.GetOrderById(id);
-    }
+    public Order GetOrderById(int id) { return _orderService.GetOrderById(id); }
 
-    public void UpdateOrder(Order order)
-    {
-        _orderService.UpdateOrder(order);
-    }
+    public void UpdateOrder(Order order) { _orderService.UpdateOrder(order); }
 
-    public void DeleteOrder(int id)
-    {
-        _orderService.DeleteOrder(id);
-    }
+    public void DeleteOrder(int id) { _orderService.DeleteOrder(id); }
 
-    public void AddOrder(Order order)
-    {
-        _orderService.AddOrder(order);
-    }
+    public void AddOrder(Order order) { _orderService.AddOrder(order); }
 
     #endregion
 
@@ -185,10 +116,7 @@ public class Service :
         _orderDetailsService.UpdateOrderDetail(orderDetails);
     }
 
-    public void DeleteOrderDetail(int id)
-    {
-        _orderDetailsService.DeleteOrderDetail(id);
-    }
+    public void DeleteOrderDetail(int id) { _orderDetailsService.DeleteOrderDetail(id); }
 
     public void AddOrderDetail(OrderDetail orderDetails)
     {
@@ -203,25 +131,13 @@ public class Service :
 
     #region Cart Administration Methods
 
-    public void AddCartItem(Cart cart)
-    {
-        _cartService.AddCartItem(cart);
-    }
+    public void AddCartItem(Cart cart) { _cartService.AddCartItem(cart); }
 
-    public void DeleteCartItem(int id)
-    {
-        _cartService.DeleteCartItem(id);
-    }
+    public void DeleteCartItem(int id) { _cartService.DeleteCartItem(id); }
 
-    public void DeleteCartItemsByUserId(int id)
-    {
-        _cartService.DeleteCartItemsByUserId(id);
-    }
+    public void DeleteCartItemsByUserId(int id) { _cartService.DeleteCartItemsByUserId(id); }
 
-    public List<Cart> GetCartItemsByUserId(int id)
-    {
-        return _cartService.GetCartItemsByUserId(id);
-    }
+    public List<Cart> GetCartItemsByUserId(int id) { return _cartService.GetCartItemsByUserId(id); }
 
     public void UpdateCartItemById(int id, int quantity, double unitprice)
     {
