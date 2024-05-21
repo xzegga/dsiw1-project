@@ -1413,6 +1413,12 @@ namespace WAMiCafesitoApp.ServiceApi {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICartService/DeleteCartItemsByUserId", ReplyAction="http://tempuri.org/ICartService/DeleteCartItemsByUserIdResponse")]
         System.Threading.Tasks.Task DeleteCartItemsByUserIdAsync(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICartService/UpdateCartItemQuantityById", ReplyAction="http://tempuri.org/ICartService/UpdateCartItemQuantityByIdResponse")]
+        void UpdateCartItemQuantityById(int id, int quantity);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICartService/UpdateCartItemQuantityById", ReplyAction="http://tempuri.org/ICartService/UpdateCartItemQuantityByIdResponse")]
+        System.Threading.Tasks.Task UpdateCartItemQuantityByIdAsync(int id, int quantity);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -1480,6 +1486,14 @@ namespace WAMiCafesitoApp.ServiceApi {
         
         public System.Threading.Tasks.Task DeleteCartItemsByUserIdAsync(int id) {
             return base.Channel.DeleteCartItemsByUserIdAsync(id);
+        }
+        
+        public void UpdateCartItemQuantityById(int id, int quantity) {
+            base.Channel.UpdateCartItemQuantityById(id, quantity);
+        }
+        
+        public System.Threading.Tasks.Task UpdateCartItemQuantityByIdAsync(int id, int quantity) {
+            return base.Channel.UpdateCartItemQuantityByIdAsync(id, quantity);
         }
     }
 }

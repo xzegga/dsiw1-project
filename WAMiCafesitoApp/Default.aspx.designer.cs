@@ -15,6 +15,24 @@ namespace WAMiCafesitoApp
     {
 
         /// <summary>
+        /// hdnToastMessage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hdnToastMessage;
+
+        /// <summary>
+        /// hdnToastType control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hdnToastType;
+
+        /// <summary>
         /// featuredProductsRepeater control.
         /// </summary>
         /// <remarks>

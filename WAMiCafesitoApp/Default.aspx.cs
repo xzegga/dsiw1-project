@@ -5,19 +5,21 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using WAMiCafesitoApp.ServiceApi;
+using WAMiCafesitoApp.Services;
 
 namespace WAMiCafesitoApp
 {
     public partial class Default : System.Web.UI.Page
     {
         IProductService productService = new ProductServiceClient();
+        private CartService _cartService = new CartService();
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+
             LoadFeaturedProducts();
         }
 
-      
+
         protected void LoadFeaturedProducts()
         {
             List<Product> products = productService.GetProductsFeatured().ToList();
@@ -46,21 +48,69 @@ namespace WAMiCafesitoApp
         {
             if (e.Item.ItemType == ListItemType.Item || e.Item.ItemType == ListItemType.AlternatingItem)
             {
-             
+
                 HyperLink verDetalleLink = (HyperLink)e.Item.FindControl("btnViewDetail");
 
                 if (verDetalleLink != null)
                 {
-             
-                    ServiceApi.Product product = (ServiceApi.Product)e.Item.DataItem;
+
+                    Product product = (Product)e.Item.DataItem;
 
                     if (product != null)
                     {
-             
+
                         verDetalleLink.NavigateUrl = $"Store/ProductDetail.aspx?id={product.ID_Producto}";
+                    }
+                }
+
+                LinkButton addToCartButton = (LinkButton)e.Item.FindControl("btnAddToCart");
+
+                if (addToCartButton != null)
+                {
+                    Product product = (Product)e.Item.DataItem;
+
+                    if (product != null)
+                    {
+                        addToCartButton.CommandArgument = product.ID_Producto.ToString();
                     }
                 }
             }
         }
+
+        protected void btnAddToCart_Click(object sender, EventArgs e)
+        {
+            LinkButton btn = (LinkButton)sender;
+            int productId = Convert.ToInt32(btn.CommandArgument);
+
+            // Retrieve the product using the productId
+            ServiceApi.Product product = GetProductById(productId);
+
+            if (product != null)
+            {
+                // Assuming you have a method to get the quantity, e.g., from a TextBox within the Repeater item
+                RepeaterItem item = (RepeaterItem)btn.NamingContainer;
+                TextBox txtQuantity = (TextBox)item.FindControl("txtQuantity");
+
+                List<ServiceApi.Cart> cartItems = _cartService.AddOrUpdateCartItem(product, 1);
+
+                // Update the session with the updated cart items
+                Session["CartItems"] = cartItems;
+
+                ShowErrorMessage($"Producto agregado al carrito.");
+
+            }
+        }
+
+        private Product GetProductById(int productId)
+        {
+            return productService.GetProductById(productId);
+        }
+
+        private void ShowErrorMessage(string message)
+        {
+            hdnToastMessage.Value = message;
+            hdnToastType.Value = "info";
+        }
+
     }
 }

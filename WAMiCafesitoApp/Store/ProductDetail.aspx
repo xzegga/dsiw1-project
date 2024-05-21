@@ -5,11 +5,11 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="header" runat="server">
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
+    <asp:HiddenField ID="hdnToastMessage" runat="server" />
+    <asp:HiddenField ID="hdnToastType" runat="server" />
     <section>
         <div class="container my-5">
             <div class="row">
-                <asp:HiddenField ID="hdnToastMessage" runat="server" />
-                <asp:HiddenField ID="hdnToastType" runat="server" />
                 <div class="col-lg-4">
                     <!-- Product Image with Lightbox -->
                     <a href="#" data-bs-toggle="modal" data-bs-target="#imageModal">

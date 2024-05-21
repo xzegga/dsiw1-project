@@ -26,7 +26,6 @@ public class Service :
         _orderService = new OrderService();
         _orderDetailsService = new ProductDetailService();
         _cartService = new CartService();
-
     }
 
     #region User Administration Methods
@@ -222,6 +221,11 @@ public class Service :
     public void UpdateCartItemById(int id, int quantity, double unitprice)
     {
         _cartService.UpdateCartItemById(id, quantity, unitprice);
+    }
+
+    public void UpdateCartItemQuantityById(int id, int quantity)
+    {
+        _cartService.UpdateCartItemQuantityById(id, quantity);
     }
 
     #endregion

@@ -42,12 +42,12 @@
                                     </asp:HyperLink>
                                 </asp:PlaceHolder>
                                 <asp:PlaceHolder ID="AuthenticatedLnks" runat="server" Visible="false">
-                                    <asp:HyperLink ID="cartLnk" runat="server" NavigateUrl="~/Registre.aspx" CssClass="me-1 py-1 px-3 nav-link d-flex align-items-center">
+                                    <asp:HyperLink ID="cartLnk" runat="server" NavigateUrl="~/Store/Cart.aspx" CssClass="me-1 py-1 px-3 nav-link d-flex align-items-center">
                                         <i class="fas fa-shopping-cart m-1 me-md-2"></i>
                                         <p class="d-none d-md-block mb-0">Carrito</p>
                                         <asp:Label ID="cartCountLbl" Visible="false" runat="server" CssClass="badge bg-primary rounded-pill ms-1"></asp:Label>
                                     </asp:HyperLink>
-                                    <asp:Button ID="cartBtn" runat="server" OnClick="closeSessionLnk_Click" Text="Carrito" CssClass="btn btn-outline-primary me-1 py-1 px-3 d-flex align-items-center"></asp:Button>
+                                    <asp:Button ID="cartBtn" runat="server" OnClick="closeSessionLnk_Click" Text="Salir" CssClass="btn btn-outline-primary me-1 py-1 px-3 d-flex align-items-center"></asp:Button>
                                 </asp:PlaceHolder>
                             </div>
                         </div>

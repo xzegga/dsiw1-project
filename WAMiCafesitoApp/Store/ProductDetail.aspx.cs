@@ -1,28 +1,30 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using WAMiCafesitoApp.Helpers;
 using WAMiCafesitoApp.ServiceApi;
+using WAMiCafesitoApp.Services;
 
 namespace WAMiCafesitoApp.Store
 {
     public partial class ProductDetail : System.Web.UI.Page
     {
-        ServiceApi.IProductService productService = new ServiceApi.ProductServiceClient();
-        Auth auth = new Auth();
-        int userId;
+        private CartService _cartService = new CartService();   
+        private IProductService productService = new ProductServiceClient();
+        private Auth auth = new Auth();
 
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
 
-
                 if (!string.IsNullOrEmpty(Request.QueryString["id"]))
                 {
+
                     int productId;
 
                     if (int.TryParse(Request.QueryString["id"], out productId))
@@ -47,17 +49,6 @@ namespace WAMiCafesitoApp.Store
                     Response.Redirect("~/Default.aspx");
                 }
             }
-        }
-
-        protected int isAuthenticated()
-        {
-            int userId;
-            if (Session["UserId"] != null && int.TryParse(Session["UserId"].ToString(), out userId))
-            {
-                return userId;
-            }
-
-            return 0;
         }
 
         protected void RenderProductDetail(Product product)
@@ -89,34 +80,14 @@ namespace WAMiCafesitoApp.Store
 
         protected void btnAddToCart_Click(object sender, EventArgs e)
         {
-            int userId = auth.isAuthenticated();
+            
             Product product = Session["SelectedProduct"] as Product;
             int quantity = Convert.ToInt32(txtQuantity.Text);
-            List<Cart> cartItems = Session["CartItems"] as List<Cart>;
-
+            
             if (product != null && quantity != 0)
             {
-                if (cartItems == null)
-                {
-                    cartItems = new List<Cart>();
-                }
 
-                Cart cartItem = cartItems.FirstOrDefault(item => item.ID_Producto == product.ID_Producto);
-
-                if (cartItem == null)
-                {
-                    Cart cart = new Cart();
-                    cart.ID_Usuario = userId;
-                    cart.ID_Producto = product.ID_Producto;
-                    cart.Cantidad = quantity;
-                    cart.PrecioUnitario = product.Precio;
-
-                    cartItems.Add(cart);
-                }
-                else
-                {
-                    cartItem.Cantidad += quantity;
-                }
+                List<ServiceApi.Cart> cartItems = _cartService.AddOrUpdateCartItem(product, quantity);
 
                 // Update the session with the updated cart items
                 Session["CartItems"] = cartItems;

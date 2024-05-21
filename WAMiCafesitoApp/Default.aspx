@@ -37,6 +37,8 @@
                 <h3>PRODUCTOS DESTACADOS</h3>
             </header>
 
+            <asp:HiddenField ID="hdnToastMessage" runat="server" />
+            <asp:HiddenField ID="hdnToastType" runat="server" />
             <div class="row">
                 <asp:Repeater ID="featuredProductsRepeater" runat="server" OnItemDataBound="featuredProductsRepeater_ItemDataBound">
                     <ItemTemplate>
@@ -52,15 +54,23 @@
                                     </span>
                                     <p class="card-text"><%# Eval("Descripcion", "{0:C}") %></p>
                                     <div class="d-flex align-items-end py-2 px-0 mt-auto gap-2">
-                                        <asp:HyperLink ID="btnViewDetail" 
-                                            runat="server" 
+                                        <asp:HyperLink ID="btnViewDetail"
+                                            runat="server"
                                             CssClass="btn btn-light shadow-none me-1 btn-view-details">
                                             <i class="fa-solid fa-magnifying-glass"></i> Detalle 
                                         </asp:HyperLink>
-                                        <asp:HyperLink ID="btnAddToCart" runat="server" CssClass="btn btn-light shadow-none me-1 btn-add-to-cart" NavigateUrl="#!">
-                                            <i class="fa-solid fa-cart-shopping"></i> Comprar
-                                        </asp:HyperLink>
+                                        <asp:LinkButton
+                                            CssClass="btn btn-light shadow-none me-1 btn-add-to-cart px-4"
+                                            ID="btnAddToCart"
+                                            runat="server"
+                                            CommandName="AddToCart"
+                                            CommandArgument='<%# Eval("ID_Producto") %>'
+                                            OnClick="btnAddToCart_Click"><i class="fa-solid fa-cart-shopping"></i> Ordenar</asp:LinkButton>
                                     </div>
+
+
+
+
                                 </div>
                             </div>
                         </div>
@@ -71,4 +81,12 @@
     </section>
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="FooterScripts" runat="server">
+    <script src="./Assets/Scripts/ErrMesasges.js" type="text/javascript"></script>
+    <script>
+        var toastMessage = document.getElementById('<%= hdnToastMessage.ClientID %>');
+        var toastType = document.getElementById('<%= hdnToastType.ClientID %>');
+        if (toastMessage) {
+            showAnimatedToast(toastMessage, toastType);
+        }
+    </script>
 </asp:Content>

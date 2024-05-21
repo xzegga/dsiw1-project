@@ -30,5 +30,8 @@ namespace MiCafesito
         [OperationContract]
         void DeleteCartItemsByUserId(int id);
 
+        [OperationContract]
+        void UpdateCartItemQuantityById(int id, int quantity);
+
     }
 }

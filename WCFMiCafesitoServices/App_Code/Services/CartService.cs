@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Web;
 
 namespace MiCafesito
 {
@@ -131,6 +128,25 @@ namespace MiCafesito
                 }
             }
             catch (Exception ex) { throw new ArgumentException("No se pudo actualizar el item del carrito"); }
+            finally { connection.Close(); }
+        }
+
+        public void UpdateCartItemQuantityById(int id, int quantity)
+        {
+            try
+            {
+                using (SqlCommand command = new SqlCommand("SP_ActualizarItemCarritoCantidad", connection))
+                {
+                    command.CommandType = System.Data.CommandType.StoredProcedure;
+
+                    command.Parameters.AddWithValue("@ID_Carrito", id);
+                    command.Parameters.AddWithValue("@Cantidad", quantity);
+
+                    connection.Open();
+                    command.ExecuteNonQuery();
+                }
+            }
+            catch (Exception ex) { throw new ArgumentException("No se pudo actualizar la cantidad del item del carrito"); }
             finally { connection.Close(); }
         }
     }
