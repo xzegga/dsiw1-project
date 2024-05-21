@@ -11,7 +11,7 @@ namespace WAMiCafesitoApp.Store
 {
 
 
-    public partial class CategoryPage
+    public partial class ResultsPage
     {
 
         /// <summary>

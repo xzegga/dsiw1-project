@@ -9,9 +9,9 @@ using WAMiCafesitoApp.Services;
 
 namespace WAMiCafesitoApp.Store
 {
-    public partial class CategoryPage : System.Web.UI.Page
+    public partial class ResultsPage : System.Web.UI.Page
     {
-        IProductService productService = new ProductServiceClient();       
+        IProductService productService = new ProductServiceClient();
         ICategoryService categoryService = new CategoryServiceClient();
         private CartService _cartService = new CartService();
 
@@ -21,20 +21,15 @@ namespace WAMiCafesitoApp.Store
             if (!IsPostBack)
             {
 
-                if (!string.IsNullOrEmpty(Request.QueryString["cat"]))
+                if (!string.IsNullOrEmpty(Request.QueryString["criteria"]))
                 {
 
-                    int categoryId;
-
-                    if (int.TryParse(Request.QueryString["cat"], out categoryId))
+                    string criteria = Request.QueryString["criteria"];
+                    if (!Validator.ValidateSafeString(criteria)) {
+                        LoadProductsBySearchCriteria(criteria);
+                    } else
                     {
-                        Category category = categoryService.GetCategoryById(categoryId);
-
-                        if (category.Nombre != null)
-                        {
-                            lblCategoryName.Text = category.Nombre;
-                        }
-                        LoadProductsByCategoryId(categoryId);
+                        ShowErrorMessage(criteria + " no es un criterio de búsqueda válido.");
                     }
                 }
                 else
@@ -46,14 +41,16 @@ namespace WAMiCafesitoApp.Store
 
 
 
-        protected void LoadProductsByCategoryId(int catId)
+        protected void LoadProductsBySearchCriteria(string criteria)
         {
-            List<Product> products = productService.GetAllProductsByCategoryId(catId).ToList();
+            List<Product> products = productService.GetProductsByName(criteria).ToList();
             if (products.Count > 0)
             {
                 featuredProductsRepeater.DataSource = products;
                 featuredProductsRepeater.DataBind();
-
+            } else
+            {
+                ShowErrorMessage(criteria + " no es un criterio de búsqueda válido.");
             }
         }
 

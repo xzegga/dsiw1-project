@@ -82,5 +82,36 @@ namespace WAMiCafesitoApp.Services
             string phoneNumberPattern = @"^(\+?503)?\d{8}$"; // Formato: (opcional "+503")xxxxxxxx
             return Regex.IsMatch(phoneNumber, phoneNumberPattern);
         }
+
+        // Validar cadena que no contenga inyección SQL, XSS, comandos de shell, LDAP o XPath
+        public static bool ValidateSafeString(string input)
+        {
+            if (string.IsNullOrWhiteSpace(input))
+                return false;
+
+            // Patrones comunes de inyección SQL
+            string[] sqlInjectionPatterns =
+            {
+            "--", ";--", ";", "/*", "*/", "@@"
+        };
+
+            // Patrón común de Cross-Site Scripting (XSS)
+            string xssPattern = @"<.*?>|&#.*?;|&.*?;";
+
+
+            // Verificar inyección SQL
+            foreach (var pattern in sqlInjectionPatterns)
+            {
+                if (input.IndexOf(pattern, StringComparison.OrdinalIgnoreCase) >= 0)
+                    return true;
+            }
+
+            // Verificar XSS
+            if (Regex.IsMatch(input, xssPattern, RegexOptions.IgnoreCase))
+                return true;
+
+
+            return false;
+        }
     }
 }

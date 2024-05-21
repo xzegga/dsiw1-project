@@ -26,5 +26,8 @@ namespace MiCafesito
 
         [OperationContract]
         List<Product> GetProductsFeatured();
+
+        [OperationContract]
+        List<Product> GetProductsByName(string criteria);
     }
 }

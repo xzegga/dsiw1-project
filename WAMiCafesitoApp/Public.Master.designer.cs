@@ -96,6 +96,24 @@ namespace WAMiCafesitoApp
         protected global::System.Web.UI.WebControls.Button cartBtn;
 
         /// <summary>
+        /// txtSearchBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtSearchBox;
+
+        /// <summary>
+        /// searchBtn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton searchBtn;
+
+        /// <summary>
         /// categoryRepeater control.
         /// </summary>
         /// <remarks>

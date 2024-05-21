@@ -181,6 +181,47 @@ namespace MiCafesito
             return null;
         }
 
+        public List<Product> GetProductsByName(string criteria)
+        {
+            // SP_ObtenerProductoByName
+            // @Nombre nvarchar(100)
+
+            try
+            {
+                using (SqlCommand command = new SqlCommand("SP_ObtenerProductoByName", connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    command.Parameters.AddWithValue("@Criterio", criteria);
+
+                    connection.Open();
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        List<Product> products = new List<Product>();
+
+                        while (reader.Read())
+                        {
+                            Product product = new Product();
+
+                            product.ID_Producto = Convert.ToInt32(reader["ID_Producto"]);
+                            product.Nombre = reader["Nombre"].ToString();
+                            product.Descripcion = reader["Descripcion"].ToString();
+                            product.Precio = Convert.ToDouble(reader["Precio"].ToString());
+                            product.ID_Categoria = Convert.ToInt32(reader["ID_Categoria"]);
+                            product.ImageUrl = reader["ImageUrl"].ToString();
+
+                            products.Add(product);
+                        }
+
+                        return products;
+                    }
+                }
+            }
+            catch (Exception ex) { throw new ArgumentException("No se pudo obtener la lista de productos por nombre"); }
+            finally { connection.Close(); }
+
+        }
+
         public List<Product> GetProductsFeatured()
         {
             try

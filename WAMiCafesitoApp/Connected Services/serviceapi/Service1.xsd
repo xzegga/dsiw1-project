@@ -243,6 +243,20 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="GetProductsByName">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="criteria" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetProductsByNameResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="GetProductsByNameResult" nillable="true" type="q15:ArrayOfProduct" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="GetAllOrders">
     <xs:complexType>
       <xs:sequence />
@@ -251,7 +265,7 @@
   <xs:element name="GetAllOrdersResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="GetAllOrdersResult" nillable="true" type="q15:ArrayOfOrder" />
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="GetAllOrdersResult" nillable="true" type="q16:ArrayOfOrder" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -265,14 +279,14 @@
   <xs:element name="GetOrderByIdResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="GetOrderByIdResult" nillable="true" type="q16:Order" />
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="GetOrderByIdResult" nillable="true" type="q17:Order" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="UpdateOrder">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="order" nillable="true" type="q17:Order" />
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="order" nillable="true" type="q18:Order" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -296,7 +310,7 @@
   <xs:element name="AddOrder">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="order" nillable="true" type="q18:Order" />
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="order" nillable="true" type="q19:Order" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -315,7 +329,7 @@
   <xs:element name="GetAllOrdersByUserIdResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="GetAllOrdersByUserIdResult" nillable="true" type="q19:ArrayOfOrder" />
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="GetAllOrdersByUserIdResult" nillable="true" type="q20:ArrayOfOrder" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -329,14 +343,14 @@
   <xs:element name="GetAllOrderDetailByOrderIdResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="GetAllOrderDetailByOrderIdResult" nillable="true" type="q20:ArrayOfOrderDetail" />
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="GetAllOrderDetailByOrderIdResult" nillable="true" type="q21:ArrayOfOrderDetail" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="UpdateOrderDetail">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="orderDetails" nillable="true" type="q21:OrderDetail" />
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="orderDetails" nillable="true" type="q22:OrderDetail" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -360,7 +374,7 @@
   <xs:element name="AddOrderDetail">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="orderDetails" nillable="true" type="q22:OrderDetail" />
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="orderDetails" nillable="true" type="q23:OrderDetail" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -384,7 +398,7 @@
   <xs:element name="AddCartItem">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="cart" nillable="true" type="q23:Cart" />
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="cart" nillable="true" type="q24:Cart" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -403,7 +417,7 @@
   <xs:element name="GetCartItemsByUserIdResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="GetCartItemsByUserIdResult" nillable="true" type="q24:ArrayOfCart" />
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="GetCartItemsByUserIdResult" nillable="true" type="q25:ArrayOfCart" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

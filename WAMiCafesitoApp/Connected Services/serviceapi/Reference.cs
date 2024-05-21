@@ -1074,6 +1074,12 @@ namespace WAMiCafesitoApp.ServiceApi {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/GetProductsFeatured", ReplyAction="http://tempuri.org/IProductService/GetProductsFeaturedResponse")]
         System.Threading.Tasks.Task<WAMiCafesitoApp.ServiceApi.Product[]> GetProductsFeaturedAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/GetProductsByName", ReplyAction="http://tempuri.org/IProductService/GetProductsByNameResponse")]
+        WAMiCafesitoApp.ServiceApi.Product[] GetProductsByName(string criteria);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/GetProductsByName", ReplyAction="http://tempuri.org/IProductService/GetProductsByNameResponse")]
+        System.Threading.Tasks.Task<WAMiCafesitoApp.ServiceApi.Product[]> GetProductsByNameAsync(string criteria);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -1157,6 +1163,14 @@ namespace WAMiCafesitoApp.ServiceApi {
         
         public System.Threading.Tasks.Task<WAMiCafesitoApp.ServiceApi.Product[]> GetProductsFeaturedAsync() {
             return base.Channel.GetProductsFeaturedAsync();
+        }
+        
+        public WAMiCafesitoApp.ServiceApi.Product[] GetProductsByName(string criteria) {
+            return base.Channel.GetProductsByName(criteria);
+        }
+        
+        public System.Threading.Tasks.Task<WAMiCafesitoApp.ServiceApi.Product[]> GetProductsByNameAsync(string criteria) {
+            return base.Channel.GetProductsByNameAsync(criteria);
         }
     }
     

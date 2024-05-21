@@ -61,5 +61,10 @@ namespace WAMiCafesitoApp
             Session["RoleId"] = null;
             Response.Redirect("/Default.aspx");
         }
+
+        protected void searchBtn_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("/Store/ResultsPage.aspx?criteria=" + txtSearchBox.Text);
+        }
     }
 }

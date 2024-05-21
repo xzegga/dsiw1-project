@@ -54,10 +54,10 @@
 
                         <div class="col-lg-5 col-md-12 col-12">
                             <div class="input-group search-box">
-                                <input type="text" class="form-control" placeholder="Search">
-                                <button class="btn btn-outline-secondary" type="button">
+                                <asp:TextBox ID="txtSearchBox" runat="server" CssClass="form-control"></asp:TextBox>
+                                <asp:LinkButton ID="searchBtn" runat="server" CssClass="btn btn-outline-secondary" OnClick="searchBtn_Click">
                                     <i class="fas fa-search"></i>
-                                </button>
+                                </asp:LinkButton>
                             </div>
                         </div>
                     </div>
@@ -210,7 +210,7 @@
                         <!-- Grid column -->
                         <div class="col-12 col-lg-3 col-sm-12 mb-2">
                             <div class="d-flex flex-column">
-                                
+
                                 <p class="mt-2 text-dark">
                                     © 2023 MiCafesito.com
                                 </p>
@@ -229,7 +229,7 @@
                     <!-- Grid row -->
                 </div>
             </section>
-           
+
         </footer>
         <!-- Footer -->
     </form>

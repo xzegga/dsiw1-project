@@ -132,6 +132,11 @@ public class Service :
     {
         return _productService.GetProductsFeatured();
     }
+
+    public List<Product> GetProductsByName(string criteria)
+    {
+        return _productService.GetProductsByName(criteria);
+    }
     #endregion
 
     #region Order Administration Methods
