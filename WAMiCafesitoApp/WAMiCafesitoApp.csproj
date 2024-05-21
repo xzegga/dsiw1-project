@@ -102,6 +102,7 @@
     <Content Include="Login.aspx" />
     <Content Include="Signup.aspx" />
     <Content Include="Store\Cart.aspx" />
+    <Content Include="Store\OrderConfirmation.aspx" />
     <Content Include="Store\ResultsPage.aspx" />
     <Content Include="Store\Category.aspx" />
     <Content Include="Store\ProductDetail.aspx" />
@@ -168,6 +169,13 @@
     </Compile>
     <Compile Include="Store\Cart.aspx.designer.cs">
       <DependentUpon>Cart.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Store\OrderConfirmation.aspx.cs">
+      <DependentUpon>OrderConfirmation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Store\OrderConfirmation.aspx.designer.cs">
+      <DependentUpon>OrderConfirmation.aspx</DependentUpon>
     </Compile>
     <Compile Include="Store\ResultsPage.aspx.cs">
       <DependentUpon>ResultsPage.aspx</DependentUpon>

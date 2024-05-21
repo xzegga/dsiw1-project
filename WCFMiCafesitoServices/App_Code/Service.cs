@@ -100,7 +100,7 @@ public class Service :
 
     public void DeleteOrder(int id) { _orderService.DeleteOrder(id); }
 
-    public void AddOrder(Order order) { _orderService.AddOrder(order); }
+    public int AddOrder(Order order) { return _orderService.AddOrder(order); }
 
     #endregion
 

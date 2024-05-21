@@ -20,4 +20,6 @@ public class Order
     [DataMember]
     public string Factura { get; set; }
 
+    [DataMember]
+    public double SubTotal { get; set; }
 }

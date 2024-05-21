@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using WAMiCafesitoApp.Helpers;
 using WAMiCafesitoApp.ServiceApi;
 using WAMiCafesitoApp.Services;
 
@@ -14,6 +15,10 @@ namespace WAMiCafesitoApp.Store
 
         private CartService _cartService = new CartService();
         private IProductService productService = new ProductServiceClient();
+        private IOrderService orderService = new OrderServiceClient();
+        private IOrderDetailsService orderDetailsService = new OrderDetailsServiceClient();
+        private Auth auth = new Auth();
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -118,6 +123,36 @@ namespace WAMiCafesitoApp.Store
 
         protected void btnCheckout_Click(object sender, EventArgs e)
         {
+            int idUser = auth.isAuthenticatedOrRedirect();
+
+            List<Cart> cartItems = _cartService.GetCartItems();
+            double subTotal = cartItems.Sum(c => c.Cantidad * c.PrecioUnitario);
+
+            Order order = new Order
+            {
+                ID_Usuario = idUser,
+                FechaPedido = DateTime.Now,
+                Estado = "Recibido",
+                SubTotal = subTotal,
+            };
+
+            int orderId = orderService.AddOrder(order);
+                        
+            foreach (Cart cartItem in cartItems)
+            {
+                OrderDetail orderDetail = new OrderDetail
+                {
+                    ID_Pedido = orderId,
+                    ID_Producto = cartItem.ID_Producto,
+                    Cantidad = cartItem.Cantidad,
+                    PrecioUnitario = cartItem.PrecioUnitario,
+                    Total = cartItem.Cantidad * cartItem.PrecioUnitario
+                };
+                orderDetailsService.AddOrderDetail(orderDetail);
+            }
+
+            _cartService.ClearCart();
+            Response.Redirect("~/Store/OrderConfirmation.aspx?id=" + orderId);
 
         }
 

@@ -99,8 +99,8 @@ namespace MiCafesito
                             orderDetail.ID_Pedido = Convert.ToInt32(reader["ID_Pedido"]);
                             orderDetail.ID_Producto = Convert.ToInt32(reader["ID_Producto"]);
                             orderDetail.Cantidad = Convert.ToInt32(reader["Cantidad"]);
-                            orderDetail.PrecioUnitario = Convert.ToSingle(reader["PrecioUnitario"]);
-                            orderDetail.Total = Convert.ToSingle(reader["Total"]);
+                            orderDetail.PrecioUnitario = Convert.ToDouble(reader["PrecioUnitario"]);
+                            orderDetail.Total = Convert.ToDouble(reader["Total"]);
 
                             detallePedidos.Add(orderDetail);
                         }

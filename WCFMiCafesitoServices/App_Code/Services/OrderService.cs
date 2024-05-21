@@ -16,7 +16,7 @@ namespace MiCafesito
             connection = new SqlConnection(_config.ConnectionString);
         }
 
-        public void AddOrder(Order order)
+        public int AddOrder(Order order)
         {
             try
             {
@@ -25,10 +25,22 @@ namespace MiCafesito
                     command.CommandType = CommandType.StoredProcedure;
 
                     command.Parameters.AddWithValue("@ID_Usuario", order.ID_Usuario);
-                    command.Parameters.AddWithValue("@Factura", order.Factura);
+                    command.Parameters.AddWithValue("@FechaPedido", order.FechaPedido);
+                    command.Parameters.AddWithValue("@SubTotal", order.SubTotal);
+                    command.Parameters.AddWithValue("@Estado", order.Estado);
+
+                    // Add output parameter for inserted ID
+                    SqlParameter outputParameter = new SqlParameter("@PedidoID", SqlDbType.Int);
+                    outputParameter.Direction = ParameterDirection.Output;
+                    command.Parameters.Add(outputParameter);
 
                     connection.Open();
-                    command.ExecuteNonQuery();
+                    command.ExecuteNonQuery(); // Use ExecuteNonQuery for INSERT statements
+
+                    // Retrieve inserted ID from output parameter
+                    int insertedOrderID = Convert.ToInt32(outputParameter.Value);
+
+                    return insertedOrderID;
                 }
             }
             catch (Exception ex) { throw new ArgumentException("No se pudo agregar el pedido"); }
@@ -77,7 +89,8 @@ namespace MiCafesito
                             order.ID_Usuario = Convert.ToInt32(reader["ID_Usuario"]);
                             order.FechaPedido = Convert.ToDateTime(reader["FechaPedido"]);
                             order.Estado = reader["Estado"].ToString();
-                            order.Factura = reader["Factura"] == DBNull.Value ? "" : reader["Factura"].ToString();
+                            order.Factura = reader["Factura"] == DBNull.Value ? "N/A" : reader["Factura"].ToString();
+                            order.SubTotal = reader["SubTotal"] == DBNull.Value ? 0 : Convert.ToDouble(reader["SubTotal"]);
 
                             orders.Add(order);
                         }

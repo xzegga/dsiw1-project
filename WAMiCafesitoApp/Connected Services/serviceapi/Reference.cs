@@ -460,6 +460,9 @@ namespace WAMiCafesitoApp.ServiceApi {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int ID_UsuarioField;
         
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double SubTotalField;
+        
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
             get {
@@ -535,6 +538,19 @@ namespace WAMiCafesitoApp.ServiceApi {
             }
         }
         
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double SubTotal {
+            get {
+                return this.SubTotalField;
+            }
+            set {
+                if ((this.SubTotalField.Equals(value) != true)) {
+                    this.SubTotalField = value;
+                    this.RaisePropertyChanged("SubTotal");
+                }
+            }
+        }
+        
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
         protected void RaisePropertyChanged(string propertyName) {
@@ -567,10 +583,10 @@ namespace WAMiCafesitoApp.ServiceApi {
         private int ID_ProductoField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private float PrecioUnitarioField;
+        private double PrecioUnitarioField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private float TotalField;
+        private double TotalField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -635,7 +651,7 @@ namespace WAMiCafesitoApp.ServiceApi {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public float PrecioUnitario {
+        public double PrecioUnitario {
             get {
                 return this.PrecioUnitarioField;
             }
@@ -648,7 +664,7 @@ namespace WAMiCafesitoApp.ServiceApi {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public float Total {
+        public double Total {
             get {
                 return this.TotalField;
             }
@@ -1203,10 +1219,10 @@ namespace WAMiCafesitoApp.ServiceApi {
         System.Threading.Tasks.Task DeleteOrderAsync(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOrderService/AddOrder", ReplyAction="http://tempuri.org/IOrderService/AddOrderResponse")]
-        void AddOrder(WAMiCafesitoApp.ServiceApi.Order order);
+        int AddOrder(WAMiCafesitoApp.ServiceApi.Order order);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOrderService/AddOrder", ReplyAction="http://tempuri.org/IOrderService/AddOrderResponse")]
-        System.Threading.Tasks.Task AddOrderAsync(WAMiCafesitoApp.ServiceApi.Order order);
+        System.Threading.Tasks.Task<int> AddOrderAsync(WAMiCafesitoApp.ServiceApi.Order order);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOrderService/GetAllOrdersByUserId", ReplyAction="http://tempuri.org/IOrderService/GetAllOrdersByUserIdResponse")]
         WAMiCafesitoApp.ServiceApi.Order[] GetAllOrdersByUserId(int id);
@@ -1274,11 +1290,11 @@ namespace WAMiCafesitoApp.ServiceApi {
             return base.Channel.DeleteOrderAsync(id);
         }
         
-        public void AddOrder(WAMiCafesitoApp.ServiceApi.Order order) {
-            base.Channel.AddOrder(order);
+        public int AddOrder(WAMiCafesitoApp.ServiceApi.Order order) {
+            return base.Channel.AddOrder(order);
         }
         
-        public System.Threading.Tasks.Task AddOrderAsync(WAMiCafesitoApp.ServiceApi.Order order) {
+        public System.Threading.Tasks.Task<int> AddOrderAsync(WAMiCafesitoApp.ServiceApi.Order order) {
             return base.Channel.AddOrderAsync(order);
         }
         

@@ -17,11 +17,11 @@ public class OrderDetail
     public int Cantidad { get; set; }
 
     [DataMember]
-    public float PrecioUnitario { get; set; }
+    public double PrecioUnitario { get; set; }
 
 
     [DataMember]
-    public float Total { get; set; }
+    public double Total { get; set; }
 
 }
 

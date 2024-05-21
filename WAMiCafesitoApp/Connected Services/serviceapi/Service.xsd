@@ -67,6 +67,7 @@
       <xs:element minOccurs="0" name="FechaPedido" type="xs:dateTime" />
       <xs:element minOccurs="0" name="ID_Pedido" type="xs:int" />
       <xs:element minOccurs="0" name="ID_Usuario" type="xs:int" />
+      <xs:element minOccurs="0" name="SubTotal" type="xs:double" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Order" nillable="true" type="tns:Order" />
@@ -82,8 +83,8 @@
       <xs:element minOccurs="0" name="ID_Detalle" type="xs:int" />
       <xs:element minOccurs="0" name="ID_Pedido" type="xs:int" />
       <xs:element minOccurs="0" name="ID_Producto" type="xs:int" />
-      <xs:element minOccurs="0" name="PrecioUnitario" type="xs:float" />
-      <xs:element minOccurs="0" name="Total" type="xs:float" />
+      <xs:element minOccurs="0" name="PrecioUnitario" type="xs:double" />
+      <xs:element minOccurs="0" name="Total" type="xs:double" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="OrderDetail" nillable="true" type="tns:OrderDetail" />

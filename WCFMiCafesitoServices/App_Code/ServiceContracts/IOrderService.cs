@@ -18,7 +18,7 @@ namespace MiCafesito
         void DeleteOrder(int id);
 
         [OperationContract]
-        void AddOrder(Order order);
+        int AddOrder(Order order);
 
         [OperationContract]
         List<Order> GetAllOrdersByUserId(int id);

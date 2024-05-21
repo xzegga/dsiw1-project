@@ -44,7 +44,8 @@ namespace WAMiCafesitoApp.Admin
                     User = user.Nombre + ' ' + user.Apellido,                    
                     c.FechaPedido,
                     c.Estado,
-                    c.Factura
+                    c.Factura,
+                    c.SubTotal
                 };
             }).ToList();
 

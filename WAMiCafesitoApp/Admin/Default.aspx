@@ -21,9 +21,11 @@
                             </div>
                         </ItemTemplate>
                     </asp:TemplateField>
-                    <asp:BoundField DataField="FechaPedido" HeaderText="Fecha" DataFormatString="{0:yyyy-MM-dd}" />
+                    <asp:BoundField DataField="FechaPedido" HeaderText="Fecha" DataFormatString="{0:MMMM dd, yyyy - HH:mm tt}" />
                     <asp:BoundField DataField="Estado" HeaderText="Estado" />
+                    <asp:BoundField DataField="SubTotal" HeaderText="SubTotal" DataFormatString="{0:C}" />
                     <asp:BoundField DataField="Factura" HeaderText="Factura" />
+
                     <asp:TemplateField>
                         <ItemTemplate>
                             <div class="d-flex justify-content-end align-items-center pe-4">

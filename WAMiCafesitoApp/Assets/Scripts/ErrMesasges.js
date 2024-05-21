@@ -22,7 +22,7 @@ function showAnimatedToast(messageCtrl, typeCtrl) {
             toastElement, {
             animation: true,
             autohide: true,
-            delay: 5000,
+            delay: 2000,
         });
 
         toast.show();
