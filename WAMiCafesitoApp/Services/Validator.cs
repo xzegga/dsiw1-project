@@ -42,7 +42,6 @@ namespace WAMiCafesitoApp.Services
             if (password.Length < minLength)
                 return false;
 
-            // Check if passwords match
             if (password != confirmPassword)
                 return false;
 
@@ -57,7 +56,6 @@ namespace WAMiCafesitoApp.Services
             if (string.IsNullOrWhiteSpace(number))
                 return false;
 
-            // Regular expression for validating number
             string numberPattern = @"^-?\d+(\.\d+)?$";
             return Regex.IsMatch(number, numberPattern);
         }
@@ -68,7 +66,6 @@ namespace WAMiCafesitoApp.Services
             if (string.IsNullOrWhiteSpace(date))
                 return false;
 
-            // Try to parse the date string
             return DateTime.TryParse(date, out _);
         }
 
