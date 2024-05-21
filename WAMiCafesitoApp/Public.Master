@@ -36,7 +36,7 @@
                                         <i class="fas fa-user-alt m-1 me-md-2"></i>
                                         <p class="d-none d-md-block mb-0">Ingresar</p>
                                     </asp:HyperLink>
-                                    <asp:HyperLink ID="registreLnk" runat="server" NavigateUrl="~/Registre.aspx" CssClass="me-1 py-1 px-3 nav-link d-flex align-items-center">
+                                    <asp:HyperLink ID="registreLnk" runat="server" NavigateUrl="~/Signup.aspx" CssClass="me-1 py-1 px-3 nav-link d-flex align-items-center">
                                         <i class="fas fa-heart m-1 me-md-2"></i>
                                         <p class="d-none d-md-block mb-0">Registrarse</p>
                                     </asp:HyperLink>
@@ -85,7 +85,7 @@
                             <asp:Repeater ID="categoryRepeater" runat="server">
                                 <ItemTemplate>
                                     <asp:HyperLink ID="categoryLink" runat="server" CssClass="nav-link text-dark cat-link"
-                                        NavigateUrl='<%# "category.aspx?cat=" + Eval("ID_Categoria") %>' Text='<%# Eval("Nombre") %>' />
+                                        NavigateUrl='<%# "/Store/Category.aspx?cat=" + Eval("ID_Categoria") %>' Text='<%# Eval("Nombre") %>' />
                                 </ItemTemplate>
                             </asp:Repeater>
                         </ul>
@@ -201,7 +201,7 @@
 
 
         <!-- Footer -->
-        <footer class="text-center text-lg-start text-muted mt-3" style="background-color: #f5f5f5;">
+        <footer class="text-center text-lg-start text-muted" style="background-color: #f5f5f5;">
             <!-- Section: Links  -->
             <section class="">
                 <div class="container text-center text-md-start pt-4 pb-4">
@@ -210,61 +210,26 @@
                         <!-- Grid column -->
                         <div class="col-12 col-lg-3 col-sm-12 mb-2">
                             <div class="d-flex flex-column">
-                                <a href="/" target="_blank" class="float-start d-flex align-items-center gap-2 logo-link">
-                                    <img src="/Assets/Images/logo.jpg" height="45" />
-                                    <h1 class="logo-text">MiCafesito <span class="logo-text-small d-block">Enlínea</span></h1>
-                                </a>
+                                
                                 <p class="mt-2 text-dark">
                                     © 2023 MiCafesito.com
                                 </p>
+                                <div>
+                                    <i class="fab fa-lg fa-cc-visa text-dark"></i>
+                                    <i class="fab fa-lg fa-cc-amex text-dark"></i>
+                                    <i class="fab fa-lg fa-cc-mastercard text-dark"></i>
+                                    <i class="fab fa-lg fa-cc-paypal text-dark"></i>
+                                </div>
                             </div>
                         </div>
                         <!-- Grid column -->
 
-                        <!-- Grid column -->
-                        <div class="col-6 col-sm-4 col-lg-2">
-                            <!-- Links -->
-                            <h6 class="text-uppercase text-dark fw-bold mb-2">Store
-                            </h6>
-                            <ul class="list-unstyled mb-4">
-                                <li><a class="text-muted" href="#">Sobre Nosotros</a></li>
-                                <li><a class="text-muted" href="#">Encuéntranos</a></li>
-                                <li><a class="text-muted" href="#">Categorías</a></li>
-                            </ul>
-                        </div>
-                        <!-- Grid column -->
 
-                        <!-- Grid column -->
-                        <div class="col-6 col-sm-4 col-lg-2">
-                            <!-- Links -->
-                            <h6 class="text-uppercase text-dark fw-bold mb-2">Information
-                            </h6>
-                            <ul class="list-unstyled mb-4">
-                                <li><a class="text-muted" href="#">Ayuda</a></li>
-                                <li><a class="text-muted" href="#">Información de envío</a></li>
-                                <li><a class="text-muted" href="#">Refunds</a></li>
-                            </ul>
-                        </div>
                     </div>
                     <!-- Grid row -->
                 </div>
             </section>
-            <!-- Section: Links  -->
-
-            <div class="">
-                <div class="container">
-                    <div class="d-flex justify-content-between py-4 border-top">
-                        <!--- payment --->
-                        <div>
-                            <i class="fab fa-lg fa-cc-visa text-dark"></i>
-                            <i class="fab fa-lg fa-cc-amex text-dark"></i>
-                            <i class="fab fa-lg fa-cc-mastercard text-dark"></i>
-                            <i class="fab fa-lg fa-cc-paypal text-dark"></i>
-                        </div>
-                        <!--- payment --->
-                    </div>
-                </div>
-            </div>
+           
         </footer>
         <!-- Footer -->
     </form>

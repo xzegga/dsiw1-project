@@ -19,7 +19,7 @@
                             <ItemTemplate>
                                 <div class="d-flex">
                                     <div class="product-img">
-                                        <img src='<%# Eval("Imagen") %>' alt='<%# Eval("Nombre") %>' />
+                                        <img src='<%# Eval("Imagen") %>' alt='<%# Eval("Nombre") %>' onerror="this.onerror=null; this.src='/Assets/Images/Default.png';" />
                                     </div>
                                     <div>
 
@@ -34,9 +34,15 @@
                             </ItemTemplate>
                         </asp:TemplateField>
 
+                        
+                        <asp:BoundField
+                            DataField="PrecioUnitario"
+                            HeaderText="Precio"
+                            DataFormatString="{0:C}" />
+
                         <asp:TemplateField HeaderText="Cantidad">
                             <ItemTemplate>
-                                <div class="d-flex align-items-center">
+                                <div class="d-flex align-items-center px-3">
                                     <asp:TextBox ID="txtQuantity" runat="server" Text='<%# Eval("Cantidad") %>' Width="38px" CssClass="form-control me-2"></asp:TextBox>
                                     <asp:LinkButton ID="lnkUpdate" runat="server" OnCommand="btnUpdate_Command" CommandArgument='<%# Eval("ID_Carrito") %>'>
                                     <i class="fa-solid fa-arrows-rotate"></i>
@@ -45,11 +51,7 @@
                             </ItemTemplate>
                         </asp:TemplateField>
 
-                        <asp:BoundField
-                            DataField="PrecioUnitario"
-                            HeaderText="Precio Unitario"
-                            DataFormatString="{0:C}" />
-                        <asp:BoundField DataField="TotalPrice" HeaderText="Precio Total" DataFormatString="{0:C}" />
+                        <asp:BoundField DataField="TotalPrice" HeaderText="Total" DataFormatString="{0:C}" />
                         <asp:TemplateField>
                             <ItemTemplate>
                                 <asp:LinkButton ID="lnkDelete" runat="server" OnCommand="btnDelete_Command" CommandArgument='<%# Eval("ID_Carrito") %>' CssClass="text-danger">

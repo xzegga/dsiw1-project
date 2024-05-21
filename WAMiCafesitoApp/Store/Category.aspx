@@ -1,52 +1,30 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Public.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="WAMiCafesitoApp.Default" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Public.Master" AutoEventWireup="true" CodeBehind="Category.aspx.cs" Inherits="WAMiCafesitoApp.Store.CategoryList" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
-
-<asp:Content ID="Content3" ContentPlaceHolderID="header" runat="server">
-    <div class="container-full hero py-5">
-        <div class="gradient-overlay">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6 mt-5 pt-3">
-                        <h1 class="display-4">¡Descubre el
-                        <br />
-                            V60 Hario!</h1>
-                        <p class="lead">
-                            Disfruta descubriendo tus granos favoritos,
-                        <br />
-                            método de preparación e inventando tu receta..
-                        </p>
-                        <div class="mt-4 d-flex gap-3">
-                            <a href="/Store/ProductDetail.aspx?id=7" class="btn btn-informacion btn-lg rounded-pill text-white px-4 ml-4">Más Información</a>
-                        </div>
-                    </div>
-                    <div class="col-md-6 d-flex justify-content-center">
-                        <img src="/Assets/Images/hero-home.png" class="img-fluid hero-img" alt="V60 Ario">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+<asp:Content ID="Content2" ContentPlaceHolderID="header" runat="server">
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
+<asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
     <section>
         <div class="container my-5">
             <header class="mb-4">
-                <h3>PRODUCTOS DESTACADOS</h3>
+                <h3>
+                    <asp:Label ID="lblCategoryName" runat="server"></asp:Label>
+                </h3>
             </header>
 
             <asp:HiddenField ID="hdnToastMessage" runat="server" />
             <asp:HiddenField ID="hdnToastType" runat="server" />
             <div class="row">
                 <asp:Repeater ID="featuredProductsRepeater" runat="server" OnItemDataBound="featuredProductsRepeater_ItemDataBound">
-                    <ItemTemplate>
+                    <itemtemplate>
                         <div class="col-lg-3 col-md-6 col-sm-6 d-flex mb-5">
                             <div class="card w-100 my-2 shadow-2-strong">
                                 <img src='/Assets/Images/<%# Eval("ID_Producto") %>.png'
-                                    class="card-img-top"
+                                    class="card-img-top" 
                                     style="aspect-ratio: 1 / 1"
-                                    onerror="this.onerror=null; this.src='/Assets/Images/Default.png';" />
+                                    onerror="this.onerror=null; this.src='/Assets/Images/Default.png';"
+                                    />
                                 <div class="card-body d-flex flex-column">
                                     <h5 class="card-title"><%# Eval("Nombre") %></h5>
                                     <span class="a-price d-flex align-items-start" aria-hidden="true">
@@ -59,7 +37,7 @@
                                         <asp:HyperLink ID="btnViewDetail"
                                             runat="server"
                                             CssClass="btn btn-light shadow-none me-1 btn-view-details">
-                                            <i class="fa-solid fa-magnifying-glass"></i> Detalle 
+                                            <i class="fa-solid fa-magnifying-glass"></i>Detalle 
                                         </asp:HyperLink>
                                         <asp:LinkButton
                                             CssClass="btn btn-light shadow-none me-1 btn-add-to-cart px-4"
@@ -67,7 +45,8 @@
                                             runat="server"
                                             CommandName="AddToCart"
                                             CommandArgument='<%# Eval("ID_Producto") %>'
-                                            OnClick="btnAddToCart_Click"><i class="fa-solid fa-cart-shopping"></i> Ordenar</asp:LinkButton>
+                                            OnClick="btnAddToCart_Click">
+                                            <i class="fa-solid fa-cart-shopping"></i>Ordenar</asp:LinkButton>
                                     </div>
 
 
@@ -76,14 +55,14 @@
                                 </div>
                             </div>
                         </div>
-                    </ItemTemplate>
+                    </itemtemplate>
                 </asp:Repeater>
             </div>
         </div>
     </section>
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="FooterScripts" runat="server">
-    <script src="./Assets/Scripts/ErrMesasges.js" type="text/javascript"></script>
+    <script src="../Assets/Scripts/ErrMesasges.js" type="text/javascript"></script>
     <script>
         var toastMessage = document.getElementById('<%= hdnToastMessage.ClientID %>');
         var toastType = document.getElementById('<%= hdnToastType.ClientID %>');

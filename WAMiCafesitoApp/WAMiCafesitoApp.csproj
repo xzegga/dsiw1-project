@@ -98,7 +98,9 @@
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Login.aspx" />
+    <Content Include="Signup.aspx" />
     <Content Include="Store\Cart.aspx" />
+    <Content Include="Store\Category.aspx" />
     <Content Include="Store\ProductDetail.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -135,12 +137,27 @@
       <DependentUpon>Public.Master</DependentUpon>
     </Compile>
     <Compile Include="Services\CartService.cs" />
+    <Compile Include="Services\Validator.cs" />
+    <Compile Include="Signup.aspx.cs">
+      <DependentUpon>Signup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Signup.aspx.designer.cs">
+      <DependentUpon>Signup.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Store\Cart.aspx.cs">
       <DependentUpon>Cart.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Store\Cart.aspx.designer.cs">
       <DependentUpon>Cart.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Store\Category.aspx.cs">
+      <DependentUpon>Category.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Store\Category.aspx.designer.cs">
+      <DependentUpon>Category.aspx</DependentUpon>
     </Compile>
     <Compile Include="Store\ProductDetail.aspx.cs">
       <DependentUpon>ProductDetail.aspx</DependentUpon>

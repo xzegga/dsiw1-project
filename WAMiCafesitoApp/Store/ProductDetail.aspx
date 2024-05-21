@@ -13,7 +13,7 @@
                 <div class="col-lg-4">
                     <!-- Product Image with Lightbox -->
                     <a href="#" data-bs-toggle="modal" data-bs-target="#imageModal">
-                        <asp:Image ID="imgProduct" runat="server" CssClass="img-fluid rounded" />
+                        <asp:Image ID="imgProduct" runat="server" CssClass="img-fluid rounded"  />
                     </a>
 
                     <!-- Lightbox Modal -->
@@ -33,9 +33,7 @@
                 </div>
                 <div class="col-lg-7 ps-4 pt-4">
                     <h2 class="mb-0">
-                        <asp:Label ID="lblProductName" runat="server" Text=""></asp:Label>
-                        En carrito
-                        <asp:Label ID="txtCart" runat="server" Text=""></asp:Label>
+                        <asp:Label ID="lblProductName" runat="server" Text=""></asp:Label>                        
                     </h2>
                     <div class="d-flex align-items-center gap-2 mb-4">
                         <strong>Categoria:</strong>

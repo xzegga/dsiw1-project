@@ -51,15 +51,6 @@ namespace WAMiCafesitoApp.Store
         protected global::System.Web.UI.WebControls.Label lblProductName;
 
         /// <summary>
-        /// txtCart control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label txtCart;
-
-        /// <summary>
         /// lblCategory control.
         /// </summary>
         /// <remarks>

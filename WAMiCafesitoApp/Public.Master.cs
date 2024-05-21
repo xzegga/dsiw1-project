@@ -59,7 +59,7 @@ namespace WAMiCafesitoApp
             // Almacenar el objeto de usuario en la sesión
             Session["UserId"] = null;
             Session["RoleId"] = null;
-            Response.Redirect(Request.RawUrl);
+            Response.Redirect("/Default.aspx");
         }
     }
 }
