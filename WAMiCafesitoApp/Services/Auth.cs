@@ -8,7 +8,6 @@ namespace WAMiCafesitoApp.Helpers
     {
         public Auth() { }
 
-        public delegate void CallBack(string message);
         public int isAuthenticated()
         {
             int userId = 0;
@@ -30,7 +29,7 @@ namespace WAMiCafesitoApp.Helpers
             return userId;
         }
 
-        public int isAdminAuthorized(CallBack callback)
+        public int isAdminAuthorized()
         {
             int userId = isAuthenticated();
 

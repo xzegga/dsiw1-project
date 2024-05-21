@@ -13,17 +13,17 @@
             <asp:HiddenField ID="hdnToastType" runat="server" />
             <asp:GridView ID="OrdersGridView" runat="server" CssClass="table table-striped" AutoGenerateColumns="false">
                 <Columns>
-                    <asp:BoundField DataField="ID_Pedido" HeaderText="Order ID" />
-                    <asp:TemplateField HeaderText="Product Name">
+                    <asp:BoundField DataField="ID_Pedido" HeaderText="ID" />
+                    <asp:TemplateField HeaderText="Producto">
                         <ItemTemplate>
                             <div>
                                 <%# Eval("User") %>
                             </div>
                         </ItemTemplate>
                     </asp:TemplateField>
-                    <asp:BoundField DataField="FechaPedido" HeaderText="Order Date" DataFormatString="{0:yyyy-MM-dd}" />
-                    <asp:BoundField DataField="Estado" HeaderText="Status" />
-                    <asp:BoundField DataField="Factura" HeaderText="Invoice" />
+                    <asp:BoundField DataField="FechaPedido" HeaderText="Fecha" DataFormatString="{0:yyyy-MM-dd}" />
+                    <asp:BoundField DataField="Estado" HeaderText="Estado" />
+                    <asp:BoundField DataField="Factura" HeaderText="Factura" />
                     <asp:TemplateField>
                         <ItemTemplate>
                             <div class="d-flex justify-content-end align-items-center pe-4">
@@ -44,7 +44,7 @@
                                         <div class="modal-content">
                                             <div class="modal-header">
                                                 <h5 class="modal-title" id="confirmationModalLabel">Eliminar Orden</h5>
-                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
                                             </div>
                                             <div class="modal-body">
                                                 ¿Está completamente seguro de que desea eliminar esta orden? Esta acción es irreversible.

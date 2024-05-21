@@ -20,24 +20,17 @@ namespace WAMiCafesitoApp.Admin
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            auth.isAdminAuthorized();
             if (!IsPostBack)
-            {
+            {                
                 BindOrdersGrid();
             }
         }
 
-        
-        private void AuthorizedUser() {
-            CallBack callback = delegate (string message)
-            {
-                ShowErrorMessage("No tienes permisos para ver esta página");
-            };
-            auth.isAdminAuthorized(callback);
-        }
 
         private void BindOrdersGrid()
         {
-            AuthorizedUser();
+
             List<Order> orders = orderService.GetAllOrders().ToList();
             OrdersGridView.DataSource = orders;
 
@@ -61,12 +54,13 @@ namespace WAMiCafesitoApp.Admin
 
         private User GetUser(int userId)
         {
+ 
             return userService.GetUserById(userId);
         }
 
         protected void btnDelete_Command(object sender, CommandEventArgs e)
         {
-            auth.isAuthenticatedOrRedirect();
+
             int orderId = Convert.ToInt32(e.CommandArgument);
             orderService.DeleteOrder(orderId);
             BindOrdersGrid();
