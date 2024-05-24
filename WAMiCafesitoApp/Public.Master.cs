@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using WAMiCafesitoApp.Helpers;
 using WAMiCafesitoApp.ServiceApi;
 
 namespace WAMiCafesitoApp
@@ -11,25 +12,19 @@ namespace WAMiCafesitoApp
     public partial class Site1 : System.Web.UI.MasterPage
     {
         ServiceApi.ICategoryService categoryService = new ServiceApi.CategoryServiceClient();
+        Auth auth = new Auth();
         protected void Page_Load(object sender, EventArgs e)
         {
+            auth.IsAdminThenRedirect();
+            HideLoginLink();
+            
             if (!IsPostBack)
-            {
-                if (Session["UserId"] != null)
-                {
-                    HideLoginLink();
-                }
-
-                if (Session["CartItems"] != null)
-                {
-                    HideLoginLink();
-                }
-
-
+            {                
                 LoadCategories();
             }
 
         }
+
 
         protected void LoadCategories()
         {
@@ -49,8 +44,16 @@ namespace WAMiCafesitoApp
 
         protected void HideLoginLink()
         {
-            UnauthenticatedLnks.Visible = false;
-            AuthenticatedLnks.Visible = true;
+            if (auth.IsAuthenticated() != 0)
+            {
+                UnauthenticatedLnks.Visible = false;
+                AuthenticatedLnks.Visible = true;
+            } else
+            {
+                UnauthenticatedLnks.Visible = true;
+                AuthenticatedLnks.Visible = false;
+            }
+           
 
         }
 
@@ -59,6 +62,7 @@ namespace WAMiCafesitoApp
             // Almacenar el objeto de usuario en la sesión
             Session["UserId"] = null;
             Session["RoleId"] = null;
+
             Response.Redirect("/Default.aspx");
         }
 

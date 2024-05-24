@@ -13,7 +13,7 @@
             <div class="d-flex">
                 <div class="card mb-3 me-4">
                     <div class="card-body">
-                        <h5 class="card-title pb-3">Información d la Orden</h5>
+                        <h5 class="card-title pb-3">Información de la orden</h5>
                         <div class="card-text d-flex">
                             <div class="card-label">ID:</div>
                             <asp:Label ID="lblOrderID" runat="server" />
@@ -38,9 +38,9 @@
                             <div class="card-label">IVA 13%:</div>
                             <asp:Label ID="lblTaxes" runat="server" />
                         </div>
-                        <div class="card-text d-flex">
+                        <div class="card-text d-flex fw-bold border-top pt-2 mt-2">
                             <div class="card-label">Total:</div>
-                            <asp:Label ID="lblTotal" runat="server" />
+                            <asp:Label ID="lblTotal" runat="server"/>
                         </div>
 
                     </div>
@@ -72,7 +72,7 @@
                         </Columns>
                     </asp:GridView>
                     <div class="card-text d-flex justify-content-between align-items-center">
-                        <div class="card-label">Status:</div>
+                        <div class="card-label">Estado de la orden:</div>
                         <div class="d-flex update-status">
                             <asp:DropDownList ID="ddlStatus" runat="server" CssClass="form-select me-2">
                                 <asp:ListItem Value="Recibida" Text="Recibida"></asp:ListItem>

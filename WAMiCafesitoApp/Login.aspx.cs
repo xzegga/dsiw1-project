@@ -73,19 +73,33 @@ namespace WAMiCafesitoApp
                 // Redirigir según el rol
                 if (roleId == 1) 
                 {
-                    // Suponiendo que el rol 1 es para administradores
-                    // Redirigir a la página de administrador
+                    // Redirigir al área de administración
                     Response.Redirect("~/Admin/Default.aspx");
                 }
                 else
                 {
-                    // Redirigir a la página de cliente
-                    Response.Redirect("~/Default.aspx"); 
+                    RedirectToPreviousPage();
                 }
             }
             else
             {
                 ShowErrorMessage("Error al redirigir. Por favor, inicie sesión primero.");
+            }
+        }
+
+        protected void RedirectToPreviousPage()
+        {
+            string returnUrl = Request.QueryString["returnUrl"];
+
+            if (!string.IsNullOrEmpty(returnUrl))
+            {
+                // Redireccionar al returnUrl si se proporciona
+                Response.Redirect(returnUrl);
+            }
+            else
+            {
+                // Redirigir a la página predeterminada
+                Response.Redirect("/default.aspx");
             }
         }
 

@@ -19,8 +19,7 @@ namespace WAMiCafesitoApp.Admin
         private Auth auth = new Auth();
 
         protected void Page_Load(object sender, EventArgs e)
-        {
-            auth.isAdminAuthorized();
+        {           
             if (!IsPostBack)
             {                
                 BindOrdersGrid();

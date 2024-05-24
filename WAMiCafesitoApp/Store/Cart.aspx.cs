@@ -123,7 +123,7 @@ namespace WAMiCafesitoApp.Store
 
         protected void btnCheckout_Click(object sender, EventArgs e)
         {
-            int idUser = auth.isAuthenticatedOrRedirect();
+            int idUser = auth.IsAuthenticatedOrRedirect();
 
             List<Cart> cartItems = _cartService.GetCartItems();
             double subTotal = cartItems.Sum(c => c.Cantidad * c.PrecioUnitario);

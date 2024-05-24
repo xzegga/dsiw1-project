@@ -85,8 +85,7 @@ namespace MiCafesito
                             product.Descripcion = reader["Descripcion"].ToString();
                             product.Precio = Convert.ToDouble(reader["Precio"].ToString());
                             product.ID_Categoria = Convert.ToInt32(reader["ID_Categoria"]);
-                            product.ImageUrl = reader["ImageUrl"].ToString();
-
+                            product.Categoria = reader["Categoria"].ToString();
                             productos.Add(product);
                         }
 

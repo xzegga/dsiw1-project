@@ -85,6 +85,7 @@ namespace MiCafesito
                     command.Parameters.AddWithValue("@ID_Usuario", id);
 
                     connection.Open();
+
                     using (SqlDataReader reader = command.ExecuteReader())
                     {
                         List<Cart> cartItems = new List<Cart>();

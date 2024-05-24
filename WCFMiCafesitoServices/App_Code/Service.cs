@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 
-public class Service :
+public class Service : 
     IUserService,
     ICategoryService,
     IProductService,
@@ -11,12 +11,12 @@ public class Service :
     IOrderDetailsService,
     ICartService
 {
-    public readonly IUserService _userService;
-    public readonly ICategoryService _categoryService;
-    public readonly IProductService _productService;
-    public readonly IOrderService _orderService;
-    public readonly IOrderDetailsService _orderDetailsService;
-    public readonly ICartService _cartService;
+    private readonly IUserService _userService;
+    private readonly ICategoryService _categoryService;
+    private readonly IProductService _productService;
+    private readonly IOrderService _orderService;
+    private readonly IOrderDetailsService _orderDetailsService;
+    private readonly ICartService _cartService;
 
     public Service()
     {

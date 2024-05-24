@@ -1,28 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
+using WAMiCafesitoApp.Helpers;
 
 namespace WAMiCafesitoApp.Admin
 {
     public partial class Admin : System.Web.UI.MasterPage
     {
+        private Auth auth = new Auth();
+
         ServiceApi.ICategoryService categoryService = new ServiceApi.CategoryServiceClient();
         protected void Page_Load(object sender, EventArgs e)
         {
+            auth.IsNotAdminThenRedirect();
             if (!IsPostBack)
             {
-                if (Session["UserId"] != null)
-                {
-                    HideLoginLink();
-                }
-
-                if (Session["CartItems"] != null)
-                {
-                    HideLoginLink();
-                }
 
             }
 
@@ -33,13 +23,6 @@ namespace WAMiCafesitoApp.Admin
             Response.Redirect("~/Login.aspx");
         }
 
-        protected void HideLoginLink()
-        {
-            UnauthenticatedLnks.Visible = false;
-            AuthenticatedLnks.Visible = true;
-
-        }
-
         protected void closeSessionLnk_Click(object sender, EventArgs e)
         {
             // Almacenar el objeto de usuario en la sesión
@@ -48,5 +31,9 @@ namespace WAMiCafesitoApp.Admin
             Response.Redirect("/Default.aspx");
         }
 
+        protected void lnkProductos_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Admin/Products.aspx");
+        }
     }
 }

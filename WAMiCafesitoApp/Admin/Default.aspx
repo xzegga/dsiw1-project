@@ -32,8 +32,8 @@
                                 <asp:LinkButton ID="lnkViewOrder" runat="server"
                                     OnCommand="lnkViewOrder_Command"
                                     CommandArgument='<%# Eval("ID_Pedido") %>'
-                                    CssClass="btn btn-primary me-4">
-                                        <i class="fa-regular fa-eye"></i> Ver Detalle
+                                    CssClass="btn rounded-pill btn-primary px-3 me-4">
+                                        Ver Detalle
                                 </asp:LinkButton>
 
 

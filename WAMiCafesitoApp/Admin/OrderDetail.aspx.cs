@@ -22,7 +22,6 @@ namespace WAMiCafesitoApp.Admin
             if (!IsPostBack)
             {
 
-                auth.isAdminAuthorized();
                 if (!string.IsNullOrEmpty(Request.QueryString["id"]))
                 {
 

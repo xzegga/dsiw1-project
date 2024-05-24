@@ -14,7 +14,7 @@ namespace WAMiCafesitoApp.Services
 
         public List<Cart> AddOrUpdateCartItem(Product product, int quantity)
         {
-            int userId = _auth.isAuthenticatedOrRedirect();
+            int userId = _auth.IsAuthenticatedOrRedirect();
             if (!userId.Equals(0))
             {
                 List<Cart> cartItems = _cartService.GetCartItemsByUserId(userId).ToList();
@@ -45,7 +45,7 @@ namespace WAMiCafesitoApp.Services
 
         public void UpdateCartItemQuantity(int id, int quantity)
         {
-            int userId = _auth.isAuthenticatedOrRedirect();
+            int userId = _auth.IsAuthenticatedOrRedirect();
             if (!userId.Equals(0))
             {
                 _cartService.UpdateCartItemQuantityById(id, quantity);
@@ -55,7 +55,7 @@ namespace WAMiCafesitoApp.Services
         public List<Cart> GetCartItems()
         {
             List<Cart> cartItems = new List<Cart>();
-            int userId = _auth.isAuthenticated();
+            int userId = _auth.IsAuthenticated();
             if (!userId.Equals(0))
             {
                 cartItems = _cartService.GetCartItemsByUserId(userId).ToList();
@@ -67,7 +67,7 @@ namespace WAMiCafesitoApp.Services
 
         public void DeleteCartItem(int id)
         {
-            int userId = _auth.isAuthenticated();
+            int userId = _auth.IsAuthenticated();
             if (!userId.Equals(0))
             {
                 _cartService.DeleteCartItem(id);
@@ -76,7 +76,7 @@ namespace WAMiCafesitoApp.Services
 
         public void ClearCart()
         {
-            int userId = _auth.isAuthenticated();
+            int userId = _auth.IsAuthenticated();
             if (!userId.Equals(0))
             {
                 _cartService.DeleteCartItemsByUserId(userId);
