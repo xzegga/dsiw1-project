@@ -25,12 +25,14 @@ namespace WAMiCafesitoApp.Store
                 {
 
                     string criteria = Request.QueryString["criteria"];
-                    if (!Validator.ValidateSafeString(criteria)) {
-                        LoadProductsBySearchCriteria(criteria);
-                    } else
+                    
+                    if (!Validator.ValidateString(criteria))
                     {
                         ShowErrorMessage(criteria + " no es un criterio de búsqueda válido.");
+                        return;
                     }
+
+                    LoadProductsBySearchCriteria(criteria);
                 }
                 else
                 {
@@ -50,7 +52,7 @@ namespace WAMiCafesitoApp.Store
                 featuredProductsRepeater.DataBind();
             } else
             {
-                ShowErrorMessage(criteria + " no es un criterio de búsqueda válido.");
+                ShowErrorMessage("No se encontraron productos para el criterio de busqueda (" + criteria + ")");
             }
         }
 

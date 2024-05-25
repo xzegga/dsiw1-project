@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/Admin.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="WAMiCafesitoApp.Admin.Default" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Public.Master" AutoEventWireup="true" CodeBehind="OrderList.aspx.cs" Inherits="WAMiCafesitoApp.Store.OrderList" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
@@ -7,20 +7,13 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
     <section>
         <div class="container pt-3">
-            <h2>Órdenes</h2>
+            <h2 class="pb-2">Órdenes</h2>
 
             <asp:HiddenField ID="hdnToastMessage" runat="server" />
             <asp:HiddenField ID="hdnToastType" runat="server" />
             <asp:GridView ID="OrdersGridView" runat="server" CssClass="table table-striped" AutoGenerateColumns="false">
                 <Columns>
                     <asp:BoundField DataField="ID_Pedido" HeaderText="ID" />
-                    <asp:TemplateField HeaderText="Usuario">
-                        <ItemTemplate>
-                            <div>
-                                <%# Eval("User") %>
-                            </div>
-                        </ItemTemplate>
-                    </asp:TemplateField>
                     <asp:BoundField DataField="FechaPedido" HeaderText="Fecha" DataFormatString="{0:MMMM dd, yyyy - HH:mm tt}" />
                     <asp:BoundField DataField="Estado" HeaderText="Estado" />
                     <asp:BoundField DataField="SubTotal" HeaderText="SubTotal" DataFormatString="{0:C}" />
@@ -33,7 +26,7 @@
                                     OnCommand="lnkViewOrder_Command"
                                     CommandArgument='<%# Eval("ID_Pedido") %>'
                                     CssClass="btn rounded-pill btn-primary px-3 me-4">
-                                        Ver Detalle
+                                    Ver Detalle
                                 </asp:LinkButton>
 
 
@@ -50,7 +43,7 @@
                                             </div>
                                             <div class="modal-body">
                                                 ¿Está completamente seguro de que desea eliminar esta orden? Esta acción es irreversible.
-                                     
+                                 
                                             </div>
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>

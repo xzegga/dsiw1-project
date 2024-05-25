@@ -14,7 +14,7 @@
                     Gracias por tu compra, tu pedido ha sido enviado con éxito. <br />En breve uno de nuestros agentes comerciales se comunicará contigo.
                 </p>
                 <p>
-                    <a href="~/Store/OrderHistory.aspx" class="btn btn-primary">Ver historial de pedidos</a>
+                    <a href="/Store/OrderList.aspx" class="btn btn-primary">Ver historial de pedidos</a>
                 </p>
             </header>
         </div>

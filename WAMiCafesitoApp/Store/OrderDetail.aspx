@@ -1,0 +1,85 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Public.Master" AutoEventWireup="true" CodeBehind="OrderDetail.aspx.cs" Inherits="WAMiCafesitoApp.Store.OrderDetails" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="header" runat="server">
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
+    <section>
+        <div class="container pt-3">
+            <asp:HiddenField ID="hdnToastMessage" runat="server" />
+            <asp:HiddenField ID="hdnToastType" runat="server" />
+
+            <div class="d-flex">
+                <div class="card mb-3 me-4">
+                    <div class="card-body">
+                        <h5 class="card-title pb-3">Información de la orden</h5>
+                        <div class="card-text d-flex">
+                            <div class="card-label">ID:</div>
+                            <asp:Label ID="lblOrderID" runat="server" />
+                        </div>
+                        <div class="card-text d-flex">
+                            <div class="card-label">Fecha:</div>
+                            <asp:Label ID="lblOrderDate" runat="server" />
+                        </div>
+                        <div class="card-text d-flex">
+                            <div class="card-label">No de Factura:</div>
+                            <asp:Label ID="lblInvoice" runat="server" />
+                        </div>
+                        <div class="card-text d-flex">
+                            <div class="card-label">Sub Total:</div>
+                            <asp:Label ID="lblSubTotal" runat="server" />
+                        </div>
+                        <div class="card-text d-flex">
+                            <div class="card-label">IVA 13%:</div>
+                            <asp:Label ID="lblTaxes" runat="server" />
+                        </div>
+                        <div class="card-text d-flex fw-bold border-top pt-2 mt-2">
+                            <div class="card-label">Total:</div>
+                            <asp:Label ID="lblTotal" runat="server" />
+                        </div>
+
+                    </div>
+                </div>
+                <div>
+                    <h5 class="mb-3">Detalle de la Orden</h5>
+                    <asp:GridView ID="gvOrderDetails" runat="server" CssClass="table table-striped" AutoGenerateColumns="false">
+                        <Columns>
+                            <asp:TemplateField HeaderText="Producto">
+                                <ItemTemplate>
+                                    <div class="d-flex">
+                                        <div class="product-img small-img">
+                                            <img src='<%# Eval("Imagen") %>' alt='<%# Eval("Nombre") %>' onerror="this.onerror=null; this.src='/Assets/Images/Default.png';" />
+                                        </div>
+                                        <div class="product-name d-flex align-items-center"><%# Eval("Nombre") %></div>
+                                    </div>
+
+                                </ItemTemplate>
+                            </asp:TemplateField>
+                            <asp:BoundField DataField="Cantidad" HeaderText="Cantidad" />
+                            <asp:BoundField
+                                DataField="PrecioUnitario"
+                                HeaderText="Precio"
+                                DataFormatString="{0:C}" />
+                            <asp:BoundField DataField="Total" HeaderText="Total" DataFormatString="{0:C}" />
+                        </Columns>
+                    </asp:GridView>                    
+                    
+                </div>
+
+            </div>
+
+
+        </div>
+    </section>
+</asp:Content>
+<asp:Content ID="Content4" ContentPlaceHolderID="FooterScripts" runat="server">
+    <script src="../Assets/Scripts/ErrMesasges.js" type="text/javascript"></script>
+    <script>
+        var toastMessage = document.getElementById('<%= hdnToastMessage.ClientID %>');
+        var toastType = document.getElementById('<%= hdnToastType.ClientID %>');
+        if (toastMessage) {
+            showAnimatedToast(toastMessage, toastType);
+        }
+    </script>
+</asp:Content>

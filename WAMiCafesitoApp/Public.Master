@@ -41,6 +41,11 @@
                                     </asp:HyperLink>
                                 </asp:PlaceHolder>
                                 <asp:PlaceHolder ID="AuthenticatedLnks" runat="server" Visible="false">
+                                    <asp:HyperLink ID="lnkOrders" runat="server" NavigateUrl="~/Store/OrderList.aspx" CssClass="me-1 py-1 px-3 nav-link d-flex align-items-center">
+                                        <i class="fa-solid fa-bag-shopping me-md-2"></i>
+                                        <p class="d-none d-md-block mb-0">Mis Compras</p>
+                                        <asp:Label ID="Label1" Visible="false" runat="server" CssClass="badge bg-primary rounded-pill ms-1"></asp:Label>
+                                    </asp:HyperLink>
                                     <asp:HyperLink ID="cartLnk" runat="server" NavigateUrl="~/Store/Cart.aspx" CssClass="me-1 py-1 px-3 nav-link d-flex align-items-center">
                                         <i class="fas fa-shopping-cart m-1 me-md-2"></i>
                                         <p class="d-none d-md-block mb-0">Carrito</p>
@@ -98,7 +103,7 @@
 
 
         <!-- main -->
-        <main  class="main-height">
+        <main class="main-height">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
         </main>

@@ -47,10 +47,6 @@
                                             OnClick="btnAddToCart_Click">
                                             <i class="fa-solid fa-cart-shopping"></i>Ordenar</asp:LinkButton>
                                     </div>
-
-
-
-
                                 </div>
                             </div>
                         </div>
