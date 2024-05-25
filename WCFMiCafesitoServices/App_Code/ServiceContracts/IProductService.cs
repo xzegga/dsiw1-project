@@ -13,13 +13,13 @@ namespace MiCafesito
         Product GetProductById(int id);
 
         [OperationContract]
-        void UpdateProduct(Product productos);
+        void UpdateProduct(Product product);
 
         [OperationContract]
         void DeleteProduct(int id);
 
         [OperationContract]
-        void AddProduct(Product productos);
+        int AddProduct(Product product);
 
         [OperationContract]
         List<Product> GetAllProductsByCategoryId(int id);

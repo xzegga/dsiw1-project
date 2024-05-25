@@ -73,7 +73,7 @@ public class Service :
 
     public void DeleteProduct(int id) { _productService.DeleteProduct(id); }
 
-    public void AddProduct(Product productos) { _productService.AddProduct(productos); }
+    public int AddProduct(Product productos) { return _productService.AddProduct(productos); }
 
     public List<Product> GetAllProductsByCategoryId(int id)
     {

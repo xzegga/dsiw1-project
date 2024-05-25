@@ -15,7 +15,6 @@
 
 <body>
     <form id="form2" runat="server">
-
         <!--Main Navigation-->
         <header>
             <!-- Jumbotron -->
@@ -99,7 +98,7 @@
 
 
         <!-- main -->
-        <main>
+        <main  class="main-height">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
         </main>

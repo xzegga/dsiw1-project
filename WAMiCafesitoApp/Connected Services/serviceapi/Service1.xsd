@@ -184,7 +184,7 @@
   <xs:element name="UpdateProduct">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="productos" nillable="true" type="q11:Product" />
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="product" nillable="true" type="q11:Product" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -208,13 +208,15 @@
   <xs:element name="AddProduct">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="productos" nillable="true" type="q12:Product" />
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="product" nillable="true" type="q12:Product" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="AddProductResponse">
     <xs:complexType>
-      <xs:sequence />
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AddProductResult" type="xs:int" />
+      </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="GetAllProductsByCategoryId">

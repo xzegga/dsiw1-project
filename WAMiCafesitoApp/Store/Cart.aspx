@@ -5,7 +5,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="header" runat="server">
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
-    <div class="container my-5">
+    <div class="container pt-3">
         <div class="d-flex align-items-start">
             <div class="col-md-9">
                 <h2 class="mb-3">Carrito de Compras</h2>
@@ -34,7 +34,7 @@
                             </ItemTemplate>
                         </asp:TemplateField>
 
-                        
+
                         <asp:BoundField
                             DataField="PrecioUnitario"
                             HeaderText="Precio"

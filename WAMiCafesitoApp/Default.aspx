@@ -31,7 +31,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <section>
-        <div class="container my-5">
+        <div class="container pt-3">
             <header class="mb-4">
                 <h3>PRODUCTOS DESTACADOS</h3>
             </header>

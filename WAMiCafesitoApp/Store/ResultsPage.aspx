@@ -6,7 +6,7 @@
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
     <section>
-        <div class="container my-5">
+        <div class="container py-5">
             <header class="mb-4">
                 <h3>
                     <asp:Label ID="lblCategoryName" runat="server"></asp:Label>
@@ -17,14 +17,13 @@
             <asp:HiddenField ID="hdnToastType" runat="server" />
             <div class="row">
                 <asp:Repeater ID="featuredProductsRepeater" runat="server" OnItemDataBound="featuredProductsRepeater_ItemDataBound">
-                    <itemtemplate>
+                    <ItemTemplate>
                         <div class="col-lg-3 col-md-6 col-sm-6 d-flex mb-5">
                             <div class="card w-100 my-2 shadow-2-strong">
                                 <img src='/Assets/Images/<%# Eval("ID_Producto") %>.png'
-                                    class="card-img-top" 
+                                    class="card-img-top"
                                     style="aspect-ratio: 1 / 1"
-                                    onerror="this.onerror=null; this.src='/Assets/Images/Default.png';"
-                                    />
+                                    onerror="this.onerror=null; this.src='/Assets/Images/Default.png';" />
                                 <div class="card-body d-flex flex-column">
                                     <h5 class="card-title"><%# Eval("Nombre") %></h5>
                                     <span class="a-price d-flex align-items-start" aria-hidden="true">
@@ -55,7 +54,7 @@
                                 </div>
                             </div>
                         </div>
-                    </itemtemplate>
+                    </ItemTemplate>
                 </asp:Repeater>
             </div>
         </div>

@@ -8,7 +8,7 @@
     <asp:HiddenField ID="hdnToastMessage" runat="server" />
     <asp:HiddenField ID="hdnToastType" runat="server" />
     <section>
-        <div class="container my-5">
+        <div class="container pt-3">
             <div class="row">
                 <div class="col-lg-4">
                     <!-- Product Image with Lightbox -->
@@ -25,7 +25,7 @@
                                     <i class="fa-regular fa-circle-xmark"></i>
                                 </button>
                                 <div class="modal-body p-0">
-                                    <img id="modalImage" class="img-fluid" alt="Product Image">
+                                    <asp:Image ID="imgProductThumb" runat="server" CssClass="img-fluid"  />
                                 </div>
                             </div>
                         </div>

@@ -73,6 +73,7 @@
     <Content Include="Admin\Categories.aspx" />
     <Content Include="Admin\Default.aspx" />
     <Content Include="Admin\OrderDetail.aspx" />
+    <Content Include="Admin\Product.aspx" />
     <Content Include="Admin\Products.aspx" />
     <Content Include="Admin\Users.aspx" />
     <Content Include="Assets\Images\15.png" />
@@ -140,6 +141,13 @@
     </Compile>
     <Compile Include="Admin\OrderDetail.aspx.designer.cs">
       <DependentUpon>OrderDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Product.aspx.cs">
+      <DependentUpon>Product.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Product.aspx.designer.cs">
+      <DependentUpon>Product.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\Products.aspx.cs">
       <DependentUpon>Products.aspx</DependentUpon>
@@ -271,6 +279,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Assets\Images\temp\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>

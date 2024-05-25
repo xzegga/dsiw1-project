@@ -76,6 +76,7 @@ namespace WAMiCafesitoApp.Admin
                 lblSubTotal.Text = $"{order.SubTotal:C2}";
                 lblTaxes.Text = $"{(order.SubTotal * 0.13):C2}";
                 lblTotal.Text = $"{(order.SubTotal + (order.SubTotal * 0.13)):C2}";
+                txtFactura.Text = order.Factura;
 
                 List<OrderDetail> orderDetails = orderDetailsService.GetAllOrderDetailByOrderId(order.ID_Pedido).ToList();
 
@@ -107,6 +108,7 @@ namespace WAMiCafesitoApp.Admin
             int orderId = Convert.ToInt32(Request.QueryString["id"]);
             Order order = Session["SelectedOrder"] as Order;
             order.Estado = ddlStatus.SelectedItem.Text;
+            order.Factura = txtFactura.Text;
 
             orderService.UpdateOrder(order);
 

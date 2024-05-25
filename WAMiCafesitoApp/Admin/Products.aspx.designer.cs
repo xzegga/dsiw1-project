@@ -15,6 +15,15 @@ namespace WAMiCafesitoApp.Admin
     {
 
         /// <summary>
+        /// lnkAddNew control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lnkAddNew;
+
+        /// <summary>
         /// hdnToastMessage control.
         /// </summary>
         /// <remarks>
@@ -51,12 +60,12 @@ namespace WAMiCafesitoApp.Admin
         protected global::System.Web.UI.WebControls.Button confirmButton;
 
         /// <summary>
-        /// hfDeleteCategoryId control.
+        /// hfDeleteProductId control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField hfDeleteCategoryId;
+        protected global::System.Web.UI.WebControls.HiddenField hfDeleteProductId;
     }
 }

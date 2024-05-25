@@ -80,7 +80,7 @@
 
 
         <!-- main -->
-        <main>
+        <main class="main-height">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
         </main>

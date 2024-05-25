@@ -1,4 +1,7 @@
-﻿.hero {
+﻿.main-height {
+    min-height: 70vh;
+}
+.hero {
     min-height: 400px; /* Altura mínima del banner */
     background: linear-gradient(to right, #A65A1A, #490702); /* Degradado de colores café */
     color: #fff; /* Texto en color blanco */
@@ -255,4 +258,8 @@
 
 .update-status {
     max-width: 450px;
+}
+
+.min-width-label {
+    min-width: 155px;
 }

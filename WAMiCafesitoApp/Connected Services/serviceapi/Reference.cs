@@ -311,6 +311,9 @@ namespace WAMiCafesitoApp.ServiceApi {
         private string DescripcionField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool DestacadoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int ID_CategoriaField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -357,6 +360,19 @@ namespace WAMiCafesitoApp.ServiceApi {
                 if ((object.ReferenceEquals(this.DescripcionField, value) != true)) {
                     this.DescripcionField = value;
                     this.RaisePropertyChanged("Descripcion");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool Destacado {
+            get {
+                return this.DestacadoField;
+            }
+            set {
+                if ((this.DestacadoField.Equals(value) != true)) {
+                    this.DestacadoField = value;
+                    this.RaisePropertyChanged("Destacado");
                 }
             }
         }
@@ -1062,10 +1078,10 @@ namespace WAMiCafesitoApp.ServiceApi {
         System.Threading.Tasks.Task<WAMiCafesitoApp.ServiceApi.Product> GetProductByIdAsync(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/UpdateProduct", ReplyAction="http://tempuri.org/IProductService/UpdateProductResponse")]
-        void UpdateProduct(WAMiCafesitoApp.ServiceApi.Product productos);
+        void UpdateProduct(WAMiCafesitoApp.ServiceApi.Product product);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/UpdateProduct", ReplyAction="http://tempuri.org/IProductService/UpdateProductResponse")]
-        System.Threading.Tasks.Task UpdateProductAsync(WAMiCafesitoApp.ServiceApi.Product productos);
+        System.Threading.Tasks.Task UpdateProductAsync(WAMiCafesitoApp.ServiceApi.Product product);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/DeleteProduct", ReplyAction="http://tempuri.org/IProductService/DeleteProductResponse")]
         void DeleteProduct(int id);
@@ -1074,10 +1090,10 @@ namespace WAMiCafesitoApp.ServiceApi {
         System.Threading.Tasks.Task DeleteProductAsync(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/AddProduct", ReplyAction="http://tempuri.org/IProductService/AddProductResponse")]
-        void AddProduct(WAMiCafesitoApp.ServiceApi.Product productos);
+        int AddProduct(WAMiCafesitoApp.ServiceApi.Product product);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/AddProduct", ReplyAction="http://tempuri.org/IProductService/AddProductResponse")]
-        System.Threading.Tasks.Task AddProductAsync(WAMiCafesitoApp.ServiceApi.Product productos);
+        System.Threading.Tasks.Task<int> AddProductAsync(WAMiCafesitoApp.ServiceApi.Product product);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/GetAllProductsByCategoryId", ReplyAction="http://tempuri.org/IProductService/GetAllProductsByCategoryIdResponse")]
         WAMiCafesitoApp.ServiceApi.Product[] GetAllProductsByCategoryId(int id);
@@ -1141,12 +1157,12 @@ namespace WAMiCafesitoApp.ServiceApi {
             return base.Channel.GetProductByIdAsync(id);
         }
         
-        public void UpdateProduct(WAMiCafesitoApp.ServiceApi.Product productos) {
-            base.Channel.UpdateProduct(productos);
+        public void UpdateProduct(WAMiCafesitoApp.ServiceApi.Product product) {
+            base.Channel.UpdateProduct(product);
         }
         
-        public System.Threading.Tasks.Task UpdateProductAsync(WAMiCafesitoApp.ServiceApi.Product productos) {
-            return base.Channel.UpdateProductAsync(productos);
+        public System.Threading.Tasks.Task UpdateProductAsync(WAMiCafesitoApp.ServiceApi.Product product) {
+            return base.Channel.UpdateProductAsync(product);
         }
         
         public void DeleteProduct(int id) {
@@ -1157,12 +1173,12 @@ namespace WAMiCafesitoApp.ServiceApi {
             return base.Channel.DeleteProductAsync(id);
         }
         
-        public void AddProduct(WAMiCafesitoApp.ServiceApi.Product productos) {
-            base.Channel.AddProduct(productos);
+        public int AddProduct(WAMiCafesitoApp.ServiceApi.Product product) {
+            return base.Channel.AddProduct(product);
         }
         
-        public System.Threading.Tasks.Task AddProductAsync(WAMiCafesitoApp.ServiceApi.Product productos) {
-            return base.Channel.AddProductAsync(productos);
+        public System.Threading.Tasks.Task<int> AddProductAsync(WAMiCafesitoApp.ServiceApi.Product product) {
+            return base.Channel.AddProductAsync(product);
         }
         
         public WAMiCafesitoApp.ServiceApi.Product[] GetAllProductsByCategoryId(int id) {

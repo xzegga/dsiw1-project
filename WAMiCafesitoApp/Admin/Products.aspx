@@ -6,8 +6,12 @@
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
     <section>
-        <div class="container my-5">
-            <h2>Productos</h2>
+        <div class="container pt-3">
+            <div class="d-flex align-items-center justify-content-between">
+                <h2>Productos</h2>
+                <asp:LinkButton ID="lnkAddNew" runat="server" CssClass="btn rounded-pill btn-success px-4" OnClick="lnkAddNew_Click">Agregar Producto</asp:LinkButton>
+            </div>
+
 
             <asp:HiddenField ID="hdnToastMessage" runat="server" />
             <asp:HiddenField ID="hdnToastType" runat="server" />
@@ -36,7 +40,11 @@
                             </ItemTemplate>
                         </asp:TemplateField>
                         <asp:BoundField DataField="Precio" HeaderText="Precio" DataFormatString="{0:C}" />
-
+                        <asp:TemplateField HeaderText="Destacado">
+                            <ItemTemplate>
+                                <%# (bool)Eval("Destacado") ? "<i class='fas fa-check'></i>" : "" %>
+                            </ItemTemplate>
+                        </asp:TemplateField>
 
                         <asp:TemplateField>
                             <ItemTemplate>
@@ -79,7 +87,7 @@
                 </div>
             </div>
         </div>
-        <asp:HiddenField ID="hfDeleteCategoryId" runat="server" />
+        <asp:HiddenField ID="hfDeleteProductId" runat="server" />
     </section>
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="FooterScripts" runat="server">
@@ -93,7 +101,7 @@
 
 
         function setDeleteCategoryId(categoryId) {
-            var hiddenField = document.getElementById('<%= hfDeleteCategoryId.ClientID %>');
+            var hiddenField = document.getElementById('<%= hfDeleteProductId.ClientID %>');
             hiddenField.value = categoryId;
         }
     </script>

@@ -46,6 +46,7 @@
     <xs:sequence>
       <xs:element minOccurs="0" name="Categoria" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Descripcion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Destacado" type="xs:boolean" />
       <xs:element minOccurs="0" name="ID_Categoria" type="xs:int" />
       <xs:element minOccurs="0" name="ID_Producto" type="xs:int" />
       <xs:element minOccurs="0" name="ImageUrl" nillable="true" type="xs:string" />

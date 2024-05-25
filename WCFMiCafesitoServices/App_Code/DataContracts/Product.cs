@@ -25,4 +25,7 @@ public class Product
     [DataMember]
     public string ImageUrl { get; set; }
 
+    [DataMember]
+    public bool Destacado { get; set; }
+
 }

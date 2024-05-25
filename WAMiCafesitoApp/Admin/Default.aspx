@@ -6,7 +6,7 @@
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
     <section>
-        <div class="container my-5">
+        <div class="container pt-3">
             <h2>Orders</h2>
 
             <asp:HiddenField ID="hdnToastMessage" runat="server" />

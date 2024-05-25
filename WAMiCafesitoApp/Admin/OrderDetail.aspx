@@ -6,7 +6,7 @@
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
     <section>
-        <div class="container my-5">
+        <div class="container pt-3">
             <asp:HiddenField ID="hdnToastMessage" runat="server" />
             <asp:HiddenField ID="hdnToastType" runat="server" />
 
@@ -40,13 +40,13 @@
                         </div>
                         <div class="card-text d-flex fw-bold border-top pt-2 mt-2">
                             <div class="card-label">Total:</div>
-                            <asp:Label ID="lblTotal" runat="server"/>
+                            <asp:Label ID="lblTotal" runat="server" />
                         </div>
 
                     </div>
                 </div>
                 <div>
-                    <h5>Detalle de la Orden</h5>
+                    <h5 class="mb-3">Detalle de la Orden</h5>
                     <asp:GridView ID="gvOrderDetails" runat="server" CssClass="table table-striped" AutoGenerateColumns="false">
                         <Columns>
                             <asp:TemplateField HeaderText="Producto">
@@ -55,10 +55,7 @@
                                         <div class="product-img small-img">
                                             <img src='<%# Eval("Imagen") %>' alt='<%# Eval("Nombre") %>' onerror="this.onerror=null; this.src='/Assets/Images/Default.png';" />
                                         </div>
-                                        <div>
-
-                                            <div class="product-name"><%# Eval("Nombre") %></div>
-                                        </div>
+                                        <div class="product-name d-flex align-items-center"><%# Eval("Nombre") %></div>
                                     </div>
 
                                 </ItemTemplate>
@@ -71,8 +68,8 @@
                             <asp:BoundField DataField="Total" HeaderText="Total" DataFormatString="{0:C}" />
                         </Columns>
                     </asp:GridView>
-                    <div class="card-text d-flex justify-content-between align-items-center">
-                        <div class="card-label">Estado de la orden:</div>
+                    <div class="card-text d-flex justify-content-star align-items-center">
+                        <div class="card-label min-width-label">Cambiar estado:</div>
                         <div class="d-flex update-status">
                             <asp:DropDownList ID="ddlStatus" runat="server" CssClass="form-select me-2">
                                 <asp:ListItem Value="Recibida" Text="Recibida"></asp:ListItem>
@@ -80,10 +77,17 @@
                                 <asp:ListItem Value="Enviada" Text="Enviada"></asp:ListItem>
                                 <asp:ListItem Value="Entregada" Text="Entregada"></asp:ListItem>
                             </asp:DropDownList>
-                            <asp:Button ID="btnUpdateStatus" runat="server" CssClass="btn btn-primary btn-sm" Text="Cambiar" OnClick="btnUpdateStatus_Click" />
                         </div>
 
                     </div>
+                    <div class="card-text d-flex justify-content-between align-items-center">
+                        <div class="card-label min-width-label">Factura:</div>
+                        <div class="d-flex update-status">
+                            <asp:TextBox ID="txtFactura" runat="server" CssClass="form-control"></asp:TextBox>
+                        </div>
+
+                    </div>
+                    <asp:Button ID="btnUpdateStatus" runat="server" CssClass="btn btn-primary btn-sm" Text="Cambiar" OnClick="btnUpdateStatus_Click" />
                 </div>
 
             </div>

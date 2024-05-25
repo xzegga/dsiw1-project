@@ -7,11 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WAMiCafesitoApp.Store
+namespace WAMiCafesitoApp.Admin
 {
 
 
-    public partial class ProductDetail
+    public partial class Producto
     {
 
         /// <summary>
@@ -33,6 +33,15 @@ namespace WAMiCafesitoApp.Store
         protected global::System.Web.UI.WebControls.HiddenField hdnToastType;
 
         /// <summary>
+        /// hdnProductId control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hdnProductId;
+
+        /// <summary>
         /// imgProduct control.
         /// </summary>
         /// <remarks>
@@ -51,75 +60,84 @@ namespace WAMiCafesitoApp.Store
         protected global::System.Web.UI.WebControls.Image imgProductThumb;
 
         /// <summary>
-        /// lblProductName control.
+        /// txtNombre control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblProductName;
+        protected global::System.Web.UI.WebControls.TextBox txtNombre;
 
         /// <summary>
-        /// lblCategory control.
+        /// txtDescripcion control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblCategory;
+        protected global::System.Web.UI.WebControls.TextBox txtDescripcion;
 
         /// <summary>
-        /// lblProductDescription control.
+        /// txtPrecio control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblProductDescription;
+        protected global::System.Web.UI.WebControls.TextBox txtPrecio;
 
         /// <summary>
-        /// lblPriceInteger control.
+        /// ddlCategoria control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblPriceInteger;
+        protected global::System.Web.UI.WebControls.DropDownList ddlCategoria;
 
         /// <summary>
-        /// lblPriceDecimal control.
+        /// chkDestacado control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblPriceDecimal;
+        protected global::System.Web.UI.WebControls.CheckBox chkDestacado;
 
         /// <summary>
-        /// lblQuantity control.
+        /// fuImagen control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblQuantity;
+        protected global::System.Web.UI.WebControls.FileUpload fuImagen;
 
         /// <summary>
-        /// txtQuantity control.
+        /// btnGuardar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtQuantity;
+        protected global::System.Web.UI.WebControls.Button btnGuardar;
 
         /// <summary>
-        /// btnAddToCart control.
+        /// confirmButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton btnAddToCart;
+        protected global::System.Web.UI.WebControls.Button confirmButton;
+
+        /// <summary>
+        /// hfDeleteProductId control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hfDeleteProductId;
     }
 }

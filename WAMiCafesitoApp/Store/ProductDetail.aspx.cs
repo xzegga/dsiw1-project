@@ -60,8 +60,13 @@ namespace WAMiCafesitoApp.Store
                 lblProductDescription.Text = product.Descripcion;
                 lblCategory.Text = product.Categoria;
                 string imageUrl = $"/Assets/Images/{product.ID_Producto}.png";
+
                 imgProduct.ImageUrl = imageUrl;
                 imgProduct.Attributes.Add("onerror", "this.onerror=null; this.src='/Assets/Images/default.png';");
+                
+                imgProductThumb.ImageUrl = imageUrl;
+                imgProductThumb.Attributes.Add("onerror", "this.onerror=null; this.src='/Assets/Images/default.png';");
+                
                 setPrice(product.Precio);
             }
             else

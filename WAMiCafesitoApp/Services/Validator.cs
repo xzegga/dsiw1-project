@@ -29,8 +29,7 @@ namespace WAMiCafesitoApp.Services
                 return false;
 
             // Expresión regular para validar nombres con caracteres Unicode
-            string namePattern = @"^[\p{L}\s'-]+$";
-            return Regex.IsMatch(input, namePattern);
+            return ValidateSafeString(input);
         }
 
         // Validar contraseña y confirmación de contraseña
@@ -60,6 +59,14 @@ namespace WAMiCafesitoApp.Services
             return Regex.IsMatch(number, numberPattern);
         }
 
+        public static bool ValidateDecimalNumber(string number)
+        {
+            if (string.IsNullOrWhiteSpace(number))
+                return false;
+
+            return double.TryParse(number, out _);
+        }
+
         // Validar fecha
         public static bool ValidateDate(string date)
         {
@@ -87,10 +94,7 @@ namespace WAMiCafesitoApp.Services
                 return false;
 
             // Patrones comunes de inyección SQL
-            string[] sqlInjectionPatterns =
-            {
-            "--", ";--", ";", "/*", "*/", "@@"
-        };
+            string[] sqlInjectionPatterns = { "--", ";--", ";", "/*", "*/", "@@" };
 
             // Patrón común de Cross-Site Scripting (XSS)
             string xssPattern = @"<.*?>|&#.*?;|&.*?;";
@@ -100,15 +104,14 @@ namespace WAMiCafesitoApp.Services
             foreach (var pattern in sqlInjectionPatterns)
             {
                 if (input.IndexOf(pattern, StringComparison.OrdinalIgnoreCase) >= 0)
-                    return true;
+                    return false;
             }
 
             // Verificar XSS
-            if (Regex.IsMatch(input, xssPattern, RegexOptions.IgnoreCase))
-                return true;
+            if (Regex.IsMatch(input, xssPattern, RegexOptions.IgnoreCase)) return false;
 
+            return true;
 
-            return false;
         }
     }
 }

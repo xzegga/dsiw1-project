@@ -20,9 +20,9 @@ namespace MiCafesito
             CategoryService categoryService = new CategoryService();
             categories = categoryService.GetAllCategories();
         }
-        public void AddProduct(Product product)
+        public int AddProduct(Product product)
         {
-
+            int newId = 0;
             try
             {
                 using (SqlCommand command = new SqlCommand("SP_InsertarProducto", connection))
@@ -31,16 +31,24 @@ namespace MiCafesito
 
                     command.Parameters.AddWithValue("@Nombre", product.Nombre);
                     command.Parameters.AddWithValue("@Descripcion", product.Descripcion);
-                    command.Parameters.AddWithValue("@Precio", product.Precio);
+                    command.Parameters.AddWithValue("@Precio", product.Precio);                    
                     command.Parameters.AddWithValue("@ID_Categoria", product.ID_Categoria);
-                    command.Parameters.AddWithValue("@ImageUrl", product.ImageUrl);
+                    command.Parameters.AddWithValue("@Destacado", product.Destacado);
+
+                    // Parámetro de salida para el nuevo ID
+                    SqlParameter newProductId = new SqlParameter("@ID_Producto", SqlDbType.Int);
+                    newProductId.Direction = ParameterDirection.Output;
+                    command.Parameters.Add(newProductId);
 
                     connection.Open();
                     command.ExecuteNonQuery();
+                    newId = Convert.ToInt32(newProductId.Value);
                 }
             }
             catch (Exception ex) { throw new ArgumentException("No se pudo agregar el producto"); }
             finally { connection.Close(); }
+            
+            return newId;
 
         }
 
@@ -86,6 +94,7 @@ namespace MiCafesito
                             product.Precio = Convert.ToDouble(reader["Precio"].ToString());
                             product.ID_Categoria = Convert.ToInt32(reader["ID_Categoria"]);
                             product.Categoria = reader["Categoria"].ToString();
+                            product.Destacado = Convert.ToBoolean(reader["Destacado"]);
                             productos.Add(product);
                         }
 
@@ -157,17 +166,8 @@ namespace MiCafesito
                             product.Descripcion = reader["Descripcion"].ToString();
                             product.Precio = Convert.ToDouble(reader["Precio"].ToString());
                             product.ID_Categoria = Convert.ToInt32(reader["ID_Categoria"]);
-
-                            // Get Category Name
-                            foreach (Category category in categories)
-                            {
-                                if (category.ID_Categoria == product.ID_Categoria)
-                                {
-                                    product.Categoria = category.Nombre;
-                                    break;
-                                }
-                            }
-                            product.ImageUrl = reader["ImageUrl"].ToString();
+                            product.Categoria = reader["Categoria"].ToString();
+                            product.Destacado = Convert.ToBoolean(reader["Destacado"]);
                         }
 
                         return product;
@@ -207,7 +207,9 @@ namespace MiCafesito
                             product.Descripcion = reader["Descripcion"].ToString();
                             product.Precio = Convert.ToDouble(reader["Precio"].ToString());
                             product.ID_Categoria = Convert.ToInt32(reader["ID_Categoria"]);
+                            product.Categoria = reader["Categoria"].ToString();
                             product.ImageUrl = reader["ImageUrl"].ToString();
+                            product.Destacado = Convert.ToBoolean(reader["Destacado"]);
 
                             products.Add(product);
                         }
@@ -256,7 +258,7 @@ namespace MiCafesito
             finally { connection.Close(); }
         }
 
-        public void UpdateProduct(Product productos)
+        public void UpdateProduct(Product product)
         {
             try
             {
@@ -264,12 +266,12 @@ namespace MiCafesito
                 {
                     command.CommandType = CommandType.StoredProcedure;
 
-                    command.Parameters.AddWithValue("@ID_Producto", productos.ID_Producto);
-                    command.Parameters.AddWithValue("@Nombre", productos.Nombre);
-                    command.Parameters.AddWithValue("@Descripcion", productos.Descripcion);
-                    command.Parameters.AddWithValue("@Precio", productos.Precio);
-                    command.Parameters.AddWithValue("@ID_Categoria", productos.Precio);
-                    command.Parameters.AddWithValue("@ImageUrl", productos.ImageUrl);
+                    command.Parameters.AddWithValue("@ID_Producto", product.ID_Producto);
+                    command.Parameters.AddWithValue("@Nombre", product.Nombre);
+                    command.Parameters.AddWithValue("@Descripcion", product.Descripcion);
+                    command.Parameters.AddWithValue("@Precio", product.Precio);
+                    command.Parameters.AddWithValue("@ID_Categoria", product.ID_Categoria);
+                    command.Parameters.AddWithValue("Destacado", product.Destacado);
 
                     connection.Open();
                     command.ExecuteNonQuery();
