@@ -56,13 +56,15 @@ namespace WAMiCafesitoApp.Store
         {
             int orderId = Convert.ToInt32(e.CommandArgument);
 
-            int rowIndex = ((GridViewRow)((Control)sender).NamingContainer).RowIndex;
-            GridViewRow row = OrdersGridView.Rows[rowIndex];
-            Label lblOrderStatus = (Label)row.FindControl("lblOrderStatus");
+            // Obtener la fila del GridView que contiene el botón clicado
+            GridViewRow row = (sender as Button).NamingContainer as GridViewRow;
 
-            if (lblOrderStatus.Text != "Recibida")
+            // Obtener el estado de la orden desde el HiddenField
+            string estado = (row.FindControl("hdnFieldEstado") as HiddenField).Value;
+
+            if (estado != "Recibida")
             {
-                ShowErrorMessage("La Orden ya está en proceso, por favor comuniquese con el adminstrador");
+                ShowErrorMessage("No se puede elminiar una orden en proceso, por favor pongase en contacto con servicio al cliente.");
                 return;
             }            
 

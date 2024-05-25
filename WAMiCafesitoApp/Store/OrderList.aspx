@@ -18,10 +18,12 @@
                     <asp:BoundField DataField="Estado" HeaderText="Estado" />
                     <asp:BoundField DataField="SubTotal" HeaderText="SubTotal" DataFormatString="{0:C}" />
                     <asp:BoundField DataField="Factura" HeaderText="Factura" />
+                   
 
                     <asp:TemplateField>
                         <ItemTemplate>
                             <div class="d-flex justify-content-end align-items-center pe-4">
+                                <asp:HiddenField ID="hdnFieldEstado" runat="server" Value='<%# Eval("Estado") %>' />
                                 <asp:LinkButton ID="lnkViewOrder" runat="server"
                                     OnCommand="lnkViewOrder_Command"
                                     CommandArgument='<%# Eval("ID_Pedido") %>'
